@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tag SVG</title>
+    <link rel="stylesheet" href="/style/estilo.css">
+    <link rel="stylesheet" href="/style/mediaQuery.css">
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+
+</head>
+<body onresize="bigLayout()">
+    <header>
+        <figure class="logo_header">
+            <img src="../img/logo-css3-150px.png" alt="">
+        </figure>
+        <div class="ord_z-index">
+            <h1>Propriedade HTML & CSS</h1>
+            <h2>Propriedade SVG</h2>
+            <svg width="300" height="10">
+                <line stroke="#29A7D9" stroke-width="6"
+                x1="2" y1="2" x2="290" y2="2"/>
+            </svg>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus non est accusamus consectetur dolor fuga perspiciatis cupiditate! Quaerat, exercitationem ratione.</p>
+        </div>
+        <svg class="mask" width="1223" height="600" viewBox="10 50 1300 500">
+            <g filter="url(#filter0_d_5_4)">
+            <path d="M732.564 303.608C446.092 303.608 420.828 95.9757 436.802 15H105V582H1215C1115.07 384.542 907.568 303.608 732.564 303.608Z" fill="#29A7D9" fill-opacity="0.4"/>
+            <path d="M628.779 303.608C345.405 303.608 320.414 95.9757 336.215 15H8V582H1106C1007.15 384.542 801.892 303.608 628.779 303.608Z" fill="#F2F2F2"/>
+            <path d="M651 323C893.488 323 1048.27 500.715 1072 582H744.9C841.379 487.589 708.784 341.68 651 323Z" fill="#29A7D9"/>
+            </g>
+            <defs>
+            <filter id="filter0_d_5_4" x="0" y="0" width="1223" height="583" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+            <feOffset dy="-7"/>
+            <feGaussianBlur stdDeviation="4"/>
+            <feComposite in2="hardAlpha" operator="out"/>
+            <feColorMatrix type="matrix" values="0 0 0 0 0.227451 0 0 0 0 0.231373 0 0 0 0 0.235294 0 0 0 0.25 0"/>
+            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_5_4"/>
+            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_5_4" result="shape"/>
+            </filter>
+            </defs>
+        </svg>
+
+
+    </header>
+  
+    <div id="iconMenu">
+        <div id="styleIcon">
+            <span class="material-symbols-outlined" onclick="clickMenu()">menu</span>
+        </div>
+    </div>
+    <nav id="menu" class="navList">   
+ 
+        <ul>
+            <li class="navItems"><a href="#" class="navLink">Home</a></li>
+            <li class="navItems"><a href="#" class="navLink">Sobre</a></li>
+            <li class="navItems"><a href="#" class="navLink">Contato</a></li>
+            <li class="navItems"><a href="#" class="navLink">Projetos</a></li>
+            <li class="navItems"><a href="#" class="navLink">Mais CSS</a></li>
+        </ul>
+    </nav>
+
+    <main class="container_main">
+
+            <svg class="timeLine" width="430" height="18000">
+                <circle r="30" cx="95" cy="30" fill="#29A7D9"/>
+                <circle r="30" cx="400" cy="1065" fill="#29A7D9"/>
+                <circle r="30" cx="30" cy="2713" fill="#29A7D9"/>
+                <circle r="30" cx="400" cy="4366" fill="#29A7D9"/>
+                <circle r="30" cx="30" cy="5067" fill="#29A7D9"/>
+                <circle r="30" cx="400" cy="5900" fill="#29A7D9"/>
+                <circle r="30" cx="30" cy="6815" fill="#29A7D9"/>
+                <circle r="30" cx="400" cy="7670" fill="#29A7D9"/>
+                <circle r="30" cx="30" cy="9046" fill="#29A7D9"/>
+                <circle r="30" cx="400" cy="9819" fill="#29A7D9"/>
+                <circle r="30" cx="30" cy="10613" fill="#29A7D9"/>
+                <circle r="30" cx="400" cy="11407" fill="#29A7D9"/>
+                <circle r="30" cx="30" cy="12089" fill="#29A7D9"/>
+                
+                <polyline fill="transparent" stroke="#29A7D9" stroke-width="2" points="95,30 400,30 400,1065 30,1065 30,2713 400,2713 400,4366 30,4366 30,5067 400,5067 400,5900 30,5900 30,6815 400,6815 400,7670 30,7670 30,9046 400,9046 400,9819 30,9819 30,10613 400,10613 400,11407 30,11407 30,12089">
+                </polyline>
+            </svg>
+             
+        <article class="container_article span_style text_style">
+            
+            <section class="positionOdd">
+                <figure class="ilustrationSVG">
+                    <img src="/img/img_man-development_blue.svg" alt="Ilustação svg de um progamador.">
+                </figure>
+            </section>
+
+            <div class="container_div">
+                <h2>Propriedade SVG</h2>
+                <p>O nome SVG vem de Scalable Vector Graphics (Gráficos Vetoriais Escaláveis). Este é basicamente um formato de imagem vetorial suportado pelos navegadores e que pode ser animado ou modificado por CSS e JavaScript. O elemento <strong>SVG</strong> é um contêiner que define um novo sistema de coordenadas e de <mark>veiwport</mark>. Ele é usado como elemento externo de documentos SVG, mas também pode ser usado para incorporar um fragmento SVG dentro de um ducumento SVG ou HTML.</p>
+                <h3>As vantagens de usar SVG</h3>
+                <p>O SVG possui várias vantagens, como:</p>
+                <ul class="listIcons">
+                    <li><span></span> Poderm ser animados por CSS e modificados por JavaScript.</li>
+                    <li><span></span> Por serem imagens vetoriais, podemos alterar o tamanho livrimente sem perda de qualidade da imagem.</li>
+                    <li><span></span> Podem ser embutidas no HTML. diminuíndo a quantidade de requisições.</li>
+                    <li><span></span> Não é necessário um super editor de imagem para trabalhar com SVG. Algumas coisas simples podem ser editadas com o próprio editor de códigos ou usar até mesmo as páginas da web.</li>
+                    <li><span></span> Possui várias funcionalidades que ainda são impossíveis ou muito complexas de se fazer com HTML e CSS, nos permitindo criar formas e efeitos mais complexos para nossas páginas web.</li>
+                    <li><span></span> Como pode ser integrado com CSS, podemos usar <em>Media Queries</em> para criar imagens responsivas.</li>
+                </ul>
+            </div>
+             
+        </article>
+
+        <article class="container_article span_style text_style">
+            <section class="positionEven">
+                <figure class="ilustrationSVG">
+                    <img src="/img/img_fone_orange.svg" alt="Ilustração svg">
+                </figure>
+            </section>
+        <h2>Sintaxe</h2>
+            <p>Podemos criar uma arquivo <mark>.svg</mark> e depois chamar em nosso HTML usando a tag &lt;img&gt;, mas também pode-se, dentro do seu próprio HTML, criar uma tag &lt;svg&gt; e começar a escrever o código dentro dele. vamos começar com uma exemplo usando o vetor &lt;rect&gt; para criarmos um retângulo:</p>
+
+            <div class="__container_exemplos">
+                <pre>
+                    <code>
+                        &lt;svg&gt;
+                           &emsp; &lt;rect width="200" height="100" fill-"#D95B29" x="30" y="30"<br>&emsp;  stroke="#A9F0E1" stroke-width="5"&gt;&lt;/rect&gt;
+                        &lt;/svg&gt;
+                    </code>
+                </pre>
+                <h3>Resultado</h3>
+                <svg class="cor_fundo" width="350" height="200">
+                    <rect width="200" height="100" fill="#D95B29" x="30" y="30" stroke="#A9F0E1" stroke-width="5"></rect>
+                </svg>
+            </div>
+            <p>Vamos entender o que está declarado no exemplo:</p>
+            <ul class="listIcons">
+                <li><span></span><mark>&lt;rect&gt;</mark> declara que queremos criar um retângulo</li>
+                <li><span></span><mark>width</mark> e <mark>height</mark> servem para declararmos a largura e altura do elemento</li>
+                <li><span></span><mark>fill</mark> serve para declararmos a cor do preenchimento do elemento.</li>
+                <li><span></span><mark>x</mark> e <mark>y</mark> servem para indicar o posicionamento  do elemento svg em relação ao contêiner em que está contido.</li>
+                <li><span></span><mark>stroke</mark> nos permite declarar a cor da linha do contorno</li>
+                <li><span></span><mark>stroke-width</mark> declara a grossura da linha de contorno do elemento.</li>
+            </ul>
+
+            <p>Outro vetor muito comum usado na tag &lt;svg&gt; é o <mark>&lt;circle&gt;</mark>, que serve para criar um círculo</p>
+            <div class="__container_exemplos">
+                <pre>
+                    <code>
+                        &lt;svg&gt;
+                            &lt;circle r="30" cx="50" cy="40" fill="#D95B29" stroke="##A9F0E1" stroke-width="5"&gt;
+                        &lt;/svg&gt;
+                    </code>
+                </pre>
+                <h3>Resultado</h3>
+                <svg>
+                    <circle r="30" cx="50" cy="40" fill="#D95B29" stroke="#A9F0E1" stroke-width="5">
+                    </svg>
+            </div>
+        </article>
+
+        <article class="container_article span_style text_style">
+            <section class="positionOdd">
+                <figure class="ilustrationSVG">
+                    <img src="/img/img_html-css_green.svg" alt="ilustração svg">
+                </figure>
+            </section>
+            <h2>Como estilizar svg com CSS</h2>
+            <p>Os elementos svg tem uma grande vantagem sobre os outros tipos de arquivos de imagens porque pode ser estilizado de maneira muito mais poderoza quando usamos as CSS. A tag svg compartilha algumas propriedades com o CSS mas possui muitas outras propriedades exclusivas para estilizar seus elementos de imagem.</p>
+            <table class="tabela">
+                <tr>
+                    <th scope="col">Compartilhado com CSS</th>
+                    <th scope="col">Somente SVG</th>
+                </tr>
+                <tr>
+                    <td>font, font-family, font-size, font-size-
+                        adjust, font-stretch, font-style, font-
+                        variant, font-weight, direction, letter-
+                        spacing, text-decoration, unincode-bidi,
+                        word-spacing, visibility, text-rendering
+                        writing-mode, clip-path, mask-opacity,
+                        filter, pointer-events, image-rendering,
+                        clip, color, cursor, display, overflow.</td>
+                        
+                    <td>clip-rule, flood-color, flood-opacity,
+                        stop-opacity, kerning, tech-anchor,
+                        color-profile, color-rendering, fill,
+                        fill-opacity, fill-rule, marker, marker-
+                        end, marker-mid, marker-start, stroke,
+                        stroke-width, stop-color, lighting-color,
+                        enable-background, dominant-baseline,
+                        color-interpolation-filters, color-
+                        interpolation, glyph-orientation-
+                        horizontal, glyph-orientation-vertical,
+                        shape-rendering, baseline-shift,
+                        alignment-baseline, stroke-miterlimit,
+                        stroke-linejoin, stroke-linecap, stroke-
+                        dashoffset, stroke-dasharray, stroke-
+                        opacity.</td>
+                </tr>
+            </table>
+            <p>Existem varias maneiras para se declarar essas propriedades na tag svg, e assim como no CSS, existe um peso de especificidade para elas que é igual a especificidade do CSS. </p>
+            <figure class="img_size">
+                <img src="/img/css-especificidade.jpg" alt="Tabela de especificidade CSS.">
+            </figure>
+        </article>
+
+        <article class="container_article span_style text_style"> 
+            <section class="positionEven">
+                <figure class="ilustrationSVG">
+                    <img src="/img/img_responsividade_blue.svg" alt="Ilustação svg de um progamador.">
+                </figure>
+            </section>
+            <h3>Estilo inline</h3>
+            <p>A forma de estilo inline é aplicada a tag <em>style</em> diretamente na tag do elemento <mark>&lt;svg&gt;</mark></p>
+
+            <div class="__container_exemplos">
+                <pre>
+                    <code>
+                        &lt;svg style="width: 300px; height: 300px;" viewBox="0 0 300 300"&gt;
+                            &emsp;  &lt;polygon
+                            &emsp;  style="fill: #D95B29; stroke: #A9F0E1; stroke-width: 5;"
+                            &emsp;  points="100,10 40,198 190,78 10,78 160,198"/&gt;
+                        &lt;/svg&gt;
+                    </code>
+                </pre>
+                <svg style="width: 300px; height: 160px;" viewBox="0 0 300 200">
+                    <polygon
+                    style="fill: #D95B29; stroke: #A9F0E1; stroke-width: 5;"
+                    points="100,10 40,198 190,78 10,78 160,198"/>
+                </svg>
+            </div>
+        </article>
+
+        <article class="container_article span_style text_style">
+            <section class="positionOdd">
+                <figure class="ilustrationSVG">
+                    <img src="/img/img_html-css_orange.svg" alt="Ilustação svg de um progamador.">
+                </figure>
+            </section> 
+            <h3>Estilo dentro do svg (presentation Attibutes)</h3>
+            <p>Essa outra maneira de estilizar o svg declaramos os atributos e seus valores diretamente na tag <mark>svg</mark> sem a tag <mark>style</mark>. A tag style será declarada como elemento filho de svg.</p>
+
+            <div class="__container_exemplos">
+                <pre>
+                    <code>
+                        &lt;svg width="300" height="300" viewBox="0 0 300 300"&gt;
+                            &emsp;  &emsp;&lt;style&gt;
+                            &emsp;  &emsp;    &emsp;  polygon {
+                            &emsp;  &emsp;    &emsp;  &emsp;    fill: red;
+                            &emsp;  &emsp;    &emsp;  &emsp;    stroke: yellow;
+                            &emsp;  &emsp;    &emsp;  &emsp;    stroke-width: 5;
+                            &emsp;  &emsp;    }
+                            &emsp;  &emsp;&lt;/style&gt;
+                            &emsp;  &emsp;&lt;polygon
+                            &emsp;  &emsp;    &emsp;  &emsp;    points="100,10 40,198 190,78 10,78 160,198"/&gt;
+                        &lt;/svg&gt;
+                    </code>
+                </pre>
+                <svg width="300" height="160" viewBox="0 0 300 200">
+                    <style>
+                        polygon {
+                            fill: #D95B29;
+                            stroke: #A9F0E1;
+                            stroke-width: 5;
+                        }
+                    </style>
+                    <polygon
+                    points="100,10 40,198 190,78 10,78 160,198"/>
+                </svg>
+            </div>
+        </article>
+
+        <article class="container_article span_style text_style"> 
+            <h3>Estilo fora do svg</h3>
+            <p>Outra maneira de estilizar svg seria declará uma tag style no documento <mark>HTML</mark> e dentro dela um seletor com os atributos de svg e depois referenciar o seletor no elemento contido na tag <mark>svg</mark>. Seguindo nas mesma ideia, também podemos referenciar um seletor que vem de um link de CSS eXterno em relação ao documento do HTML (rel="stylesheet" href="/style/estilo.css").</p>
+
+            <div class="__container_exemplos">
+                <pre>
+                    <code>
+                        &lt;style&gt;
+                            &emsp;.estrela_svg {
+                                &emsp;  &emsp;fill: #D95B29;
+                                &emsp;  &emsp;stroke:#A9F0E1;
+                                &emsp;  &emsp;stroke-width: 5;
+                                &emsp;  &emsp;}
+                         &lt;style/&gt;
+                        .......
+                        &lt;svg&gt;
+                        &emsp;  &emsp;&lt;polygon class="estrela_svg"
+                        &emsp;  &emsp;  points="100,10 40,198 190,78 10,78 160,198"&gt;
+                        &lt;/svg&gt;
+                    </code>
+                </pre>
+                <style>
+                    .estrela_svg {
+                        fill: #D95B29;
+                        stroke:#A9F0E1;
+                        stroke-width: 5;
+                    }
+                </style>
+                <svg width="300" height="160" viewBox="0 0 300 200">
+                     <polygon class="estrela_svg"
+                     points="100,10 40,198 190,78 10,78 160,198"/>
+                </svg>
+            </div>
+        </article>
+
+        <article class="container_article span_style text_style">
+            <h3>Viewport e ViewBox</h3>
+            <p>Os elementos svg são manipulados dentro de um espaço específico para eles que é a viewport da tag &lt;svg&gt;. já o <mark>viewBox</mark> é o atributo que define a posição e a dimensão destes elementos que estão no espaço da viewport svg.</p>
+            <p>O valor do atributo <mark>viewBox</mark> é uma lista de quatro números: min-x, min-y, width e height. Os números declarados para min-x e min-y representam as coordenadas superiores esquerdas da viewport (apartir de x="0" y="0"). os números para width e height representam suas dimensões. Esses números, que são separados por espaço em branco e/ou vírgula, especificam um retângulo no espaço do usuário que é mapeado para os limites da viewport estabelicida para o elemento SVG associado (não a viewport do navegador).</p>
+
+            <div class="__container_exemplos">
+                <pre>
+                    <code>
+                        &lt;svg class="cor_fundo" width="300" height="100"<br> viewBox="0 0 400 150" style="border: 1px solid blue;"&gt;
+                            &emsp;  &emsp;&lt;circle r="50" cx="200" cy="75"/&gt;
+                        &lt;/svg&gt;
+                    </code>
+                </pre>
+                <svg class="cor_fundo" width="300" height="100" viewBox="0 0 400 150" style="border: 1px solid #A9F0E1;">
+                    <circle r="50" cx="200" cy="75" fill="#D95B29" stroke="#A9F0E1" stroke-width="4"/>
+                </svg>
+            </div>
+        </article>
+
+        <article class="container_article span_style text_style">
+            <h3>Formas Básicas do SVG</h3>
+            <p>A linguagem SVG possui seis formas básicas de constuir gráficos que também são chamadas de objetos primitivos da SVG, e são usadas isoladamente para criação de gráficos simples ou em conjunto para desenvolvimento de gráficos avançados. São eles:</p>
+            <ul class="listIcons">
+                <li><span></span> &lt;rect /&gt;</li>
+                <li><span></span> &lt;circle /&gt;</li>
+                <li><span></span> &lt;ellipse /&gt;</li>
+                <li><span></span> &lt;line /&gt;</li>
+                <li><span></span> &lt;polyline /&gt;</li>
+                <li><span></span> &lt;polygon /&gt;</li>
+            </ul>
+
+            <h4>&lt;rect /&gt;</h4>
+            <p>Os atributos xml para o elemento &lt;rect&gt; destinados á criação de um retângulo são:</p>
+            <ul class="listIcons">
+                <li><span></span> x &rarr; define a coordenada horizontal do canto superior esquerdo do retângulo;</li>
+                <li><span></span> y &rarr; define a coordenada vertical do canto superior esquerdo do retângulo;</li>
+                <li><span></span> width &rarr; define a largura do retângulo;</li>
+                <li><span></span> height &rarr; define a altura do retângulo;</li>
+                <li><span></span> rx &rarr; define o raio de curvatura segundo o eixo x para arredondamento dos cantos do retângulo;</li>
+                <li><span></span> ry &rarr; define o raio de curvatura segundo o eixo dos y para arredondamento dos cantos do retângulo.</li>
+            </ul>
+
+            <div class="__container_exemplos">
+                <pre>
+                    <code>
+                        &lt;svg class="cor_fundo" width="300" height="100"<br> viewBox="0 0 400 150" style="border: 1px solid #A9F0E1"&gt;
+                            &emsp;  &emsp;&lt;rect x="125" y="37.5" width="150" height="75" rx="10" ry="10"/&gt;
+                        &lt;/svg&gt;
+                    </code>
+                </pre>
+                <svg class="cor_fundo" width="300" height="100" viewBox="0 0 400 150" style="border: 1px solid #A9F0E1">
+                    <rect x="125" y="37.5" width="150" height="75" rx="10" ry="10" fill="#D95B29" stroke="#A9F0E1" stroke-width="4"/>
+                </svg>
+            </div>
+        </article>
+        
+        <article class="container_article span_style text_style">
+            <h4>&lt;circle&gt;</h4>
+            <p>Os atributos XML para o elemento &lt;circle&gt; destinados à criação de um círculo são:</p>
+            <ul class="listIcons">
+                <li><span></span> r &rarr; define o raio do círculo;</li>
+                <li><span></span> cx &rarr; define a coordenada horizontal do centro do círculo;</li>
+                <li><span></span> cy &rarr; define a coordenada vertical do centro do círculo;</li>
+            </ul>
+
+            <div class="__container_exemplos">
+                <pre>
+                    <code>
+                        &lt;svg class="cor_fundo" width="300" height="100"<br>viewBox="0 0 400 150" style="border: 1px solid #A9F0E1"&gt;
+                            &emsp;  &emsp;&lt;circle r="70" cx="200" cy="75" fill="#D95B29" stroke="#A9F0E1"<br> &emsp;   &emsp;stroke-width="4"/&gt;
+                        &lt;/svg&gt;
+                    </code>
+                </pre>
+                <svg class="cor_fundo" width="300" height="100" viewBox="0 0 400 150" style="border: 1px solid #A9F0E1">
+                    <circle r="70" cx="200" cy="75" fill="#D95B29" stroke="#A9F0E1" stroke-width="4"/>
+                </svg>
+            </div>
+        </article>
+
+        <article class="container_article span_style text_style">
+            <h4>&lt;ellipse&gt;</h4>
+            <p>os atributos XML para o elemento &lt;ellipse&gt; destinados à criação de uma elipse são:</p>
+            <ul class="listIcons">
+                <li><span></span> cx &rarr; define a coordenada horizontal do centro da elipse;</li>
+                <li><span></span> cy &rarr; define a coordenada vertical do centro da elipse;</li>
+                <li><span></span> rx &rarr; define o raio horizontal da elipse;</li>
+                <li><span></span> ry &rarr; define o raio vertical da elepse;</li>
+            </ul>
+
+            <div class="__container_exemplos">
+                <pre>
+                    <code>
+                        &lt;svg class="cor_fundo" width="300" height="100"<br> viewBox="0 0 400 150" style="border: 1px solid blue"&gt;
+                            &emsp;  &emsp;&lt;ellipse cx="200" cy="75" rx="90" ry="60" fill="green"<br> &emsp;  &emsp;stroke="yellow" stroke-width="4"/&gt;
+                        &lt;/svg&gt;
+                    </code>
+                </pre>
+                <svg class="cor_fundo" width="300" height="100" viewBox="0 0 400 150" style="border: 1px solid #A9F0E1">
+                    <ellipse cx="200" cy="75" rx="90" ry="60" fill="#D95B29" stroke="#A9F0E1" stroke-width="4"/>
+                </svg>
+            </div>
+        </article>
+
+        <article class="container_article span_style text_style">
+            <h4>&lt;line&gt;</h4>
+            <p>Os atributos XML para o elemento &lt;line&gt; destinados à criação de uma linha reta são:</p>
+            <ul class="listIcons">
+                <li><span></span> x1,y1 &rarr; definem a coordenada do ponto inicial da linha reta;</li>
+                <li><span></span> x2,y2 &rarr; definem a coordenada do ponto final da linha reta;</li>
+                <li><span></span> stroke-width &rarr; define a espessura da linha reta;</li>
+                <li><span></span> stroke &rarr; define a cor da linha reta;</li>
+            </ul>
+            <div class="__container_exemplos">
+                <pre>
+                    <code>
+                        &lt;svg class="cor_fundo" width="300" height="100"<br> viewBox="0 0 400 150" style="border: 1px solid blue"&gt;
+                            &emsp;  &emsp;  &lt;line x1="10" y1="10" x2="100" y2="120" stroke="#000" stroke-width="4"/&gt;
+                        &lt;/svg&gt;
+                    </code>
+                </pre>
+                <svg class="cor_fundo" width="300" height="100" viewBox="0 0 400 150" style="border: 1px solid blue">
+                    <line x1="10" y1="10" x2="100" y2="120" stroke="#000" stroke-width="4"/>
+                </svg>
+            </div>
+        </article>
+
+        <article class="container_article span_style text_style">
+            <h4>&lt;polyline&gt;</h4>
+            <p>O atributo XML para o elemento &lt;polyline&gt; destinados à criação de polilinhas é o atributo <mark>points</mark>.
+            O valor deste atributo é uma lista de coordenadas separadas por espaço em branco. A polilinha é uma sequência de segmentos de reta unindo os pontos definidos pelas coordenadas</p>
+
+            <div class="__container_exemplos">
+                <pre>
+                    <code>
+                        &lt;svg class="cor_fundo" width="300" height="100"<br> &emsp;   &emsp;viewBox="0 0 300 100" style="border: 1px solid #A9F0E1"&gt;
+                            &emsp;  &emsp;&lt;polyline fill="transparent" stroke="#176583" stroke-width="4"
+                            &emsp;  &emsp;points="0,20 30,20 30,40 60,40 60,60 90,60 90,80 120,80 "/&gt;
+                        &lt;/svg&gt;
+                    </code>
+                </pre>
+                <svg class="cor_fundo" width="300" height="100" viewBox="0 0 300 100" style="border: 1px solid #A9F0E1">
+                    <polyline fill="transparent" stroke="#176583" stroke-width="4"
+                    points="0,20 30,20 30,40 60,40 60,60 90,60 90,80 120,80 "/>
+                </svg>
+            </div>
+        </article>
+
+        <article class="container_article span_style text_style">
+            <h4>&lt;polygon&gt;</h4>
+            <p>O atributo XML para o elemento &lt;polygon&gt; destinados à criação de polígonos é o atributo <mark>points</mark>.
+            O valor deste atributo é uma lista de coordenadas separadas por espaço em branco. O polígono é uma sequência de segmentos de reta unindo os pontos definidos pelas coordenadas, formando uma superfície fechada.</p>
+            <p>Observe o código a seguir destinado a criar um hexágono (polígono de seis lados) passando pelos pontos de coordenadas <mark>"125,10 175,10 200,50 175,90 125,90 100,50 125,10"</mark>.</p>
+
+            <div class="__container_exemplos">
+                <pre>
+                    <code>
+                        &lt;svg class="cor_fundo" width="300" height="100"<br> viewBox="0 0 300 100" style="border: 1px solid blue"&gt;
+                            &emsp;  &emsp;&lt;polygon fill="#D95B29" stroke="#A9F0E1" stroke-width="4"
+                            &emsp;  &emsp;points="125,10 175,10 200,50 175,90 125,90 100,50 125,10"/&gt;
+                        &lt;/svg&gt;
+                    </code>
+                </pre>
+                <svg class="cor_fundo" width="300" height="100" viewBox="0 0 300 100" style="border: 1px solid blue">
+                    <polygon fill="#D95B29" stroke="#A9F0E1" stroke-width="4"
+                    points="125,10 175,10 200,50 175,90 125,90 100,50 125,10"/>
+                </svg>
+            </div>
+        </article>
+    </main>
+     <script>
+        function bigLayout(){
+            if (window.innerWidth >= 1170) {
+                iconMenu.style.display = 'none';
+                menu.style.display = 'flex';
+                
+            } else {
+                iconMenu.style.display = 'flex';
+                menu.style.display = 'none';
+            }
+        }
+     
+        function clickMenu() {
+           // menu.style.display = 'flex';
+            if (menu.style.display == 'flex') {
+                menu.style.display = 'none';
+            }
+            else {
+                    menu.style.display = 'flex';
+                }
+        }
+    </script>
+</body>
+</html>

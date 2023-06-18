@@ -1,0 +1,328 @@
+@charset 'UTF-8';
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* font-family: 'Bruno Ace', cursive; */
+:root {
+    --titulo: 'Bruno Ace', cursive;
+    --paragrafo:  'Roboto', sans-serif;
+    --verde-ciano-escuro: #176583;
+    --azul-claro: #29A7D9;
+    --azul-picina: #4accff;
+    --verde-claro: #A9F0E1;
+    --marron-escuro: #8c4a00;
+    --laranja-forte: #D95B29;
+    --branco: #FBFDFE;
+    --cinza-claro: #d0d9dd;
+}
+/* Estilo do banner da página */
+/* =================================================================== */
+.cabecalho {
+    display: flex;
+    position: relative;
+    width: 100%;
+    background: linear-gradient(128.91deg, #D95B29 23.95%, #d9b3297d 57.74%, #29A7D9 82.1%);
+    height: 75.6vh;
+    background-size:200% 200% ;
+    color: var(--branco);
+    /* animation: linearGradient 10s linear alternate infinite; */
+}
+/* @keyframes linearGradient {
+    from {
+        background-position: 0% 50%;
+    }
+    to {
+        background-position: 100% 50%;
+    }
+} */
+.logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 1rem;
+    left: 3rem;
+    width: 18rem;
+    z-index: 2;
+}
+.logo span {
+    font-family: var(--titulo);
+}
+.logo img {
+    object-fit: contain;
+    width: 4rem;
+}
+.banner {
+    /* position: absolute; */
+    z-index: 1;
+    height: 100%;
+}
+.banner img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}
+.ilustracao {
+    position: absolute;
+    z-index: 1;
+    right: 8%;
+    bottom: 1.6rem;
+    width: 26rem;
+
+}
+.ilustracao img {
+    object-fit: contain;
+    width: 100%;
+}
+.conceito {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    z-index: 1;
+    width: 35.5rem;
+    height: 12.5rem;
+    position: absolute;
+    bottom: 10.5rem;
+    left: 3rem;
+    line-height: 1.5em;
+}
+.conceito h1 {
+    font-family: var(--titulo);
+    font-size: 3em;
+    font-weight: 400;
+}
+.conceito p::first-letter {
+    font-family: var(--titulo);
+    font-size: 3em;
+    
+}
+
+/* Estilo dos botões de navegação */
+/* ===================================================================== */
+.flexContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.border {
+   border: 2px solid var(--cinza-claro); 
+   box-shadow: inset 0px -3px 10px -3px #444;
+   background-color: var(--cinza-claro);
+}
+/* Ícone do menú */
+#iconMenu {
+    width: 100%;
+    height: 4rem;
+    background-color: var(--verde-ciano-escuro);
+}
+#styleIcon {
+    width: 3rem;
+    height: 3rem;  
+    border-radius: 5px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    cursor: pointer;
+}
+/* Lista dos botões */
+.navList {
+    width: 100%;
+    height: fit-content;
+    background-color: var(--verde-ciano-escuro);
+}
+.navList ul {
+    list-style: none;
+    padding: 1rem;
+}
+.navItems {
+    width: 5rem;
+    text-align: center;
+    height: 1.7rem;
+    border-radius: 5px;
+    margin: 0em 1rem;
+    
+    transition: transform 0.8s linear, background-color 0.8s linear; 
+}
+.navItems:hover {
+    transform: scale(1.05);
+    background-color:#29A7D9;
+    color: #fff;
+}
+.navLink {
+    display: block;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    font-size: 0.9em;
+    font-family: var(--paragrafo);
+    color: #000;
+}
+
+/* Estilo do conteúdo da página */
+/* ==================================================================== */
+.container-main {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    
+    font-family: var(--paragrafo);
+    width:100%
+}
+.container-main pre code{
+    white-space: pre-line;
+}
+.container-main h2, h3 {
+    
+    font-family: var(--titulo);
+    margin: 2rem 0rem;
+    text-indent: 1rem;
+    font-weight: 300;
+}
+.container-article h3 {
+    height: 1.6rem;
+    width: 17rem;
+    z-index: 4; 
+    position: relative;
+    background-color: #f6fafb;
+}
+.aviso {
+    font-weight: 600;
+
+}
+.container-article {
+    max-width: 44rem;
+    margin: 4rem 1rem 1rem 1rem;
+    padding: 2rem;
+
+}
+
+
+ article::before {
+    content: '';
+    position: absolute;
+    left: 2rem;
+    top: 3rem;
+    width: 5rem;
+    height: 1rem;
+    border-top: 4px solid var(--azul-claro);
+    border-bottom: 4px solid var(--laranja-forte);
+    transition: transform .5s linear;
+}
+::before {
+    z-index: 0;
+}
+ article:hover::before {
+   transform: translateX(-100%);
+   /* animation: barras 2s linear forwards ; */
+   
+}
+.container-article article:hover {
+    transform: scale(1.01);
+}
+/* @keyframes barras {
+    0% {
+        transform: translateX(0%);
+    }
+    50% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(-100%) rotateZ(90deg) scaleX(1.5);
+         transform: translateX(-100%); 
+    }
+}
+ */
+
+.container-article article {
+    background-color: #f6fafb;
+    position: relative;
+    margin-top: 4rem;
+    padding: 1rem 2rem;
+    border-radius: 0.5em;
+    box-shadow: 0px 5px 14px -9px #aaa;
+    transition: transform 0.5s linear;
+}
+.container-article mark {
+    background-color: var(--cinza-claro);
+    padding: 0 4px;
+    border-radius: 3px;
+    margin: 0 3px;
+    font-family: monospace;
+    font-size: 1.15em;
+}
+/* Estilo dos exemplos da página. */
+/* ================================================================== */
+.exemplo {
+    background-color: #ffeeeec2;
+    width: 80%;
+    padding: 1rem;
+    margin: 2rem;
+    border-radius: 10px;
+    box-shadow: 0px 9px 21px -11px #aaa;
+    
+}
+.exemplo ul li {
+    list-style: none;
+}
+.resultado_1 li:first-child {
+    color: orange;
+}
+.resultado_2 dd:first-of-type {
+    color: red;
+}
+.resultado_3 li:last-child {
+    color: red;
+}
+.resultado_4 dd:last-of-type {
+    color: darkgreen;
+}
+.resultado_5 li:not(.destaque) {
+    color: blue;
+}
+.resultado_6 li:nth-child(3) {
+    color: orange;
+}
+.resultado_7 li:nth-child(2n) {
+    color: orange;
+}
+.resultado_8 li:nth-child(even) {
+    color: orange;
+}
+.resultado_9 li:nth-child(2n+6) {
+    color: orange;
+}
+.resultado_10 li:nth-last-child(3) {
+    color: orange;
+}
+.resultado_11 p:nth-of-type(2) {
+    color: orange;
+}
+.resultado_12 p:nth-last-of-type(2) {
+    color: orange;
+}
+.resultado_13 li:only-child {
+    color: orange;
+}
+.resultado_14 p :only-of-type {
+    color: orange;
+}
+
+@media screen and (max-width: 75rem) {
+    .ilustracao {
+        display: none;
+    }
+}
+@media screen and (max-width:780px) {
+    .cabecalho {
+        height: fit-content;
+        /* background-image: none; */
+    }
+}

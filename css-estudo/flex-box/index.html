@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudos de CSS</title>
+    <link rel="shortcut icon" href="favicon (3).ico" type="image/x-icon">
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="mediaQueries.css">
+</head>
+<body>
+    <header>
+        <figure>
+            <img src="logo-css3.png" alt="logo da logo-CSS3">
+        </figure>
+        <h1>FlexBox</h1>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Curiosidades</a>
+            <a href="#">Notícias</a>
+            <a href="#">Sobre</a>
+        </nav>
+    </header>
+    
+    <nav class="guia">
+        <ul>
+            <li><a href="#FlexBox">O que é FlexBox?</a></li>
+            <li><a href="#Elementos">Elementos</a></li>
+            <li><a href="#FlexContainer">flex container</a></li>
+            <li><a href="#FlexDirection">Propriedade flex-direction</a></li>
+            <li><a href="#FlexWrap">Propriedade Flex-wrap</a></li>
+            <li><a href="#flexFlow">Propriedade flex-flow</a></li>
+            <li><a href="#tamanho">Expansão, encolhimento e tamanho dos elementos flex</a></li>
+            <li><a href="#alinhamento">Alinhamento e justificação</a></li>
+            <li><a href="#alignSelf">Propriedade align-self</a></li>
+            <li><a href="#Order">Propriedade order</a></li>
+        </ul>
+    </nav>
+                                
+    <main>
+        <section class="container_items">
+            <article id="FlexBox" class="espaço_y">
+                <h2>O que é FlexBox?</h2>
+
+                <p>O FlexBox tem como meta ser um modo mais eficiente para criar leiautes, alinhar e distribuir de maneiras avançadas os espaços entre os elementos de uma interface, mesmo quando as dimensções destes itens são desconhecidos e/ou dinâmicas (dai o termo flex).</p>
+                <p>FlexBox é um módulo completo de propriedades com a finalidade de posicionar os elementos filhos em seus respectivos elementos pais para uma boa compatibilidade entre o browsers.</p>
+                <p>Para aplicar FlexBox devemos declarar suas propriedades tanto no, container, (elemento pai que chamamos de <em>fex container</em>)quanto nos elementos filhos que chamamos de (<em>flex itens</em>).</p>
+            </article>
+
+             <article id="Elementos" class="espaço_y">
+                <h2>Elementos</h2>
+
+                <p>Se o laiaute "padrão" é baseado na direções <mark>block</mark> e <mark>inline</mark>, o leiaute Flex é baseado em direções "flex flow". Veja o diagrama da especificação, explicando a ideia central por trás do leiaute Flex.</p>
+
+                <div>
+                    <img src="exe-responsividade/flex-box-img.svg" alt="diagrama de FlexBox">
+                </div>
+
+                <p>Ao se utilizar o flexbox, é preciso saber que todas as operações realizada relacionam-se a dois eixos: o eixo principal e o eixo transversal. </p>
+                <p>O eixo principal é difinido através da propriedade <mark>flex-direction</mark> e o eixo transversal encontra-se na direção perpendicular a ele</p>
+
+                <ul>
+                    <li><dfn>Eixo principal</dfn> &rarr; o eixo principal de um <em>flex container</em> definido, será o eixo primário e ao longo dele serão inseridos os flex items.</li>
+                    <li><dfn>main-start/main-end</dfn> &rarr; os flex items são insetidos dentro do container começando pelo lado start, indo em direção ao lado end.</li>
+                    <li><dfn>Tamanho principal</dfn> &rarr; A largura ou altura de um flex item, dependendo da direção do container, é o tamanho principal do item.A propriedade de tamanho principal de um flex item deve ser tanto <mark>width</mark> quato <mark>height</mark>, dependendo de qual delas estiver na direção principal.</li>
+                    <li><dfn>Eixo transversal</dfn> &rarr; O eixo perpendicular ao eixo principal é chamado de eixo transversal, sua direção depende da direção do eixo principal.</li>
+                    <li><dfn>cross-start/cross-end</dfn> &rarr; Linhas flex são preenchidas com itens e adicionadas aou container, começando pelo lado <mark>cross start</mark> do flex em direção ao lado <mark>cross end</mark>.</li>
+                    <li><dfn>cross size</dfn> &rarr; A largura ou autura de um <mark>flex item</mark>, dependendo do que estiver na dimensão transversal, é o cross size do ítem, o que estiver na transversal.</li>
+                </ul>
+            </article>
+
+            <article id="FlexContainer" class="espaço_y">
+                <h2>flex container</h2>
+
+                <p>A área de um documento que faz uso do flexbox é chamada de flex container. Para criar essa estrutura é preciso declarar a propriedade <mark>display</mark> do elemento representado pelo container com os valores <em>flex</em> ou <em>inline-flex</em> Desse modo, os elementos-filhos desse contêiner se tornarm do tipo flex. Como todas as propriedades no CSS possuem valores padrão, ao criar um contêiner flex, os elementos nele contidos apresentarão o seguinte valores:</p>
+
+                <h4>Exemplo de sintaxe</h4>
+
+                <pre>
+                    <code>
+                        .boxboxflex {
+                            display: flex;
+                        }
+                    </code>
+                </pre>
+                <pre>
+                    <code>
+                        &lt;div class="boxflex"&gt;
+                            &lt;div&gt;item 1&lt;/div&gt;
+                            &lt;div&gt;etem 2&lt;/div&gt;
+                            &lt;div&gt;etem 3
+                                &lt;br&gt;has
+                                &lt;br&gt;extra
+                                &lt;br&gt;text
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    </code>
+                </pre>
+                <div class="boxflex">
+                    <div>item 1</div>
+                    <div>item 2</div>
+                    <div>item 3
+                        <br>has
+                        <br>extra
+                        <br>text
+                    </div>
+                </div>
+                <div>
+                    <ul>
+                        <li>Exibição em linha (o padrão do <mark>flex-direction</mark> é <em>row</em>)</li>
+                        <li>Alinhamento na borda inicial do eixo principal</li>
+                        <li>Não há expansão no eixo peincipal, mas pode haver contração.</li>
+                        <li>Haverá expansão vertical para preencher a altura do eixo transversal.</li>
+                        <li>A propriedade <mark>flex-basis</mark> estará definida como auto</li>
+                        <li>A propriedade <mark>flex-wrap</mark> estará definida como <em>nowrap</em></li>
+                    </ul>
+                </div>
+                <p>O resultado final é que todos os elementos serão alinhados em uma linha, usando o tamanho do conteúdo como o tamanho do eixo principal. Se houver mais ítens do que é possível caber no contêiner, não haverá uma quebra de linha ; ao invés disso, irão ultrapassar o limite horizontal da página. Se alguns elementos forem mais alto que os outros , todos os itens se estenderão ao longo do eixo transversal para preencher seu tamanho total.</p>
+            </article>
+
+            <article id="FlexDirection"class="espaço_y">
+                <h2>Propriedade <mark>flex-direction</mark></h2>
+
+                <p>A propriedade <dfn>flex-direction</dfn> permite alterar a direção na qual os elementos flex serão exibidos ao longo do eixo principal. Definindo a propriedade <mark>flex-direction</mark> como <em>row-reverse</em> (linha reversa) ainda teremos os elementos dispostos em uma linha, entretanto, as linhas inicial e final serão trocadas (da direita para esquerda).</p>
+                <p>Se mudarmos a <mark>flex-direction</mark> para <em>column</em> (coluna), o eixo principal exibirá os elementos em uma coluna. trocando o valor para <em>column-reverse</em> (coluna reversa) fará vom que as linhas inicial e final sejam novamente trocadas (de baixo para cima).</p>
+                <h4>Exemplo de sintaxe</h4>
+                <pre>
+                    <code>
+                        .boxdirection{
+                            display: flex;
+                            flex-direction: row-reverse;
+                        }
+                    </code>
+                </pre>
+                <pre>
+                    <code>
+                        &lt;div class="boxdirection"&gt;
+                            &lt;div&gt;item 1&lt;/div&gt;
+                            &lt;div&gt;etem 2&lt;/div&gt;
+                            &lt;div&gt;etem 3&lt;/div&gt;
+                        &lt;/div&gt;
+                    </code>
+                </pre>
+                <div class="boxdirection">
+                    <div>item 1</div>
+                    <div>item 2</div>
+                    <div>item 3</div>
+                </div>
+                <div>
+                    <ul>
+                        <li><dfn>row</dfn>: exibição em linha da esquerda para direita;</li>
+                        <li><dfn>now-reverse</dfn>: exibição em linha da direita pra esquerda;</li>
+                        <li><dfn>column</dfn>: exibição em coluna de cima pra baixo;</li>
+                        <li><dfn>column-reverse</dfn>: exibição em columa de baixo para cima.</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article id="FlexWrap" class="espaço_y">
+                <h2>Flex-wrap</h2>
+
+                <p>Embora o flexbox seja um modelo unidimensional, é possível fazer com que elementos <em>flex</em>sejam agrupados em múltiplas linhas. Ao fazer isso, considera-se cada linha como um novo contêiner <em>Flex</em>. Qualquer distribuição espacial ocorrerá ao longo dessa linha, sem referência às linhas de ambos os lados. Para gerar a quebra automática das linhas adicione a propriedade <mark>flex-wrap</mark> com o valor <em>wrap</em>. Assim, de elementos forem muito grandes para serem exibidos em uma única linha, eles serão agrupados em outras linhas.</p>
+                <p>O exemplo prático abaixo contém elementos <em>flex</em> aos quais foi dada uma determinada largura, cuja soma totoliza um valor grande demais para caber no contêiner. Visto que a propriedade <mark>flex-wrap</mark> está definida como <em>wrap</em>, os itens serão reorganizados em mais de uma linha.</p>
+                <pre>
+                    <code>
+                        .boxwrap {
+                            display: flex;
+                            flex-wrap: wrap;
+                        }
+                    </code>
+                </pre>
+                <pre>
+                    <code>
+                        &lt;div class="boxwrap"&gt;
+                            &lt;div&gt;item 1&lt;/div&gt;
+                            &lt;div&gt;etem 2&lt;/div&gt;
+                            &lt;div&gt;etem 3&lt;/div&gt;
+                        &lt;/div&gt;
+                    </code>
+                </pre>
+                <div class="boxwrap">
+                    <div>item 1</div>
+                    <div>item 2</div>
+                    <div>item 3</div>
+                </div>
+            </article>
+
+            <article id="flexFlow"class="espaço_y">
+                <h3>Propriedade abreviada <mark>Flex-flow</mark></h3>
+
+                <p>Pode-se combinar as propriedades <mark>flex-direction</mark> e <mark>flex-wrap</mark> de forma abreviada através da propriedade <mark>flex-flow</mark>. O primeiro valor esprcificado é o <mark>flex-direction</mark> e o segundo valor é o <mark>flex-wrap</mark></p>
+                <p>No exemplo abaixo, vemos a sintaxe desta propriedade:</p>
+                <pre>
+                    <code>
+                        .boxflow {
+                            display: flex;
+                            flex-flow: row wrap;
+                        }
+                    </code>
+                </pre>
+                <pre>
+                    <code>
+                        &lt;div class="boxflow"&gt;
+                            &lt;div&gt;item 1&lt;/div&gt;
+                            &lt;div&gt;etem 2&lt;/div&gt;
+                            &lt;div&gt;etem 3&lt;/div&gt;
+                        &lt;/div&gt;
+                    </code>
+                </pre>
+                <div class="boxflow">
+                    <div>item 1</div>
+                    <div>item 2</div>
+                    <div>item 3</div>
+                </div>
+            </article>
+            <article id="tamanho" class="espaço_y">
+                <h2>Expansão, encolhimento e tamanho dos elementos flex</h2>
+
+                <p>Para ter mais controle sobra os elementos flex é possível alterá-los diretamente utilizando as três propriedades abaixo:</p>
+                <ul>
+                    <li><a href="">flex-grow</a></li>
+                    <li><a href="">flex-shrink</a></li>
+                    <li><a href="">flex-basis</a></li>
+                </ul>
+                <p>Quando se modifica o valor das propriedades , altera-se a forma que o espaço disponível é distribuido entre os elementos. Tal conceito de espaço disponível também é relevante quando se trata do alinhamento</p>
+                <p>As propriedades a seguir tratam dessa distribuição do <strong>espaço disponível</strong> do elemento pai entre seus elementos filhos, cada uma da sua maneira; seja todos os elementos crescendo proporcionalmente ou não, seja preenchendo espaço disponível, ou ainda distribuição dos espaços vazios entre eles</p>
+
+                <h3><mark>flex-basis</mark></h3>
+                
+                <p><dfn>Flex-basis</dfn> serve para especificar o tamanho inicial dos "flex-items" antes de um eventual espaço livre ou faltante do flex-conteiner ser dividido e distribuido, segundo o que constar em flex-grow e flex-shrink. Em outras palavras, flex-basis é a melhor maneira de definir tamanho de "flex-items", ao invés de usar "width" ou "height", pois ele os manipula de acordo com a orinteção do "flex-direction". </p>
+                <p>A propriedade <dfn>flex-basis</dfn> é do tipo flex-items, deve ser aplicada nos elementos filhos. <dfn>flex-basis</dfn> se aplica ao tamanho de todos  elementos filhos ao mesmo tempo. Ela segue a direção do <em>main-axis</em>, portanto se mudamos o <em>flex-direction</em> ela mudará o eixo á ser manipulado.</p>
+                <ul>
+                    <li>flex-direction: row &rarr; manipulará a largura (width);</li>
+                    <li>flex-direction: column &rarr; manipulará a altura (height).</li>
+                </ul>
+                <p<mark>flex-basis</mark> está como padrão com o valor <em>auto</em>, quando o seu elemento pai está como <em>display-flex</em>. Isso faz com que o elemento tenha o tamanho do seu conteúdo. Quando adicionamos um valor em pixels, todos os seus elementos filhos terão essa medida por igual independente do tamanho de seus conteúdos.</p>
+
+                <h3>Propriedade <mark>flex-grow</mark></h3>
+
+                <p><dfn>Flex-grow</dfn> define como os elementos flex-items de comportam caso haja espaço disponível no flex-container ("grow" significa crescer). Com a propriedade <dfn>flex-grow</dfn> definida com um número inteiro positivo, os elementos flex podem crescer ao longo do eixo principal, <strong>recebendo uma cota igual de espaço live do conteiner</strong> a partir do valor mínimo estabelecido no flex-basis. Isto fará com que o elemento se estique e ocupe qualquer espaço disponível nesse eixo ou uma proporção dele, caso outros elementos-irmãos também possam crescer.</p>
+                <p><dfn>Flex-grow</dfn> é do tipo <em>flex-itens</em> então devemos aplica-la nos elementos filhos. Um número inteiro positivo como valor para ela fará com que os elementos cresçam de maneira fracionada de acordo com o respectivo valor. Vamos ver um exemplo:</p>
+
+                <h3>Propriedade <mark>flex-shrink</mark></h3>
+
+                <p>(Shrink significa "encolher"), logo, a propriedade <dfn>flex-shrink</dfn> é a que faz os elementos filhos se ajustarem, redimensionando o tamanho para diminuirem quando o espaço do conteiner diminui, distribuindo cotas de espaços livres. Esse redimensionamento se limita até o tamanho do conteúdo contido nele mais o tamanho do padding caso haja algum. O seu <strong>valor padrão</strong> é o número inteiro positivo "1".</p>
+                <p><mark>flex-shrink</mark> é também do tipo <em>flex-itens</em>, sendo assim aplica-se nos elementos filhos. Se aplicarmos o valor "0" o elemento se posiciona fixo e não diminúi seguindo o layout. Se aplicarmos o valor maior que "1", o elemento diminuirá, mais vezes de acordo com o valor declarado, quando o layout diminuir. Vamos ver o exemplo:</p>
+
+                <h3>Avreviatura para propriedades <mark>flex</mark></h3>
+
+                <p>As propriedades <mark>flex-grow</mark>, <mark>flex-shrink</mark> e <mark>flex-basis</mark> raramente são empregadas de maneira individual. Usualmente, elas são combinadas através da propriedade de abreviação <mark>flex</mark>. A abreviatura <mark>flex</mark> permite definir os três valores na seguinte ordem: <mark>flex-grow</mark>, <mark>flex-shrink</mark>, <mark>flex-basis</mark>.</p>
+                <p>Vamos ver o exemplo de sintaxe abaixo</p>
+
+                <p>Há ainda alguns valores de abreviação predefinidos, que cobrem a maioria dos casos de uso. São aplicados normalmente para suprir as necessidades práticas da estilização flexbox.</p>
+                <ul>
+                    <li><mark>flex: initial;</mark> &rarr; reseta os elementos para valores padrões do FlexBox, sendo equivalente a <mark>flex: 1 1 auto;</mark>.</li>
+                    <li><mark>flex: auto;</mark> &rarr; é o equivalente a <mark>flex: 1 1 0;</mark> que fará os elementos preencher o contêiner ou diminuir se necessário, pra evitar o transbordamento lateral do layout.</li>
+                    <li><mark>flex: none;</mark> &rarr; irá criar um elemento flex totalmente inflexível, sendo equivalente à <mark>felx: 0 0 auto;</mark>.</li>
+                    <li><mark>flex: número inteiro;</mark> &rarr; equivalente à <mark>flex: 3;</mark> 4, 2 e etc, onde os elementos podem crescer ou diminuir a partir da propriedade <mark>flex: basis;</mark> com o valor nulo.</li> 
+                </ul>
+            </article>
+
+            <article id="alinhamento" class="espaço_y">
+                <h2>Alinhamento e justificação </h2>
+
+                <p>Um atributo chave do flexbox é a capacidade de alinhar e justificar os elementos flex nos eixos principal e transversal e distribuir o espaço livre entre eles.</p>
+
+                <h3>Propriedade <mark>align-items</mark></h3>
+
+                <p>A propriedade <dfn>align-items</dfn> tem a função de alinhar os elementos no eixo transversal (cross-axis). <mark>align-items</mark> é aplicada no elemento pai para alinhar os elementos filhos no espaço do seu contêiner. O valor inicial padrão desta propriedade é <em>stretch</em> que faz os elementos flex se estenderem até a maior altura entre eles. </p>
+                <p> Para que <mark>align-items</mark> faça sua função o elemento pai deve está com o <strong>display: flex</strong> declarado, assim como também é necessário para as outras propriedades do tipo flex. Os valores que se aplicam nesta propriedade são os seguintes: <mark>stretch</mark>, <mark>flex-start</mark>, <mark>flex-end</mark> e <mark>center</mark>.</p>
+
+                <ul>
+                    <li><dfn>stretch</dfn> &rarr; esta propriedade faz os elementos flex se estenderem até a maior altura entre eles.</li>
+                    <li><dfn>flex-start</dfn> &rarr; alinha os elementos no início do eixo transversal (cross-axis), no topo do contêiner.</li>
+                    <li><dfn>flex-end</dfn> &rarr; alinha os elementos no fim do eixo transversal (cross-axis), na base do contêiner.</li>
+                    <li><dfn>center</dfn> &rarr; alinha os elementos no centro do eixo transversal (cross-axis).</li>
+                </ul>
+
+                <h3>Propriedade <mark>justify-content</mark></h3>
+
+                <p>A propriedade <dfn>justify-content</dfn> tem a função de alinhar os elementos no eixo principal (main-axis) seguindo a direção definida pela propriedade <mark>flex-direction</mark>. <mark>justify-content</mark> deve ser declarada no elemento pai para alinhar os elementos filhos. Para cumprir sua função o elemento pai também precisa estar com <mark>display-flex</mark> declarado e também ter uma largura definida.</p>
+                <p>O valor padrão inicial para <mark>justify-content</mark> é <em>flex-start</em>, que alinha os elementos no início do eixo principal. Os valores para esta propriedade sao os seguinte: <mark>flex-start</mark>, <mark>flex-end</mark>, <mark>center</mark>, <mark>space-around</mark>, <mark>space-between</mark> e <mark>space-evenly</mark>.</p>
+
+                <ul>
+                    <li><mark>flex-start</mark> &rarr; alinha os elementos para o início do eixo principal </li>
+                    <li><mark>flex-end</mark> &rarr; alinha os elementos para o fim do eixo principal.</li>
+                    <li><mark>center</mark> &rarr; alinha os elementos para o centro do eixo principal.</li>
+                    <li><mark>space-around</mark> &rarr; alinha os elementos distribuindo o espaço vazio entre eles, com um espaço maior entre eles e um espaço menor nas laterais.</li>
+                    <li><mark>apace-between</mark> &rarr; alinha os elementos distribuindo o espaço vazio entre eles, onde o espaço entre eles são iguais, mas, sem espaço nas laterais.</li>
+                    <li><mark>space-evenly</mark> &rarr; alinha os elementos distribuindo o espaço vazio entre eles, distribuindo espaço vazio com uma única medida entre os elementos as e também nas laterais.</li>
+                </ul>
+
+            </article>
+            <article id="alignSelf" class="espaço_y">
+                <h2>Align-self</h2>
+
+                <p>A propriedade <dfn>align-self</dfn> tem a função de alinhar um elemento alvo específico dentro de um contêiner flex. O <mark>align-self</mark> alinha o elemento no mesmo eixo do <mark>align-items</mark> (eixo transversal, "cross-axeis"). Quando aplicado ele sobreescreve o valor de <mark>align-items</mark> O seu valor padrão é o <em>auto</em>, que faz o elemento alvo herdar o valor de <mark>align-items</mark> de seu elemento pai. Todos os valores de <mark>align-items</mark> também estão disponíveis para o <mark>align-self</mark>.</p>
+
+                <ul>
+                    <li><dfn>stretch</dfn> &rarr; esta propriedade faz os elementos flex se estenderem até a maior altura entre eles.</li>
+                    <li><dfn>flex-start</dfn> &rarr; alinha os elementos no início do eixo transversal (cross-axis), no topo do contêiner.</li>
+                    <li><dfn>flex-end</dfn> &rarr; alinha os elementos no fim do eixo transversal (cross-axis), na base do contêiner.</li>
+                    <li><dfn>center</dfn> &rarr; alinha os elementos no centro do eixo transversal (cross-axis).</li>
+                </ul>
+
+                <p>O valor da palavra-chave <em>normal</em> tem efeitos diferente dependendo do modo de layout em que o elemento se encontra:</p>
+
+                <ul>
+                    <li>Em layouts <mark>pisition: absolute</mark> o valor <em>normal</em> se comporta como o valor <em>start</em> em caixas absolutamente aposicionadas <em>replaced</em>, e como <em>stretch</em> em caixa absolutamente posicionadas <em>all other</em>.</li>
+                    <li>Em layouts <mark>position: static</mark> absolutamente posicionados, a palavra-chave se comporta como <em>stretch</em>.</li>
+                    <li>Para <mark>itens-flex</mark>, a palavra-chave se comporta como <em>stretch</em></li>
+                    <li>Para <mark>itens-grid</mark>, a palavra-chave se comporta similar ao de stretch, com exceção de caixas com <em>aspect ratio</em> ou tamanhos intrencicos onde se comportam como <em>start</em>.</li>
+                    <li>A propriedade não se aplica para caixas <mark>block-level</mark>.</li>
+                </ul>
+
+            </article>
+
+            <article id="Order" class="espaço_y">
+                <h2>Propriedade Order</h2>
+                <p>A propriedade <dfn>order</dfn> nos permite alterar a ordem original em que os elementos são apresentados, sem alterar a ordem que estão no HTML. Essa propriedade é projetada para colocar os itens em <em>grupos ordinais</em>. O que isso significa é que os itens recebem um número inteiro que representa seu grupo. Os itens são colocados na ordem visual de acordo com esse número inteiro, os valores mais baixos primeiro. Se mais de um item tiver o mesmo nalor inteiro, dentro desse grupo os itens serão dispostos de acordo com a ordem de origem. O valor padrão de <mark>order</mark> é "0".</p>
+                <p>Como exemplo, temos 5 itens flexíveis e vamos atribuir <dfn>order</dfn> com os valores da seguinte forma</p>
+                <ul>
+                    <li>Item de origem 1 &rarr; <mark>order: 2</mark></li>
+                    <li>Item de origem 2 &rarr; <mark>order: 3</mark></li>
+                    <li>Item de origem 3 &rarr; <mark>order: 1</mark></li>
+                    <li>Item de origem 4 &rarr; <mark>order: 3</mark></li>
+                    <li>Item de origem 5 &rarr; <mark>order: 1</mark></li>
+                </ul>
+                <p>Estes itens seriam exibidos na página na seguinte ordem:</p>
+                <ul>
+                    <li>Item de origem 3 &rarr; <mark>order: 1</mark></li>
+                    <li>Item de origem 5 &rarr; <mark>order: 1</mark></li>
+                    <li>Item de origem 1 &rarr; <mark>order: 2</mark></li>
+                    <li>Item de origem 2 &rarr; <mark>order: 3</mark></li>
+                    <li>Item de origem 4 &rarr; <mark>order: 3</mark></li>
+                </ul>
+                <h3>Resultado</h3>
+                <div class="boxflex">
+                    <div class="order_1">Item de origiem 1</div>
+                    <div class="order_2">Item de origiem 2</div>
+                    <div class="order_3">Item de origiem 3</div>
+                    <div class="order_4">Item de origiem 4</div>
+                    <div class="order_5">Item de origiem 5</div>
+                </div>
+
+            </article>
+
+        </section>
+    </main>
+                                
+    <aside>
+        <div>
+            <h1>Anotações - Observações</h1>
+            <blockquote>
+                <span>-</span> Para um layout com uma responsividade mais eficaz o ideal é declará como <strong>flex</strong>, cada elemento, um dentro do outro simultâneos.
+            </blockquote>
+            <blockquote>
+                <span>-</span> a propriedade <mark>flex-basis</mark> quando declarada com o valor um de número de pixels soma este valor a partir do contúdo do elemento.
+            </blockquote>
+            <blockquote>
+                <span>-</span> Quando se trata de altura no <mark>FlexBox</mark> percebemos que os valores do elemento pai e do elemento filho se na estiverem declarado como um valor fixo, devem alternar entre si um valor fixo ("pixels" e "em" ) e um valor relativo (% porcentagem). Não podendo ser dois valores de porcentagem para eles.
+            </blockquote>
+        </div>
+        
+    </aside>
+    
+    <footer>
+
+        <div>
+            <img src="logo-css3.png" alt="">
+        </div>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab!</p>
+        <ul>
+            <li><a href="">link 1</a></li>
+            <li><a href="">link 2</a></li>
+            <li><a href="">link 3</a></li>
+        </ul>
+    </footer>
+
+</body>
+</html>

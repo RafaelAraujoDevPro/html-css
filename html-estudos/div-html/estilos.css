@@ -1,0 +1,44 @@
+#cabecalho {
+    background-color: green;
+    width: 70%;
+    color: white;
+    height: 120px;
+    margin: 20px auto;
+    padding-left:20px;
+    padding-top:10px;
+    border-radius: 20px;
+}
+.centralizado {
+    background-color: #5f9ea097;
+    border: 2px solid green;
+    width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    font-size: 20px;
+    border-radius: 20px;
+}
+#rodape {
+    background-color: #008b8b;
+    width:auto;
+    color: black;
+    height: 80px;
+    margin: 20px auto;
+    padding: left 20px;
+    padding-top: 5px;        
+}
+
+u {
+    color:#008b8b;
+}
+
+.exemplos {
+    background-color: #99999979;
+    color: #974e00;
+    width: 80%;   
+    font-size: 15px;
+    white-space: pre-line;
+    /*white-space: pre-line; colapsa espaços juntos e mantem a quebra de linha do texto pra se encaichar ao tamanho da box.*/
+    text-align: justify;
+    padding: 20px;
+    margin-left: 30px;
+}

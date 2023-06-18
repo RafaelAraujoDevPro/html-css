@@ -1,0 +1,17 @@
+@charset "UTF-8";
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@media screen and (max-width: 1070px) {
+    nav.guia {
+        flex: 0 1 41.8em;
+        border-right: 1px solid #29a7d950;
+        border-left: 1px solid #29a7d950;
+        box-shadow: 0px 3px 4px #29a7d950;
+    }
+    header nav {
+        justify-content: center;
+    }
+}

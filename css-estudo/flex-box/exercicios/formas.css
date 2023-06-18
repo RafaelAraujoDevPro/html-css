@@ -1,0 +1,67 @@
+@charset "UTF-8";
+* {
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 300vh;
+    padding-top: 3rem;
+    /* flex-wrap: wrap; */
+    gap: 3em;
+    flex-direction: column;
+
+}
+.textCenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Quadrado {
+    width: 200px;
+    height: 200px;
+    background-color:#98c7f0;
+}
+.Retangulo {
+    width: 400px;
+    height: 200px;
+    background-color: #5757ecc2;
+}
+.Circulo {
+    width: 200px;
+    height: 200px;
+    background-color:#3eac82;
+    border-radius: 50%;
+}
+.triangulo {
+    width: 0;
+    height: 0;
+    border-bottom: 200px solid #8a3a3acb;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+}
+.trapezio {
+    width: 300px;
+    height: 0;
+    border-bottom: 100px solid #8a3a3acb;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+}
+.Paralelograma {
+    width: 300px;
+    height: 200px;
+    background-color: #4c6e4cce;
+    transform: skewx(-20deg);
+    margin-left: 20px;
+}
+.Pentagono {
+    width: 500px;
+    height: 300px;
+    background-color:#3eac82;
+    border-bottom-left-radius: 50%;
+}

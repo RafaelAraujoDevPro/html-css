@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&display=swap');
+
+/*
+    Sintaxe para aplicar @font-face. Os valores """obrigatóriamente""" devem estar entre aspas simples ('valor')
+
+ @font-face {
+    font-family: 'sintaxe';
+    src: url('pasta/nome.tipo') format('tipodearquivo');
+ }
+
+*/
+
+
+@font-face {
+    font-family: 'good times';
+    src: url('fontes/good times rg.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'inconsolata';
+    src: url('fontes/Inconsolata.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'lora';
+    src: url('fontes/Lora.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'roboto';
+    src: url('fontes/Roboto.ttf') format('truetype');
+}
+
+:root {
+    --titulo: 'good times';
+    --paragrafo: 'roboto';
+    --codigos: 'inconsolata'
+}
+
+/* 
+    tipos de format()
+    -opentype (otf)
+    -truetype (ttf)
+    -embedded-opentype
+    -truetype-att (Aple Advanced Typography)
+    -svg
+*/
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+   
+}
+header {
+    background-color: darkorange;
+    display: flex;
+    flex-flow: row wrap;
+    height: 30vh;
+    flex-basis: 1600px;
+    padding: 30px;
+    /* justify-content: space-between; */
+}
+header picture {
+    display: flex;
+    align-items: center;
+}
+header img {
+    max-height: 80px;
+}
+header h1 {
+    /* background-color: aliceblue; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: 350px;
+    text-shadow: -1px -1px 2px rgb(70, 166, 245, 2);
+    font-family: var(--titulo);
+    font-weight: normal;
+}
+header nav {
+    display: flex;
+    flex-basis: 500px;
+    flex-grow: 1;
+    justify-content: flex-end;
+    align-items: flex-end;
+    
+}
+header a {
+    text-decoration:none;
+    background-color: red;
+    padding: 4px 10px;
+    margin: 0px 10px;
+    border-radius: .5em;
+    transition: .6s;
+    font-family: var(--codigos);
+}
+a:hover {
+    background-color: azure;
+    box-shadow: inset 0px -1px 2px 2px;
+}
+
+hr {
+    border: 3px double darkblue;
+    box-shadow: 0px 4px 6px 1px green;
+    width: 100%;
+}
+section {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: darkseagreen;
+    width: 800px;
+    height: 500px;
+    gap: 10px;
+    padding:10px;
+    align-items: flex-start;   
+}
+/* .FlexGrow0 {flex-grow: 3;}
+.FlexGrow1 {flex-grow: 1;}
+.FlexGrow2 {flex-grow: 2;} */
+
+section.alignitems1 {
+    flex: 1 1 auto;
+    justify-content:space-evenly;
+    align-items: center;
+    
+}
+ div {
+    background-color: antiquewhite;
+    display: flex;
+     height: 100px;
+     flex: 0 1 100px; 
+     align-items: center;
+     justify-content: center;
+     font-family: var(--codigos);
+     
+}
+/* .flexshink0 {flex-shrink: 0;}
+.flexshink1 {flex-shrink: 2;}
+.flexshink2 {flex-shrink: 0;} */
+
+aside {
+    display: flex;
+    flex: 1 1 auto;
+    width: 100%;
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+}
+aside nav {
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+}
+.flex {
+    display: flex;
+    flex:1 1 auto;
+    height: auto;
+    font-family: var(--paragrafo); 
+    font-size: 1.5em;
+}
+.alvo {
+    display: flex;
+    /* align-self:stretch; */
+    align-self: flex-end;
+    margin-right: auto;
+}
+
+

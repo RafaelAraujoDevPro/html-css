@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudo de CSS</title>
+    <link rel="shortcut icon" href="favicon (3).ico" type="image/x-icon">
+    <link rel="stylesheet" href="estilo.css">
+
+</head>
+<body>
+    <h1>Como utilizar "class" em CSS</h1>
+    <h2>O que são "class" em CSS?</h2>
+
+    <p>Classes são seletores de CSS que usamos para aplicar as folhas de estilos em elementos do HTML, usando o <em>atributo</em> "<strong>class</strong>". por exemplo: <code>&lt;div class="blue"&gt;&lt;/div&gt; </code>em referência a uma class de nome "blue".</p>
+    <p>Entenda <strong>seletores</strong> como palavras-chave com regras específicas que "selecionam" determinados elementos HTML em uma página, para poder atribuir uma aparência deiferente à esses elementos.
+    </p>
+    <p>Por exemplo, existem <strong>seletores</strong> CSS para selecionar tags HTML,tags com ids específicos, ex: <code>&lt;div id="footer"&gt;&lt;/div&gt;</code>,<strong>classes</strong> ex: &lt;div class="footer"&gt;&lt;/div&gt;, tags dentro de tags, entre outras regras específicas. Veja o exemplo a seguir:</p>
+    <div>
+        <pre>
+            <code>
+                &lt;style&gt;
+                        div {
+                            color: red;
+                        }
+                &lt;style&gt;
+                &lt;div&gt;Teste&lt;/div&gt;
+            </code>
+        </pre>
+    </div>
+    <p>O codigo CSS acima define um CSS seletor "div", que vai selecionar toda as tags div na página e pintar o texto de vermelho.</p>
+    <p>Classes em CSS são simplesmente seletores. A sintaxe a ser utilizada é um ponto "." seguido de uma palavra-chave, e em seguida a definição dos estilos entre "{" e "}". Veja o exemplo a seguir:</p>
+    <div>
+        <pre>
+            <code>
+                &lt;style&gt;
+                    .bordered {
+                        border: 2px solid black;
+                     }
+                &lt;/style&gt;
+                &lt;div class="bordered"&gt;&lt;/div&gt;
+            </code>
+        </pre>
+    </div>
+    <h2>Formas de se utilzar classes CSS</h2>
+    <p>Como visto no parágrafo acima, classes CSS são fundamentalmente seletores. É possível combinar classes CSSde diresas maneiras. Veja abaixo alguns exemplos:</p>
+    <div>
+        <pre>
+            <code>
+                &lt;style&gt;
+                    .blue {
+                        color: blue;
+                    }
+                &lt;style&gt;
+
+                &lt;div class="blue"&gt;Texto em azul&lt;/div&gt;
+                &lt;a href="#" class="blue"&gt;texto em azul&lt;/a&gt;
+            </code>
+        </pre>
+    </div>
+    <p>No exemplo acima, qualquer tag que receba a classe "blue", deve conter o texto em azul.</p>
+    <div>
+        <pre>
+            <code>
+                &lt;style&gt;
+                    div.blue{
+                       color: blue;
+                    }
+                &lt;/style&gt;
+
+                &lt;div class="blue"&gt;Texto em azul&lt;/div&gt;
+                &lt;a href="#" class="blue"&gt; Texto em preto, 
+                    apesar da classe em azul&lt;/a&gt;
+            </code>
+        </pre>
+    </div>
+    <p>No exemplo acima, a div vai ter o texto azul, mas o link não vai, pois o seletor CSS foi descrito de tal forma que combina a tag "div" com a classe ".blue", portanto aplicando o estilo somente na tag div que contém a classe "blue".</p>
+    <div>
+        <pre>
+            <code>
+                &lt;style&gt;
+                .blue-text {
+                    color: blue;
+                }
+
+                .black-background {
+                    background: black;
+                }
+                &lt;style&gt;
+
+                &lt;div class="blue-text black-background"&gt;Texto azul, fundo preto&lt;/div&gt;
+                &lt;a href="#" coass="blue-text"&gt;Texto azul&lt;/a&gt;
+            </code>
+        </pre>
+    </div>
+    <p>O código acima demonstra que é possívil definir múltiplas classes ao mesmo tempo, e utilizar múltiplas classes na mesma tag ao mesmo tempo. Desta forma você pode escrever uma série de estilos e reaproveitá-los apenas usando classes diferentes, separando por espaço no atributo HTML "class".</p>
+    <p>Essa é a maior utilidade de definirmos classes. Algumas bibliotecas como o bootstrap, por exemplo, fazem uso disso o tempo todo.</p>
+    <h2>Dicas úteis sobre classes e seletors</h2>
+    <p>Aqui vão algumas dicas dobre classes e seletores CSSque podem ajudar bastante:</p>
+    <h3>Aprender principais seletores CSS</h3>
+    <p>Os seletores de classes mais comuns ou recorrentes são: <strong><mark>.classe</mark></strong>, id: <strong><mark>#id</mark></strong>, tag: <strong><mark>div</mark></strong>, atributo: <strong><mark>input[type="text"]</mark></strong>, bem como o funcionamento de hierarquia desses seletores, são conceitos diferentes e importantes de se aprender. </p>
+    <h3>Seletores CSS funcionam para JavaScript e jQuery:</h3>
+    <p>No jQuery usamos <strong><mark>$('#container')</mark ></strong>. A ideia por trás do jQuery vem justamente do seletores CSS. A biblioteca torna fácil a seleção de elementos por id, classe, nome da tag, etc através de seletores CSS. o mesmo pode ser atingido através da função <strong><mark>document.querySelectorA11('#container')</mark></strong> em puro JavaScript.</p>
+    <h3>Uso de padrão para nomes de classes:</h3>
+    <p>Além de ser importante descrever o que cada classe significa, por exemplo usar uma palavra-chave <strong><mark>.bordered</mark></strong> para um elemento que tenha bordas. É recomendável também sempre manter um padrão na nomenclatura de classes, sempre usando letras minúsculas, substituindo espaços por traços "-", exemplo: <strong><mark>.is-centered</mark></strong> para um container com propriedade <strong><mark>text-align: center</mark></strong>.</p>
+    <h3>Tire vantagem de combinações de classes:</h3>
+    <p>Vai ter elementos com as mesmas caracteristicas na mesma página ou em múltiplas páginas difrentes? Então podemos definir um estilo para esse grupo de caracteristicas.</p>
+    <p>Por exemplo, digamos que temos um menu lateral com uma sombra que é a mesma sombra de uma seção "leia mais" no rodapé da página. Então podemos criar uma classe <strong><mark>.card-shadow</mark></strong> que contém a sombra e outras possíveis características comuns que vários elementos compartilham, assim reduzimos a quantidade de código CSS e cria uma estrutura de estilos semântica.</p>
+    <h3>Recomendações finais</h3>
+    <p>Apesar do CSS aceitar o  uso de outos tipos de seletores, como <strong><mark>#</mark></strong> para ids, é recomendável utilizarmos a classe ao invés de ids para a definição de estilos entre CSS e HTML.</p>
+    <p>O intuito principal de classes em CSS e HTML é poder reutilizar o mesmo código para múltiplos elementos que compartilham o mesmo estilo.</p>
+    <p>Para que isso aconteça, temos que manter suas classes organizadas em seu código CSS para sempre poder lembrar que uma classe já existe para detreminado estilo e evitar recriar classes que fazem a mesma coisa.</p>
+    <p>Uma boa dica é usarmos <strong><mark>/*comentarios CSS*</mark>/</strong> para definir diferentes seções no seu arquivo CSS, como uma seção que define classes de tipografia, outra seção que define classes de botões, outra seção que defina xlasses para menu, cabeçalho, e assim por diante.</p>
+    <blockquote><q>Resumo do artigo <strong>CSS Básico: Como Utilizar "class" em HTML e CSS</strong> no site <a href="https://metring.com.br/como-usar-class-em-html-e-css" target="_blank">metring.com.br</a></q></blockquote>
+</body>
+</html>

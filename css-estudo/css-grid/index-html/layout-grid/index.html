@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudos de CSS</title>
+    <link rel="stylesheet" href="css-grid/estilo-exemplos.css">
+    <link rel="stylesheet" href="/index-html/layout-grid/css-grid/estilo-pagina.css">
+    <link rel="shortcut icon" href="/index-html/imagens/favicon.ico" type="image/x-icon">
+    <!--Icone de Grid layout-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body class="conteiner">
+    <header id="l_cabecalho">
+        <div class="logo_css">
+            <figure>
+                <a href="#l_navegador">
+                    <img src="/index-html/imagens/logo-css3-150px.png" alt="logo css3">
+                </a>
+            </figure>
+             <h1>Estudos de CSS</h1>
+        </div>
+       
+        <section>
+            <h2>Conceitos básicos de Grid Layout </h2>
+           <p>
+            <span class="first_line">CSS Grid Layout</span>
+            <span class="material-symbols-outlined">
+            flex_wrap
+            </span>
+            introduz um sistema bi-dimensional de grid (literalmente "grades") para CSS. Grids podem ser usados para o design de layouts de grandes seções de uma webpage, assim como de pequenos elementos de interface. Esse artigo apresenta o CSS Grid Layout Level 1. As funcionalidades demonstradas neste resumo serão posteriormente explicadas em maiores detalhes nas demais seções desse guia.</p>
+       </section>
+        <nav class="menu">
+            <div class="btn"><a href="">HTML5</a></div>
+            <div class="btn"><a href="">CSS3</a></div>
+            <div class="btn"><a href="">Tecnologia</a></div>
+            <div class="btn"><a href="">Tutoriais</a></div>
+        </nav>
+    </header>
+
+     <nav id="l_navegador">
+        <ul>
+            <li><a href="#content__1">O que é Grid Layout?</a></li>
+            <li><a href="#content__2">Grid container</a></li>
+            <li><a href="#content__3">Grid Tracks</a></li>
+            <li><a href="#content__4">Dimensionamento de trilha e minmax()</a></li>
+            <li><a href="#content__5">Linhas virtuais de grid</a></li>
+            <li><a href="#content__6">Posicionamento através de Grid Area</a></li>
+        </ul>
+    </nav> 
+    <main id="l_principal">
+        <section class="l_conteudo">
+ 
+            <article id="content__1" class="l_artigo">
+
+                <h2>O que é Grid Layout?
+                    <span class="material-symbols-outlined size">
+                        flex_wrap
+                    </span>
+                </h1>
+
+                <p><dfn>Grid</dfn> é uma malha formada pela interseção de um conjunto de linhas horizontais e um conjunto de linhas verticais. Um dos conjuntos define colunas e outro define linhas. Dentro de um grid, respeitando-se a configuração criada pelas suas linhas, pode-se inserir elementos da marcação. As CSS grid layout preveem as seguintes funcionalidades:</p>
+
+                <h3>Dimensões fixas ou flexíveis</h3>
+
+                <p>Podemos criar grids com dimensões fixas ou flexíveis que vai depender do valor declados para as propriedades de <em>grid</em>. As dimensões fixas são decladas com pixels, já as dimensões flexíveis são declaradas com porcentagem (%) ou fraçoes (fr).</p>
+
+                <h3>Criação de grids adicionais</h3>
+                <p>Além da possibilidade de se criar um grid inicial para o layout a especificação prevê também a possibilidade de se adicionar linhas e colunas para layoutar conteúdos adicionados fora do grid inicial. Com isso podemos adicionar tantas colunas quantas forem necessárias em um grid contêiner existente.</p>
+
+                <h3>Alinhamento e Justificação</h3>
+
+                <p>Assim como no flexbox, no grid layout também podemos alinhar os elementos itens com as mesmas propriedades de justificação e alinhamento. As propriedades e valores são as mesmas declaradas para o flexbox.</p>
+
+                <h3>Controle sobre conteúdos sobrepostos</h3>
+
+                <p>Em uma célula do grid podem ser posicionados mais de um item da página e também é possivel que se defina sobreposição parcial de áreas. Esse controle de camadas é feito com uso de <em>z-index</em>.</p>
+                <p>CSS Grid Layout é um poderosa específicação que se for combinada com outras partes do CSS, tal como <mark>flexbox</mark>, possibilita a criação de layouts que até então eram impossíveis de serem criados com CSS. Tudo começa com a criação de um grid dentro de um <mark>grid contêiner</mark>.</p>
+            </article>
+
+            <article id="content__2" class="l_artigo">
+                <h2>Grid container
+                    <span class="material-symbols-outlined size">
+                        flex_wrap
+                    </span>
+                </h2>
+                <p>Para criar um <mark>grid-container</mark> temos de declarar no CSS a propriedade <strong>display</strong> com o valor <em>grid</em> ou <em>inline-gride</em>, assim: <mark><strong>display</strong>: <em>grid</em>;</mark> para o elemento de marcação. Assim todos os elementos filhos diretos daquele contêiner se transformam em <mark>grid items</mark>.</p>
+                <h3>Exemplo de sintaxe:</h3>
+                <p>No exemplo aseguir vejamos como declar o layout grid ao elemento pai.</p>
+                    
+                    <h4>HTML</h4>
+                <pre calss="box_ex__html">
+                    <code class="f_color__html">
+                        &lt;div class="l_container"&gt;
+                            &lt;div&gt;item 1&lt;/div&gt;
+                            &lt;div&gt;item 2&lt;/div&gt;
+                            &lt;div&gt;item 3&lt;/div&gt;
+                            &lt;div&gt;item 4&lt;/div&gt;
+                            &lt;div&gt;item 5&lt;/div&gt;
+                        &lt;/div&gt;
+                    </code>
+                </pre>
+                
+                <h4>CSS</h4>
+                <pre>
+                    <code>
+                        .l_container {
+                            display: grid;
+                        }
+                    </code class="f_color__html">
+                </pre>
+                
+                <h4>Resultado:</h4>
+                <div class="l_container l_items l_tamanho__ex">
+                    <div>item 1</div>
+                    <div>item 2</div>
+                    <div>item 3</div>
+                    <div>item 4</div>
+                    <div>item 5</div>
+                </div>
+
+                <p>Todos os elementos filhos diretos agora são grid items apesar de não haver mudanças na rendenização em um navegador web, porém  ao inspecionar no <mark>DevToos</mark> do navegador vai estar declarado <em>grid</em> ao lado do valor.</p>
+            </article>
+            
+            <article id="content__3" class="l_artigo">
+                <h2>Grid Tracks
+                    <span class="material-symbols-outlined size">
+                        flex_wrap
+                    </span>
+                </h2>
+                <p>Para definir linhas e colunas no layout grid temos de declarar as propriedades <strong>grid-template-columns:</strong> e <strong>grid-template-rows:</strong>, dessa forma criamos o <mark>grid tracks</mark>. Um <mark>grid track</mark> é o espaço entre duas linhas em um grid. </p>
+                <h3>Exemplo de sintaxe:</h3>
+                <p>No exemplo aseguir podemos ver como criar um grid track com a propriedade <strong>grid-template-columns</strong>. vamos criar três colunas fixas de 100px. os elementos filhos serão dispostos nessa grade, cada um em uma celula da grade.</p>
+                
+                <h4>HTML</h4>
+                <pre>
+                    <code class="f_color__html">
+                        &lt;div class="l_container"&gt;
+                            &emsp; &emsp; &lt;div&gt;items 1&lt;/div&gt;
+                            &emsp; &emsp; &lt;div&gt;items 2&lt;/div&gt;
+                            &emsp; &emsp; &lt;div&gt;items 3&lt;/div&gt;
+                            &emsp; &emsp; &lt;div&gt;items 4&lt;/div&gt;
+                            &emsp; &emsp; &lt;div&gt;items 5&lt;/div&gt;
+                        &lt;/div&gt;
+                    </code>
+                </pre>
+                
+                <h4>CSS</h4>
+                <pre>
+                    <code>
+                        .l_container {
+                            &emsp; &emsp;  display: grid;
+                            &emsp; &emsp;  grid-template-columns: 100px 100px 100px;
+                        }
+                    </code>
+                </pre>
+                
+                <h4>Resultado:</h4>
+                <div class="l_container__trilhas l_items l_tamanho__ex">
+                    <div>items 1</div>
+                    <div>items 2</div>
+                    <div>items 3</div>
+                    <div>items 4</div>
+                    <div>items 5</div>
+                </div>
+
+                <h3>Grid Auto Flow</h3>
+                <p>O algoritimo de arrumação automatica é bastante útil para o posicionamento dos elementos itens no fluxo da grid container. Este algorítimo adicina mais trilhas de linhas ou colunas implícitas na grid quando adicionamos mais elementos itens além da quantidade de células existentes inicialmente.  E existe uma propriedade que é usada para controlar este algorítimo, o <strong>grid-auto-flow</strong>. Esta propriedade nos permite manipular onde em qual trilha os novos elementos itens vão ficar posicionados. Para isso basta declará os valores:</p>
+                <ul>
+                    <li><em>row</em> &rarr; (Padrão) posiciona os elementos itens nas linhas adicionadas automaticamente.</li>
+                    <li><em>column</em> &rarr; Posiciona os elementos itens nas colunas adicionadas automaticamente.</li>
+                </ul>
+                <p>Vamos conferir um exemplo de sintaxe da propriedade <strong>grid-auto-flow</strong>:</p>
+                <H3>Sintaxe</H3>
+                <h4>HTML</h4>
+                <pre>
+                    <code class="f_color__html">
+                        &lt;div class="l_container"&gt;
+                                &emsp; &emsp; &lt;div&gt;items 1&lt;/div&gt;
+                                &emsp; &emsp; &lt;div&gt;items 2&lt;/div&gt;
+                                &emsp; &emsp; &lt;div&gt;items 3&lt;/div&gt;
+                                &emsp; &emsp; &lt;div&gt;items 4&lt;/div&gt;
+                                &emsp; &emsp; &lt;div&gt;items 5&lt;/div&gt;
+                                &emsp; &emsp; &lt;div&gt;items 6&lt;/div&gt;
+                        &lt;/div&gt;
+                    </code>
+                </pre>
+                <h4>CSS</h4>
+                <pre>
+                    <code>
+                        .l_container {
+                            display: grid;
+                            grid-template-columns: 1fr 1fr;
+                            grid-template-rows: 60px 60px;
+                            grid-auto-flow: row;
+                        }
+                    </code>
+                </pre>
+                <h4>Resultado</h4>
+                <div class="l_tamanho__ex l_auto__flow">
+                    <div>item 1</div>
+                    <div>item 2</div>
+                    <div>item 3</div>
+                    <div>item 4</div>
+                    <div>item 5</div>
+                    <div>item 6</div>
+                </div>
+                <p>No exemplo acima foi gerada mais uma linha da grid para comportar os dois elementos itens extras, porém ela tem a medida de altura do conteúdo, e não herda o valor das trilhas iniciais.</p>
+
+                <h3>A unidade <mark><em>fr</em></mark></h3>
+                <p>Nas propriedades de grid podem ser utilizadas quaisquer unidades de medida, mas para ajudar a criar layouts flexíveis utilizando o grid, foi criada uma nova medida: fração (fr). A unidade <mark><em>fr</em></mark> representa uma fração do espaço disponível no contêiner do grid.</p>
+
+                <h3>Exemplo de sintaxe</h3>
+
+                <p>O próximo exemplo vamos declarar <strong>grid-template-columns</strong> com a unidade de fração (<em>fr</em>):</p>
+                
+                <h4>HTML</h4>
+                <pre>
+                    <code class="f_color__html">
+                        &lt;div class="l_container"&gt;
+                                &emsp; &emsp; &lt;div&gt;items 1&lt;/div&gt;
+                                &emsp; &emsp; &lt;div&gt;items 2&lt;/div&gt;
+                                &emsp; &emsp; &lt;div&gt;items 3&lt;/div&gt;
+                                &emsp; &emsp; &lt;div&gt;items 4&lt;/div&gt;
+                                &emsp; &emsp; &lt;div&gt;items 5&lt;/div&gt;
+                        &lt;/div&gt;
+                    </code>
+                </pre>
+                
+                <h4>CSS</h4>
+                <pre>
+                    <code>
+                        .l_container {
+                                &emsp; &emsp; display: grid;
+                                &emsp; &emsp; grid-template-columns: 1fr 1fr 1fr;
+                        }
+                    </code>
+                </pre>
+                
+                <h4>Resultado:</h4>
+                <div class="l_container__fr l_items l_tamanho__ex">
+                    <div>item 1</div>
+                    <div>item 2</div>
+                    <div>item 3</div>
+                    <div>item 4</div>
+                    <div>item 5</div>
+                </div>
+
+                <h3>Track listings com a notação <mark><em>repeat()</em></mark></h3>
+                <p>Podemos simplificar uma grid track muito grande com muitos valores repetidos usando a notação <em>repeat()</em>. A sintaxe é declarada da seguinte forma: "repeat", parenteses "()" e dentro colocamos a quatidade de colunas ou linhas iguais, em seguida uma virgula "," e por último a unidade de medida "fr, pixels, % etc..". Vejamos o exemplo aseguir:</p>
+                
+                <h4>CSS</h4>
+                <pre>
+                    <code>
+                        .l_container {
+                                &emsp; &emsp; display: grid;
+                                &emsp; &emsp; grid-template-columns: 1fr 1fr 1fr;
+                        }
+                    </code>
+                </pre>
+                <p>Com a notação <em>repeat()</em> simplificamos para:</p>
+                
+                <h4>CSS</h4>
+                <pre>
+                    <code>
+                        .l_container {
+                                &emsp; &emsp; display: grid;
+                                &emsp; &emsp; grid-template-columns: repeat(3,1fr);
+                        }
+                    </code>
+                </pre>
+                <p>Também, a notação <em>repeat()</em> pode ser usada  para uma parte da track listing quando não são todos os valores de medidas iguais, mas apenas alguns valores iguais. Vejamos o exemplo:</p>
+                
+                <h4>CSS</h4>
+                <pre>
+                    <code>
+                        .l_container {
+                                &emsp; &emsp; display: grid;
+                                &emsp; &emsp; grid-template-columns:  20px repeat(6, &emsp; &emsp; 1fr) 20x;
+                        }
+                    </code>
+                </pre>
+                <p>A notação <em>repeat()</em> tem como parâmetro uma track listing, sendo assim você pode usá-lo para criar um padrão de repetição de tracks. No próximo exemplo vamos criar um grid de 10 tracks columns, uma trilha de 1fr seguida por uma trilha de 2fr, ambas repetidas 5 veses</p>
+                
+                <h4>CSS</h4>
+                <pre>
+                    <code>
+                        .l_container {
+                                &emsp; &emsp; display: grid;
+                                &emsp; &emsp; grid-template-columns: repeat(5, 1fr  &emsp; &emsp; 2fr);
+                        }
+                    </code>
+                </pre>
+
+                <h3>O grid implícito e explícito</h3>
+
+                <p>Ao criar um grid layout apenas com uma trilha de colunas declarando <strong>grid-template-columns</strong> as colunas estarão no grid explícito. Mas as linhas que não foram definidas serão criadas pelo grid implícito automaticamente de acordo com a necessidade do conteúdo. </p>
+                <p><dfn>Grid Explícito</dfn> é quando definimos explícitamente o número de colunas e linhas que criam um número de células que coincidem com o número exato de elementos do HTML. Vejamos o exemplo:</p>
+                
+                <h4>HTML</h4>
+                <pre>
+                    <code class="f_color__html">
+                        &lt;div class="l_container"&gt;
+                                &emsp; &emsp; &lt;div&gt;items 1&lt;/div&gt;
+                                &emsp; &emsp; &lt;div&gt;items 2&lt;/div&gt;
+                                &emsp; &emsp; &lt;div&gt;items 3&lt;/div&gt;
+                                &emsp; &emsp; &lt;div&gt;items 4&lt;/div&gt;
+                                &emsp; &emsp; &lt;div&gt;items 6&lt;/div&gt;
+                                &emsp; &emsp; &lt;div&gt;items 7&lt;/div&gt;
+                        &lt;/div&gt;
+                    </code>
+                </pre>
+                <p>No exemplo temos seis elementos que coincidem com o número de celulas geradas.</p>
+                
+                <h4>CSS</h4>
+                <pre>
+                    <code>
+                        .l_container {
+                                &emsp; &emsp; display: grid;
+                                &emsp; &emsp; grid-template-columns: 100px 100px 100px;
+                                &emsp; &emsp; grid-template-rows: 60px 60px;
+                        }
+                    </code>
+                </pre>
+                
+                <h4>Resultado:</h4>
+                <div class="l_container__explicito l_items l_tamanho__ex">
+                    <div>item 1</div>
+                    <div>item 2</div>
+                    <div>item 3</div>
+                    <div>item 4</div>
+                    <div>item 5</div>
+                    <div>item 6</div>
+                </div>
+
+                <p><dfn>Grid implícito</dfn> acontece quando temos mais itens HTML do que o número de células geradas pelas trilhas de grids declaradas no CSS. Então o navegador automaticamente adiciona células para comportar os itens extras. Vejamos outro exemplo:</p>
+                
+                <h4>HTML</h4>
+                <pre>
+                    <code class="f_color__html">
+                        &lt;div class="l_container"&gt;
+                                &emsp; &emsp; &lt;div&gt;items 1&lt;/div&gt;
+                                &emsp; &emsp; &lt;div&gt;items 2&lt;/div&gt;
+                                &emsp; &emsp; &lt;div&gt;items 3&lt;/div&gt;
+                                &emsp; &emsp; &lt;div&gt;items 4&lt;/div&gt;
+                                &emsp; &emsp; &lt;div&gt;items 5&lt;/div&gt;
+                                &emsp; &emsp; &lt;div&gt;items 6&lt;/div&gt;
+                                &emsp; &emsp; &lt;div&gt;items 7&lt;/div&gt;
+                                &emsp; &emsp; &lt;div&gt;items 8&lt;/div&gt;
+                                &emsp; &emsp; &lt;div&gt;items 9&lt;/div&gt;
+                        &lt;/div&gt;
+                    </code>
+                </pre>
+                <p>Os itens 7, 8, e 9 não fazem parte do grid explícito, mas sim parte do <mark>grid implícito</mark>. O navegador tentou adaptar os itens ao grid mas ele não iguala à altura das células explícitas, por isso declaramos a propriedade <strong>grid-auto-rows:</strong> com o valor da medida das células explícitas para que então o navegador iguale as células com a mesma altura das demais. Também podemos usar quando necessário a propriedade <strong>grid-auto-columns</strong> quando for o caso de o navegador não igular a largura de células implícitas à células explícitas.</p>
+                
+                <h4>CSS</h4>
+                <pre>
+                    <code>
+                        .l_container {
+                                &emsp; &emsp; display:grid;
+                                &emsp; &emsp; grid-template-columns: 100px 100px 100px;
+                                &emsp; &emsp; grid-template-rows: 60px 60px;
+                                &emsp; &emsp; grid-auto-rows: 60px;
+                        }
+                    </code>
+                </pre>
+                
+                <h4>Resultado:</h4>
+                <div class="l_container__implicito l_items l_tamanho__ex">
+                    <div>items 1</div>
+                    <div>items 2</div>
+                    <div>items 3</div>
+                    <div>items 4</div>
+                    <div>items 5</div>
+                    <div>items 6</div>
+                    <div>items 7</div>
+                    <div>items 8</div>
+                    <div>items 9</div>
+                </div>
+
+            </article>
+            
+            <article id="content__4" class="l_artigo">
+
+                <h2>Dimensionamento de trilha e <mark><em>minmax()</em></mark>
+                    <span class="material-symbols-outlined size">
+                        flex_wrap
+                    </span>
+                </h2>
+
+                <p>A função de <a href="https://medium.com/@mikiasoliveira/como-usar-minmax-no-css-grid-a805520f856a" target="_blank"><em>minmax()</em></a>
+                    é tornar possível definir o tamanho de uma track da grid com um intervalo mínimo e máximo, para que o grid possa flexionar e se adaptar melhor à viewport de cada usuário da melhor maneira possível.</p>
+                    <h3>sintaxe</h3>
+                  
+                    <h4>CSS</h4>
+                    <pre>
+                        <code>
+                            .l_container {
+                                    &emsp; &emsp; display: grid;
+                                    &emsp; &emsp; grid-template-columns: minmax(100px, 200px) 1fr 1fr;
+                                    &emsp; &emsp; grid-template-rows: 100px 100px;
+                            }
+                        </code>
+                    </pre>
+                  
+                    <h4>Resultado:</h4>
+                    <div class="l_container__minmax l_items l_tamanho__ex">
+                        <div>item 1</div>
+                        <div>item 2</div>
+                        <div>item 3</div>
+                        <div>item 4</div>
+                        <div>item 5</div>
+                        <div>item 6</div>
+                    </div>
+                    <p><em>minmax()</em> é declarada como valor para as propriedades <strong>grid-template-columns</strong> e,ou, <strong>grid-template-rows</strong>. Nele inserimos uma medida mínima e medida máxima separados por virgula ",". Onde o valor <em>min</em> deve ser menor que o valor <em>max</em>, caso contrário o valor <em>max</em> será ingnorado pelo navegador.</p>
+                    <h3>Valores estáticos de comprimento</h3>
+                    <p>Existem duas maneiras de como podemos usar a função <em>minmax()</em> com valores estáticos de comprimento.</p>
+                    <p>Primeiramente, podemos usar <em>minmax()</em> apenas em uma coluna do grid e defenir a largura das outras colunas com valores estáticos simples (pixel por exemplo), como mostrado abaixo.</p>
+                    
+                    <h4>CSS</h4>
+                    <pre>
+                        <code>
+                            .l_container {
+                                &emsp; &emsp; display: grid;
+                                &emsp; &emsp; grid-template-columns: minmax(100px, 200px) 200px 200px;
+                            }
+                        </code>
+                    </pre>
+                    <p>Em segundo lugar, podemos definir a largura de mais de uma coluna do grid usando <em>minmax()</em>.Os valores <em>min</em> e <em>max</em> são estáticos, portanto, por padrão o grid não é responsivo. Porém as próprias colunas serão flexíveis apenas entre o valor mínimo e o valor máximo. Elas crescem e encolhem simultaneamente à medida que mudamos o tamanho do layout.</p>
+                    
+                    <h4>CSS</h4>
+                    <pre>
+                        <code>
+                            .l_container {
+                                &emsp; &emsp; display: grid;
+                                &emsp; &emsp; grid-template-columns:minmax(100px, 200px) <br>minmax(100px, 200px) minmax(100px, 200px);
+                            }
+                        </code>
+                    </pre>
+                    <p>Podemos ainda usar a função <em>repeat()</em> junto como <em>minmax()</em>, o que pode sinplificar mais ainda o nosso código. vamos ver como fica a sintaxe:</p>
+                    
+                    <h4>CSS</h4>
+                    <pre>
+                        <code>
+                            .l_container {
+                                &emsp; &emsp; display: grid;
+                                &emsp; &emsp; grid-template-columns: repeat(3,minmax(100px, 200px));
+                            }
+                        </code>
+                    </pre>
+
+                    <h3>Valores dinâmicos de comprimento</h3>
+
+                    <p>Além dos valores estáticos, a função <em>minmax()</em> também aceita unidades de porcentagem (%) e a nova unidade de fração (fr) como valores. Ao usá-las, podemos obter grids personalizadas que são responsivas e alteram suas dimensões de acordo com o espaço disponível.</p>
+                    
+                    <h4>CSS</h4>
+                    <pre>
+                        <code>
+                            .l_container {
+                                &emsp; &emsp; display: grid;
+                                &emsp; &emsp; grid-templates-columns: minmax(50%, 80%) 1fr 1fr;
+                            }
+                        </code>
+                    </pre>
+
+            </article>
+
+            <article id="content__5" class="A_linhas__virtuais l_artigo">
+                <h2>Linhas virtuais de grid
+                    <span class="material-symbols-outlined size">
+                        flex_wrap
+                    </span>
+                </h2>
+                <p>Devemos observar que quando definimos um grid definimos as trilhas do grid. Já as linhas virtuais que contamos são as que estão disposta em parelelo às trilhas, e no entorno delas. Em uma trilha de três colunas e duas linhas, teremos "4" linhas virtuais no entorno das colunas, e "3" linhas virtuais entorno das linhas. Vejamos um exemplo na imagem a seguir:</p>
+
+                <figure>
+                    <img src="/index-html/imagens/linhas-virtuais-grid.png" alt="Linhas virtuais de grid">
+                </figure>
+
+                <h3><a href="https://chiefofdesign.com.br/css-grid-layout-02/" target="_blank">Posicionado itens</a> entre linhas virtuais</h3>
+
+                <p>Entendendo sobre as linhas virtuais podemos então manipular os itens grids através das propriedades <strong>grid-column-start</strong>, <strong>grid-column-end</strong> e <strong>grid-row-start</strong>, <strong>grid-row-end</strong>  para definir suas posições dentro do contêiner.</p>
+                <p>Para definirmos as posições dos itens devemos dizer em qual linha virtual ele vai iniciar e depois em qual ele vai terminar. Para essa definição temos de declarar as propriedades <strong>grid-column-start</strong> e <strong>grid-row-start</strong> para a linha virtual de inicio, e as propriedades <strong>grid-column-end</strong> e <strong>grid-row-end</strong> para a linha virtual de término. Vejamos o exemplo da sintaxe:</p> 
+                
+                <h3>Sintaxe:</h3>
+                
+                <h4>HTML</h4>
+                <pre>
+                    <code class="f_color__html">
+                        &lt;div class="l_container"&gt;
+                                &emsp; &emsp; &lt;div class="l_header"&gt;Header&lt;/div&gt;
+                                &emsp; &emsp; &lt;div class="l_nav"&gt;Nav&lt;/div&gt;
+                                &emsp; &emsp; &lt;div class="l_main"&gt;Main&lt;/div&gt;
+                                &emsp; &emsp; &lt;div class="l_aside"&gt;Aside&lt;/div&gt;
+                                &emsp; &emsp; &lt;div class="l_footer"&gt;Footer&lt;/div&gt;
+                        &lt;/div&gt;
+                    </code>
+                </pre>
+              
+                <H4>CSS</H4>
+                <pre>
+                    <code>
+                        .l_container {
+                            &emsp; &emsp; display: grid;
+                            &emsp; &emsp; grid-template-columns: 1fr 1fr 1fr;
+                            &emsp; &emsp; grid-template-rows: 80px 400px 60px 40px;
+                        }
+                        .l_header {
+                            &emsp; &emsp; grid-column-start: 1;
+                            &emsp; &emsp; grid-column-end: 4;
+                            &emsp; &emsp; grid-row-start: 1;
+                            &emsp; &emsp; grid-row-end: 2;
+                        {
+                        .l_nav {
+                            &emsp; &emsp; grid-column-start: 1;
+                            &emsp; &emsp; grid-column-end: 2;
+                            &emsp; &emsp; grid-row-start: 2;
+                            &emsp; &emsp; grid-row-end: 3;
+                            }
+                        .l_main {
+                            &emsp; &emsp; grid-column-start: 2;
+                            &emsp; &emsp; grid-column-end: 4;
+                            &emsp; &emsp; grid-row-start: 2;
+                            &emsp; &emsp; grid-row-end: 3;
+                        }
+                        .l_aside {
+                            &emsp; &emsp; grid-column-start: 1;
+                            &emsp; &emsp; grid-column-end: 4;
+                            &emsp; &emsp; grid-row-start: 3;
+                            &emsp; &emsp; grid-row-end: 4;
+                        }
+                        .l_footer {
+                            &emsp; &emsp; grid-column-start: 1;
+                            &emsp; &emsp; grid-column-end: 4;
+                            &emsp; &emsp; grid-row-start: 4;
+                            &emsp; &emsp; grid-row-end: 5;
+                        }
+                    </code>
+                </pre>
+              
+                <h4>Resultado:</h4>
+                <div class="l_position l_items l_tamanho__ex">
+                    <div class="l_header">Header</div>
+                    <div class="l_nav">Nav</div>
+                    <div class="l_main">Main</div>
+                    <div class="l_aside">Aside</div>
+                    <div class="l_footer">Footer</div>
+                </div>
+
+                <p>Nós podemos diminuir a quantidade de códigos CSS para atingir este mesmo resultado se usarmos as versões de propriedades shorthand <strong>grid-column</strong> e <strong>grid-row</strong> no lugar das propriedades variantes. Vejamos o exemplo abaixo:</p>
+              
+                <h4>CSS</h4>
+                <pre>
+                    <code>
+                        .l_container {
+                            &emsp; &emsp; display: grid;
+                            &emsp; &emsp; grid-template-columns: 1fr 1fr 1fr;
+                            &emsp; &emsp; grid-template-rows: 80px 400px 60px 40px;
+                        }
+                        .l_header {
+                            &emsp; &emsp; grid-column: 1/4;
+                            &emsp; &emsp; grid-row: 1/2; &emsp; &emsp; &emsp; &emsp; /* ou grid-row:2; */
+                        }
+                        .l_nav {
+                            &emsp; &emsp; grid-column: 1/2;  &emsp;&emsp; &emsp; /* ou grid-column: 2; */
+                            &emsp; &emsp; grid-row: 2/3; &emsp; &emsp; &emsp; &emsp; /* ou grid-row: 2; */
+                        }
+                        .l_main {
+                            &emsp; &emsp; grid-column: 1/4;
+                            &emsp; &emsp; grid-row: 2/3; &emsp; &emsp; &emsp; &emsp; /* or grid-row:2; */  
+                        }
+                        .l_aside {
+                            &emsp; &emsp; grid column: 1/4;
+                            &emsp; &emsp; grid-row: 3/5;
+                        }
+                        .l_footer {
+                            &emsp; &emsp; grid-column: 1/4;
+                            &emsp; &emsp; grid-row: 4/5; &emsp; &emsp; &emsp;&emsp; &emsp; /* ou grid-row: 4; */
+                        }
+                    </code>
+                </pre>
+                <p>No shorthand de <strong>grid-column</strong> e <strong>grid-row</strong> o primeiro número corresponde a linha virtual de <em>start</em>, o simbolo de barra " / " indica até onde o elemento vai se estender, e o segundo número corresponde a linha virtual de <em>end</em>. No caso dos elementos que se estendem em apenas uma coluna ou linha grid podemos declarar somente o número do valor start, como está comentado nos códigos do exemplo <mark>/* ou grid-row: 4; */</mark> , pois mesmo assim o os navegadores interpretarão os códigos corretamente.</p>
+                <p>Podemos ainda usar um "valor reservado -1" para que um elemento ocupe toda a extensão do contêiner.  No exemplo vimos que o "Header" ocupa todas as três colunas do grid pois está declarado para ele o "<mark>grid-column: 1/4;</mark>". Porém se adicionarmos mais uma coluna para contêiner o "Header" não se estenderá, porque está delimitado para três colunas. Já se declararmos "<mark>grid-column: -1;</mark>" o "Header" se estenderá para mais colunas que adicionarmos.</p>
+                <p>Outro valor reservado para as propriedades grid é o <em>span</em>. <dfn>span</dfn> dertermina que o elemento item possa abranger uma quantidade de colunas ou linhas grid, apartir da linha virtual start, até a quantidade definida por ele (o span). vejamos o exemplo de sintaxe:</p>
+                <pre>
+                    <code>
+                        .l_header {
+                            grid-column:1/span 2;
+                        }
+                    </code>
+                </pre>
+
+                <h3>Sobrepondo itens com z-index</h3>
+                <p>Itens de uma mesma grid podem ocupar uma mesma célula sobrepondo um sobre o outro. Isso ocorre de acordo com o posicioncamento dos itens através das linhas virtuais. Além disso podemos também manipular a ordem desta sobreposição, ou seja qual item fica sobre o outro, usando a propriedade CSS <strong>z-index</strong>. Para isso devemos declará esta propriedade para os dois itens em questão, atribuindo os valores com números inteiros, e o item que está com o valor de <strong>z-index</strong> maior vai se sobrepor sobre o item de valor <strong>z-index</strong> menor.</p>
+                <p>No exemplo abaixo podemos ver como ocorre a sobrepodição dos itens de uma grid container.</p>
+
+                <h3>Sintaxe</h3>
+
+                <h4>HTML</h4>
+                <pre>
+                    <code class="f_color__html">
+                        &lt;div class="l_container"&gt;
+                            &emsp; &emsp; &lt;div class="item__1"&gt;items 1&lt;/div&gt;
+                            &emsp; &emsp; &lt;div class="item__2"&gt;items 2&lt;/div&gt;
+                            &emsp; &emsp; &lt;div class="item__3"&gt;items 3&lt;/div&gt;
+                            &emsp; &emsp; &lt;div class="item__4"&gt;items 4&lt;/div&gt;
+                            &emsp; &emsp; &lt;div class="item__5"&gt;items 5&lt;/div&gt;
+                            &emsp; &emsp; &lt;div class="item__6"&gt;items 6&lt;/div&gt;
+                        &lt;/div&gt;
+                    </code>
+                </pre>
+                <h4>CSS</h4>
+                <pre>
+                    <code>
+                        .l_container {
+                            display: gris;
+                            grid-template-columns: repeat(3, 1fr);
+                            grid-auto-rows: 100px;
+                        }
+                        .item__1 {
+                            grid-colum:1/4;
+                            grid-row:1/3;
+                            z-index: 0;
+                        }
+                        .item__3 {
+                            grid-colum:2/4;
+                            grid-row:2/4
+                            z-index: 1;
+                        }
+                    </code>
+                </pre>
+                <h4>Resultado</h4>
+                <div class="l_tamanho__ex l_z-index">
+                    <div class="z-index__1">item 1</div>
+                    <div>item 2</div>
+                    <div class="z-index__3">item 3</div>
+                    <div>item 4</div>
+                    <div>item 5</div>
+                    <div>item 6</div>
+                </div>
+
+            </article>
+
+            <article id="content__6" class="l_artigo">
+                <h2>Posicionamento através de Grid Area
+                    <span class="material-symbols-outlined size">
+                        flex_wrap
+                    </span>
+                </h2>
+                <p>Quando criamos um "Grid container" e delimitamos as "tracks grid" automaticamente também criamos células (ou areas) onde são organizados os elementos itens. Uma célula de grid é a menor unidade em um grid container, conceitualmente seria como células de tabelas. E no CSS podemos nomear cada célula da grid usando a propriedade <strong>grid-area</strong> no seletor CSS do <mark>elemento item</mark>.</p>
+                <p>Já no seletor do elemento contêiner podemos adicionar a propriedade <strong>grid-template-areas</strong>. Essa propriedade nos permite posicionar cada elemento item nas "tracks grids" da maneira que queremos. Estas propriedades trabalham coletivamente. No <strong>grid-template-areas</strong> atribuimos o nome das <strong>grid-areas</strong> de maneira que os nomes correspondam a posição de cada célula da "grid", podendo também repetir os nomes quando uma <strong>grid-area</strong> ocupa mais de uma célula.</p>
+                <p>Vamos ver uma exemplo de sintaxe desta técnica de grid:</p>
+                <h4>HTML</h4>
+                <pre>
+                    <code class="f_color__html">
+                        &lt;div class="l_container"&gt;
+                        &emsp; &emsp; &lt;div class="l_header"&gt;Header&lt;/div&gt;
+                        &emsp; &emsp; &lt;div class="l_nav"&gt;Nav&lt;/div&gt;
+                        &emsp; &emsp; &lt;div class="l_main"&gt;Main&lt;/div&gt;
+                        &emsp; &emsp; &lt;div class="l_aside"&gt;Aside&lt;/div&gt;
+                        &emsp; &emsp; &lt;div class="l_footer"&gt;Footer&lt;/div&gt;
+                    &lt;/div&gt;
+                    </code>
+                </pre>
+              <h4>CSS</h4>
+                <pre>
+                    <code>
+                        .l_container {
+                            display: grid;
+                            grid-template-columns: 1fr 3fr 1fr;
+                            grid-template-rows: 60px 300px 50px 40px;
+                            grid-template-areas: 
+                            &emsp; &emsp; "header  header  header"
+                            &emsp; &emsp; "nav  main  main"
+                            &emsp; &emsp; "aside  aside  aside"
+                            &emsp; &emsp; "footer  footer  foter"
+                        }
+                        .l_header {
+                            &emsp; &emsp; grid-area: header;
+                        }
+                        .l_nav {
+                            &emsp; &emsp; grid-area: nav;
+                        }
+                        .l_main {
+                            &emsp; &emsp; grid-area: main;
+                        }
+                        .l_aside {
+                            &emsp; &emsp; grid-area: aside;
+                        }
+                        .l_footer {
+                            &emsp; &emsp; grid-area: footer;
+                        }
+                    </code>
+                </pre>
+                <p>No exemplo os nomes estão organizados para representar as células geradas pelas trilhas de colunas e de linhas grid do elemento contêiner (sendo esta uma das boas práticas para essa técnica). Os valores para <strong>grid-template-areas</strong> são declarado entre aspas duplas ("") ou aspas simples (''), e os nomes do <strong>grid-area</strong> não precisam de aspas.</p>
+              
+                <h4>Resultado</h4>
+                <div class="l_container__area l_tamanho__ex">
+                    <div class="l_header__area">Header</div>
+                    <div class="l_nav__area">NavBar</div>
+                    <div class="l_main__area">Main</div>
+                    <div class="l_aside__area">Aside</div>
+                    <div class="l_footer__area">Footer</div>
+                </div>
+
+                <h3>Guntter: Espaçamento de grid-area</h3>
+                <p><dfn>Guntters</dfn> são espaçamentos que separam as células da 'grid' no eixos X e no eixo Y. Estes espaços são criados usando as propriedades <strong>grid-column-gap</strong> e <strong>grid-row-gap</strong>. Os valores para estas propriedades podem ser declaradas em "px" ou "em". Também existe a forma reduzida com a propriedade <strong>grid-gap</strong>, onde a sequência dos valores fica assim: o primeiro valor representa o eixo X e o segundo valor representa o eixo Y. Os espaçamentos são adicionados apenas entre as células da "grid", não adiciona espaço para as margens do grid container. </p>
+                <ul>
+                    <li><dfn>grid-column-gap</dfn>: &rarr; Adiciona espaço entre as colunas , no eixo Y.</li>
+                    <li><dfn>grid-row-gap</dfn>: &rarr; Adiciona espaço entre as linhas, no eixo X.</li>
+                    <li><dfn>grid-gap</dfn>: &rarr; É um shorthand para adicionar espaço para os dois eixos.</li>
+                </ul>
+              
+                <h4>HTML</h4>
+                <pre>
+                    <code class="f_color__html">
+                        &lt;div class="l_container"&gt;
+                        &lt;div&gt;item 1&lt;/div&gt;
+                        &lt;div&gt;item 2&lt;/div&gt;
+                        &lt;div&gt;item 3&lt;/div&gt;
+                        &lt;div&gt;item 4&lt;/div&gt;
+                        &lt;div&gt;item 5&lt;/div&gt;
+                        &lt;div&gt;item 6&lt;/div&gt;
+                    &lt;/div&gt;
+                    </code>
+                </pre>
+              
+                <h4>CSS</h4>
+                <pre>
+                    <code>
+                        .l_containar {
+                            grid-template-columns: repeat(3, 1fr);
+                            grid-template-rows: 60px 60px;
+                            grid-column-gap: 10px;
+                            grid-row-gap: 1.2em;
+                        }
+                    </code>
+                </pre>
+              
+                <h4>Resultado</h4>
+
+                <div class="l_container__gap l_items l_tamanho__ex">
+                    <div>item 1</div>
+                    <div>item 2</div>
+                    <div>item 3</div>
+                    <div>item 4</div>
+                    <div>item 5</div>
+                    <div>item 6</div>
+                </div>
+
+                <h3>Aninhamento de grids</h3>
+                <p>Um item de uma grid também pode se tornar um grid container. Isso acontece porque se o elemento filho tiver mais elementos contidos dentro dele, eles não herdam atributos e nem  participam do grid layout, desta forma são exibidos no fluxo normal do documento. Então  podemos aninhar grids containers adicionando <strong>display</strong>: <em>grid</em> para o elemento filho, nos permetindo assim estilizar outra grid container dentro de uma já existente.</p>
+                <p>Vamos ver uma exemplo de sintaxe de aninhamento de grids container.</p>
+
+                <h3>Sintaxe</h3>
+                <h4>HTML</h4>
+                <pre>
+                    <code class="f_color__html">
+                        &lt;div class="l_container"&gt;
+                            &emsp; &emsp; &lt;div class="l_items"&gt;
+                                &emsp; &emsp; &emsp; &emsp; &lt;div&gt;item a&lt;/div&gt;
+                                &emsp; &emsp; &emsp; &emsp; &lt;div&gt;item b&lt;/div&gt;
+                                &emsp; &emsp; &emsp; &emsp; &lt;div&gt;item c&lt;/div&gt;
+                            &emsp; &emsp; &lt;/div&gt;
+                            &emsp; &emsp; &lt;div&gt;item 2&lt;/div&gt;
+                            &emsp; &emsp; &lt;div&gt;item 3&lt;/div&gt;
+                            &emsp; &emsp; &lt;div&gt;item 4&lt;/div&gt;
+                            &emsp; &emsp; &lt;div&gt;item 5&lt;/div&gt;
+                            &emsp; &emsp; &lt;div&gt;item 6&lt;/div&gt;
+                    &lt;/div&gt;
+                    </code>
+                </pre>
+                <h4>CSS</h4>
+                <pre>
+                    <code>
+                        .l_container {
+                            display: grid;
+                            grid-template-columns: 100%;
+                            grid-template-rows: repeat(6, 10vh);
+                            grid-gap: 1em;
+                        }
+                        .l_items {
+                            display: grid;
+                            grid-template-columns: repeat(3, 1fr);
+                            grid-template-rows: auto;
+                            grid-gap: .5em;
+                        }
+                    </code>
+                </pre>
+                <h4>Resultado</h4>
+                <div class="l_tamanho__ex l_aninhamento">
+                    <div class="l_aninhamento__items">
+                        <div>Item a</div>
+                        <div>Item b</div>
+                        <div>Item c</div>
+                    </div>
+                    <div>Item 1</div>
+                    <div>Item 2</div>
+                    <div>Item 3</div>
+                    <div>Item 4</div>
+                    <div>Item 5</div>
+                </div>
+
+               
+
+            </article>
+
+        </section>
+    </main>
+    <aside id="l_lateral">
+        <section class="l_ctd__lateral">
+            <h2>Observações</h2>
+           
+        </section>
+    </aside>
+    <footer id="l_rodape">
+        <div>
+            links do estudo do artigo. 
+        </div>
+
+    </footer>
+</body>
+</html>

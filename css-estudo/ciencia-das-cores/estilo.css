@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2? family= Advertência & family= Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100; 1.200;1.300;1.400;1.500;1.600;1.700 & display=trocar');
+
+
+body {
+    background-image: linear-gradient(to right, #0477BF, #29A7D9, #CFCFCF);
+    margin:0px;
+    justify-content:space-between;
+
+
+}
+header {
+    background-image: linear-gradient(to right, #0477BF, #29A7D9);
+    text-align: justify;
+    display: flex;
+    justify-content: space-between;
+    width: 98%;
+    height: 100px;
+    padding: 10px;
+    
+}
+.imagem { 
+    height: inherit;
+    
+}
+main {
+    background-image: linear-gradient(to right, #CFCFCF, #69bff4ca);
+    margin: auto;
+    box-shadow: 10px 10px 10px #1FA9FF;
+    width: 60%;
+    padding: 15px 20px;
+
+
+}
+article {
+    font-size: 18px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+h1 {
+    color: #CFCFCF;
+    font-family: monospace;
+    font-size: 4em;
+    text-shadow: 3px 3px 0px #0477BF;
+    margin: auto;
+}
+dt {
+    font-style: italic;
+    font-weight: bold;
+    color: #784000;
+    border-left: 2px solid;
+    padding-left: 10px;
+
+}
+aside {
+    background-image: linear-gradient(to left, #0477BF, #CFCFCF);
+    width:17%;
+    height:100em;
+    float: left;   
+    
+}

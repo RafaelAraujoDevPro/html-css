@@ -1,0 +1,13 @@
+    	Dimensionar imagens com CSS3: 
+    Para que as imagens se dimensionem dentro de um elemento
+pai respeitando o espaçamento devemos seguir os seguintes requisitos:
+° Definir a altura do elemento pai (heigth);
+° Declará a propriedade  pai display e o valor flex no elemento pai;
+° Declará a propriedade heigth como o valor inherit no elemento filho.
+	 footer {
+	         heigth: 100px;
+	         dixplay: flex;
+     	 }
+     	 footer img {
+           	         heigth: inherit;
+	 }

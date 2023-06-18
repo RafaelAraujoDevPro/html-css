@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Query</title>
+</head>
+<body>
+    <article>
+        <h2>O que é Media Query</h2>
+        <p>A Media Query permite que sejam aplicadas diversas formatações para atender diferentes dispositivos e tamanhos de telas. E com isso podemos proporcionar que os usuários tenha uma boa experiência ao navegar através das páginas de nosso site ou aplicação. Ou podemos até mesmo formatar as páginas do website para a opção de impremir.</p>
+        <p>Na prática, <strong>Media Qurey</strong> permitem criar layauts que moldam a imformação do website de forma que fique apresentável de acordo com o tamanho da viewport do dispositivo do usuário</p>
+
+        <h3>Sintaxe</h3>
+        <p>As <strong>Media Query derivam da Media Type</strong>, e, para que a aplicação interprete corretamente as especificaçôes CSS3 disponibilizadas, temos as chamadas <strong>Media Features</strong>, que retornam verdadeiro ou falso. Para que o retorno seja verdadeiro, é preciso que o retorno da Media Type, que é especificado na Media Querey, esteja de acordo com o tipo de documento do dispositivo.</p>
+        <p>Técnicamente <strong>Media Query</strong> são Media Type que fazem um estilo valer a denpender de derterminadas condições especidicadas. Inicialmente uma <strong>Media Query</strong> era declarada como link no head do documento HTML como um arquivo de estilização específico para uma determinada condição. Exemplo:</p>
+
+        <pre>
+            <code>
+                &lt;link rel="stylesheet" type="text/css" href="print.css" <strong>media="print"&gt;</strong>
+
+            </code>
+        </pre>
+
+        <p>Com o passar do tempo as <strong>Media Query</strong> poderam ser introduzidas dentro de um arquivo CSS declarando o comando<strong>@media</strong> mais a "condição" ou Media type(all, screen, print e speech) e em seguida dentro de {...} especificando-se a estilização desejada. Se nenhum media type for especificado, por padrão estará declarado implícitamente a condição "all".</p>
+        <ul>
+            <li><dfn>screen</dfn>: Todas as telas de dispositivos que não são <strong>print</strong> ou <strong>speech</strong>;</li>
+            <li><dfn>print</dfn>: Direciona o arquivo para dispositivos de impressão</li>
+            <li><dfn>speech</dfn>: Direciona o arquivo para sintetizadores de fala:</li>
+            <li><dfn>all</dfn>: Padrão. Direciona o arquivo para todos os media types anteriores</li>
+        </ul>
+
+        <h3>Exemplo</h3>
+        <pre>
+            <code>
+                @media screen and (min-width: 768px) {
+                    .content{
+                        ...regras CSS
+                    }
+                    header{
+                        ...regras CSS
+                    }
+                }
+            </code>
+        </pre>
+
+        <p>Alem das Media Type também existem disponíveis as <strong>Media Features</strong> que descrevem caracteristicas específicas de <em>user agents</em>, dispositivos ou do próprio ambiente. aluguns exemplos são: "color", " pointer", "orientetion". <strong>Media features</strong> também servem para testar se uma condição é verdade, mas, ao invés de testarem <em>meios</em>, testam características. A lista de <strong>Media Feature</strong> disponível é extensa. A seguir teremos alguns exemplos.</p>
+        <ul>
+            <li><dfn>width, max-width e min-width</dfn></li>
+            <li><dfn>height, max-height e min-height</dfn></li>
+            <li><dfn>orientation</dfn></li>
+            <li><dfn>pixel-density</dfn></li>
+            <li><dfn>aspect-ratio</dfn></li>
+            <li><dfn>prefers-color-scheme</dfn></li>
+        </ul>
+        <p>Abaixo um link para a lista completa das media features.</p>
+        <p>Lista de<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries#Media_features" target="_blank" rel="external"> <strong>Media Features</strong><a> para <strong>Media Query</strong>.</p>
+
+        <h2>Operadores Lógicos</h2>
+        <p>Os operadores lógicos podem ser usados para compor uma consulta de mídia complexa: <em>not</em>, <em>end</em> e <em>only</em>. Podemos também combinar várias consultas de mídia em uma única regra, separando-as com vírgulas. Uma consulta de mídia calcula <em>true</em> quando o tipo de mídia  (se especificado) correspode ao dispositivo no qual um documento está sendo exibido e todos as expressões de recurso de mídia são computadas como verdadeiras. As consultas envolvendo tipos de mídia desconhecidos são sempre <em>false</em>.</p>
+        <ul>
+            <li><dfn>and</dfn>: Operador capaz de combinar varios <em>Media Features</em> em uma única regra de <strong>Media Query</strong>.</li>
+            <li><dfn>not</dfn>: Operador capaz de negar uma <em>Media Feature</em> basicamente invertendo seu significado normal.</li>
+            <li><dfn>only</dfn>: Operador que impede que navegadores mais antigos apliquem os estilos da regra da <strong>Media Query</strong>.</li>
+        </ul>
+
+        <h3>Exemplo</h3>
+        <pre>
+            <code>
+                @media (min-width: 600px) and (orientation: landscape) {
+                    body {
+                        background-color: red;
+                    }
+                }
+            </code>
+        </pre>
+
+        <h3>Segmentação de <strong>Media type</strong></h3>
+        <p>Os <strong>Media Type</strong> descrevem a categoria geral de um determinado dispositivo. Embora os sites sejam geralmente projetados com telas em mente, você pode quere criar estilos que visam dispositivos especiais, como impressoras ou leitores de tela baseados em áudio. Sabendo disso, podemos também segmentar vários dispositivos na mesma regra de <strong>Media Query</strong>. como por exemplo:</p>
+
+        <pre>
+            <code>
+                @media screen, print {
+                    width: 100%;
+                }
+            </code>
+        </pre>
+
+        <h3>Segmentação de <em>Media Feature</em></h3>
+        <p>Como as <em>Media Features</em> descrevem características específica de um determinado <em>user agent</em>, dispositivo de  saída ou ambiente (como widescreen, computadores que usam mouse ou dispositivos usados em condições de pouca luz), podemos combina-las juntos ao mesmo tempo na mesma regra de <strong>Media Query</strong> usando os operadores de lógica.</p>
+
+        <h3>Exemplo</h3>
+        <pre>
+            <code>
+                @media (orientation: portrait), (min-width: 3rem) and (max-aspect-ratio: 2/1) {
+                    margin: 0 auto;
+                }
+            </code>
+        </pre>
+
+        <h3>Breakpoints</h3>
+        <p><strong>Breakpoints</strong>são, talvez, o termo mais comum usados quando falamos de <strong>Media Query</strong>. Um breakpoint é uma chave usada para determinar o momento de pausa para mudar o layout, e adaptá-lo às novas regras dentro de uma media query. Vamos à um exemplo:</p>
+        <pre>
+            <code>
+                @media (max-width: 480px) {
+                    .text {
+                        font-size: 1em;
+                    }
+                }
+            </code>
+        </pre>
+
+        <p>Aqui, o breakpoint é 480px determinado por uma <em>media feature</em>. Agora, a media query sabe quando definir ou sobrescrever a nova classe. Basicamente, se a largura de um dispositivo for inferior a 480px, a classe text será aplicada. Do contrário, isso não acontece.</p>
+
+        <h3>Breakpoints comuns</h3>
+        <p>Hoje em dia, existem milhares de dispositivos no mercado com grande variedade de tamanhos de tela que acessam os navegadores de internet. Então não podemos definir breakpoints fixos para cada um deles. Sendo assim, o que os desenvolvedores de websites utilizam no seu dia a dia são as resoluções mais comuns e que abrangem o maior número de tamanhos de telas possível. A seguir esta uma lista com essas resoluções.</p>
+
+        <ul>
+            <li>360px até 480px: dispositivos móveis</li>
+            <li>481px até 768px: iPads e tablets</li>
+            <li>769px até 1024px: telas pequenas, laptops</li>
+            <li>1025px até 1200px: desktops, telas grandes</li>
+            <li>1201px e acima: telas muito grande e tvs.</li>
+        </ul>
+
+        <h3>Mobile First</h3>
+        <p>Mobile First é um conceito aplicado em projetos web onde o foco inicial da arquitetura e desenvonlvimento é direcionado aos dispositivos móveis e em seguida com foco secundário é direcionado para as demais telas como de tablet, desktop, tvs e etc... </p>
+        <figure>
+            <img src="/img/mobile-first-design.webp" alt="Exemplo de mobile first">
+        </figure>
+    </article>
+</body>
+</html>

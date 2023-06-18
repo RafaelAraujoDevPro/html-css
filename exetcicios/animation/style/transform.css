@@ -1,0 +1,13 @@
+
+img {
+    transform: translateX(200px);/*Desloca o elemento no eixo x, valor positivo vai para direita; valor negativo vai para a esquerda*/
+    transform: translateY(-300px); /*Desloca o elemento no eixo y, valor positivo vai para baixo; valor negativo vai para cima.*/
+    transform: translate(300px, 50%); /*É um shorthand para declarar o deslocamento bidimensional dos eixos x e y.*/
+    transform: scaleX(2); /*dimensiona o tamanho de um elemento em escala para eixo x.*/
+    transform: scaley(1.5); /*dimensiona o tamanho de um elemento em escala para eixo y.*/
+    transform: scale(0.6); /*Shorthand que dimensiona o tamanho de um elemento em escala bidimensional para os dois eixos x e y.*/
+    transform: rotate(60deg);/* Rotaciona o elemento em ângulo*/
+    transform: skew(30deg); /*Inclina o elemento em ângulo*/
+    
+    transform: translateX(50%) scale(2) rotate(20deg) skew(25deg);
+}

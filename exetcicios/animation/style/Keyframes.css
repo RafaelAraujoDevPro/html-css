@@ -1,0 +1,42 @@
+body {
+    background-image: url(/img/Paisagem-svg.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+.box {
+    width: 10rem;
+    height: 10rem;
+    /* A propriedade animation determina como a animação vai acontecer no elemento */
+    animation-name: jato; /*Especifica o nome dado para a diretiva de @keyfames, que descreve a animação á ser aplicada.*/
+    animation-duration: 5s;/*Determina a duração que a animação será executada no elemento.*/
+    animation-timing-function: ease;/* define como uma animação progride na duração de cada ciclo.
+    *ease: o valor padrão, aumenta em velocidade no meio da animação, diminuindo novamente no final.
+    *ease-in: começa lentamente, com a velocidade da transição da propriedade de animação aumentando até completar.
+    *ease-out: começa rapidamente, desacelerando a animação continua.
+    *ease-in-out: com as propriedades de animação transitando lentamente, acelerando e desacelerando novamente.
+    *linear: anima a uma velocidade uniforme.
+    *cubic-bezier(p1,p2,p3,p4): permite definir uma duração da execução da animação de maneira personalizada.
+    *steps(n,jumpterm): Exibe uma iteração de animação ao longo de n paradas ao longo da transição, exibindo cada parada por períodos de tempo iguais.*/
+    animation-delay: 1.5s;/*Define um tempo de delay para iniciar a animação para o elemento.*/
+    animation-iteration-count: 4; /*define o número de vezes que uma sequência de animação deve ser reproduzida antes de parar*/
+    animation-direction: alternate-reverse;/* define se uma animação deve ser reproduzida para frente, para trás ou alternar entre reproduzir a sequência para frente e para trás.*/
+    animation-fill-mode:backwards;/*define como uma animação CSS aplica estilos ao seu destino antes e depois de sua execução.*/
+    animation-play-state: running;/*define se uma animação está em execução ou pausada.*/
+    animation: jato 5s ease 1s 7 alternate-reverse backwards running;/*animation é um shorthand para todas as propriedades animaton.*/
+}
+.box img {
+    width: 100%;
+    object-fit: cover;
+}
+/*As keyframes determinam qual a animação que vai acontecer para o elemento */
+@keyframes jato {
+    0% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(50vh, 20vw);
+    }
+    100% {
+        transform: translate(calc(100vw - 10rem), 0);
+    }
+}

@@ -1,0 +1,134 @@
+@charset "UTF-8";
+.gridContainer {
+    display: grid;
+    
+
+}
+.gridContainerinline {
+    display: inline-grid;
+}
+
+/* Trilhas grids */
+.l_estatico {
+    display: grid;
+    grid-template-columns: 30px 50px 20px 60px 80px 40px;
+}
+.l_dinamico {
+    display: grid;
+    grid-template-columns: 20% 50% 10% 20%; 
+}
+.l_fracionado {
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr 4fr; 
+}
+.l_repeat {
+    display: grid; 
+                              /*3 recebe 2fr    virgula significa "recebe"*/
+    grid-template-columns: repeat(3,2fr) 4fr;
+}
+.l_min-max__1 {
+    display: grid;
+                              /* 200px ou 2fr   virgula significa "ou"*/
+    grid-template-columns: minmax(200px,2fr) 1fr 2fr 1fr;
+}
+.l_min-max__2 {
+    display: grid;
+    grid-template-columns: minmax(100px, 300px) minmax(60px, 150px) minmax(80px, 2fr) 200px;
+}
+.l_explicito {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 60px 60px;
+}
+.l_implicito {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 60px 60px;
+}
+.l_implicito__auto {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 60px 60px;
+    grid-auto-rows: 60px;
+}
+/* Trilhas grids */
+
+
+/* posicionamento dos itens grid */
+.l_position {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 100px 150px 200px 80px;
+    gap: 5px;
+}
+.ex_top {
+/*      grid-column-start: 1;
+        grid-column-end: 4;
+        grid-row-start: 1;
+        grid-row-end: 2;        */
+
+                /*  Shorthand   */
+    grid-column: 1/4;
+    grid-row: 1/2;
+
+}
+.ex_aside {
+/*      grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 2;
+        grid-row-end: 3;        */
+
+                /*  Shorthand   */
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+.ex_main {
+/*      grid-column-start: 2;
+        grid-column-end: 4;
+        grid-row-start: 2;
+        grid-row-end: 4;         */
+
+
+                /*  Shorthand   */
+    grid-column: 2/4;
+    grid-row: 2/4;
+}
+.ex_footer {
+    /*  grid-column-start: 1;
+        grid-column-end: 4;
+        grid-row-start: 4;
+        grid-row-end: 5;        */
+
+                /*  Shorthand   */
+    grid-column: 1/4;
+    grid-row: 4/5;
+}
+/* posicionamento dos itens grid */
+
+/* ====================================================== */
+
+/* grid de imagens responsivas */
+.l_object__fit {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    max-width: 800px;
+}
+.l_object__fit figure {
+    background: linear-gradient(160deg, red, transparent);
+}
+.l_object__fit img {
+    object-fit: contain;
+    width: 100%;
+}
+/* grid de imagens responsivas */
+
+.l_auto__flow {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 50px);
+    grid-auto-flow: row;
+}
+.l_auto__flow div {
+    background-color: rgba(127, 255, 212, 0.647);
+    height: 100%;
+}

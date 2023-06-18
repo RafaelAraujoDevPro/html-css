@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <article>
+        <h2>Seletores E Especificidade</h2>
+        <p>
+            Seletores e especificidade são assuntos basilares no CSS, portanto é um tema de estudo fundamental. Mas, o que significa especificidade? Olhando o dicionário, encontramos o seguinte:
+        </p>
+        <h4>Especificidade</h4>
+        <blockquote>s.f qualidade daquilo que é específico; particularidade; qualidade própria, peculiar, de uma espécie.</blockquote>
+        <p>No contexto do CSS, a definição de especificidade não passa tão longe assim. Especificidade é o que define o quão especifico um seletor CSS é, portanto quanto mais específico, ele possui prioridade sob os outros.</p>
+        <h2>Seletores</h2>
+        <p>Primeiramente, vomos entender quais são os seletores mais específicos. Na lista abaixo, os seletore estão ordenados do mais específicos ao menos específicos.</p>
+        <ol>
+            <li>Ids <em>#id {...}</em></li>
+            <li>Classes, atributos e pseudo-classes <em>.classe {...}</em></li>
+            <li>Elementos e pseudo-elementos <em>div {...}</em></li>
+        </ol>
+
+        <h2>Como calcular a especificidade?</h2>
+        <p>O <strong>cálculo de especificidade</strong> é uma cobinação desses três tipos de seletores, que gera algo mais ou menos assim:</p>
+        <span>(0,0,0)</span>
+        <p>Separadamente, esse números representam, em sequência, a quantidade de ids, classes e elementos usados na formação de um seletor css. O digito a esquerda terá maior prioridade que o da direita, ou seja, a primeita posição é a de maior peso, enquanto a terceira posição é a de menor (peso/prioridade)</p>
+
+        <h3>Exemplo de cálculo de especificidade</h3>
+        <p>Para dicar mais visível esse cálculo, observe o trecho HTML abaixo:</p>
+        <pre>
+            <code>
+                &lt;p id="id class="classe&gt;Hello world!&lt;/p&gt;
+            </code>
+        </pre>
+        <p>E dado o seguinte trecho CSS:</p>
+        <pre>
+            <code>
+                /* Especificidade (1,0,0) */
+                #id {
+                    color: blue;
+                }
+
+                /* Especificidade (0,1,0) */
+                .classe {
+                    color: red;
+                }
+
+                /* Especificidade (0,0,1) */
+                p {
+                    color
+                }
+
+            </code>
+        </pre>
+
+        <h2>Cascata E Especificidade</h2>
+        <p>Um outro fator que define qual estilo será aplicado, é o comportamento de cascata do CSS. A ordem e o local onde o estilo for declarado pode influênciar na estilização. Veja um exemplo bem simples disso:</p>
+        <pre>
+            <code>
+                p {
+                    color: blue;
+                }
+
+                p {
+                    color: white;
+                }
+
+            </code>
+        </pre>
+        <p>O comportamento de cascata faz com que a cor do parágrafo seja branca, visto que foi declarado por último. O mesmo vale para seletores mais complexos. Se a especificidade do elemento for o mesmo, a ordem em que foram definidos é que define qual estilo será aplicado.</p>
+
+        <p>Como dito anteriormente, o local onde o CSS é definido também tem um papel muito importante na hora de definir quem terá a precedência. Segue uma lista em ordem decrescente dos locais com maior precedência. Quem possui maior prioridade está no topo.</p>
+
+        <ol>
+            <li>Inline CSS
+                 <pre>
+                    <code>
+                        &lt;p style="color: white"&gt;
+                    </code>
+                </pre>
+            </li>
+            <li>CSS Embutido/CSS Externo
+                <pre>
+                    <code>
+                        HTML &lt;style&gt; p {color: white} &lt;/p&gt;</code>
+                </pre>
+                <pre>
+                    <code>
+                        HTML &lt;link rel="stylesheet" href="style.css"&gt;
+                    </code>
+                </pre>
+            </li>
+            <li>Inline attributes 
+                <pre>
+                    <code>
+                        HTML &lt;p color="white"&gt;Hello World!&lt;/&gt;
+                    </code>
+                </pre>
+            </li>
+            <li>Herança
+                <pre>
+                    <code>
+                        HTML &lt;div color="red"&gt; 
+                                &lt;p&gt;Hello World&lt;/p&gt;
+                             &lt;/div&gt;
+                    </code>
+                </pre>
+            </li>
+        </ol>
+        <p>Em relação ao CSS Embutido/CSS Externo, é importante mencionar que terá maior prioridade quem for declarado por último, mas respeitando os aspectos de especificidade do seletor.</p>
+
+        <h2>!important</h2>
+        <p>O CSS disponibiliza uma forma de "burlar" os níveis de specificidade através da palavra-chave <em>!important</em>.</p>
+        <pre>
+            <code>
+                p {
+                    color: red!important;
+                }
+            </code>
+        </pre>
+
+        <p>O estilo que for marcado juntamente com essa palavra-chave terá prioridade acima dos outros seletores, mas respeitando o comportamento de cascata mencionado anteriormente. Então, muito cuidade ao usá-lo.</p>
+    </article>
+</body>
+</html>

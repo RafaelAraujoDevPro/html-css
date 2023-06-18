@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudo CSS</title>
+    <link rel="stylesheet" href="estilos.css">
+
+</head>
+<body>
+    <h1>CSS</h1>
+    <h2>O que é CSS?</h2>
+    <p>CSS (Cascading Style sheets) é uma linguagem que usamos pra estilizar um documento HTML. As CSS descreve como os elementos HTML devem ser exibidos. As CSS economizam muito trabalho quando precisamos desenvolver sites com um número alto de páginas. Ele pode controlar o layout de várias páginas da web de uma só vez.</p>
+    <p>As CSS podem ser usadas de três maneiras: pode ser através do Style Inline, do Style Local/interno ou Style Esterno.
+    </p>
+    
+        <h3>Style inline.</h3>
+
+        <div class="div1">
+            <p>O Style inline é usudo dentro das tags do HTML como atributos. Sempre é inserido na tag de abertura onde podemos definir o estilo para o conteúdo da tag como cor,tamanho e tipo de fonte do texto, cor de fundo do e etc...  </p>
+            <p>Essa forma de inserir CSS para o site é a menos usual pois demanda mais trabalho, ainda mais se tivermos muitas páginas neste site para desenvolver folhas de estilos. Geralmente aproveitamos o Style inline estilizar um conteúdo pontual em uma única página apenas.</p>
+        </div>
+    
+    
+    <h3>Style Local/interno</h3>
+
+    <div class="div1">
+        <p>Usamos Style Local logo no início do nosso documento ainda dentro da tag &lt;head&gt;. Desta forma os estilos declarados ficam restritos em uma única página, não sendo possível a sua reutilização em outras páginas, ao menos que copiemos e colemos nas outras, porém demada um pouco mais de trabalho. </p>
+    </div>
+    <h3>Exemplo</h3>
+
+    <pre>
+        <code>
+        &lt;html&gt;
+          &lt;head&gt;
+                &lt;style type="text/css"&gt;
+                            h2 {color:#000;}
+                &lt;/style&gt;
+          &lt;/head&gt;
+        &lt;body&gt;                
+        </code>
+    </pre>
+    <h3>Style Externo</h3>
+    <div class="div1">
+        <p>Este tipo de uso de CSS em documentos HTML é o mais indicado e recomendado. Neste tipo, os códigos CSS ficam em um documento externo ao documento HTML, separando assim as camadas de estrutura e apresentação do projeto WEB.
+            Existe duas formas de incorporar folhas de estilos CSS externa ao documento WEB. Veja a seguir:
+        </p>
+    </div>
+
+    <h4>1. Linkadas</h4>
+    <div class="div1">
+        <p>Para o tipo de estilo CSS externo linkado, usamos o elemento link para incorpora o documento CSS externo ao documento HTML. O elemento link deve ser usado dentro da seção &lt;head&gt; do documento HTML.</p>
+        <p>Vamos ver um exemplo da utilização do elemento link para incorporar uma folha de estilo CSS ao documento HTML. Neste exemplo, imagine que o documento CSS esteja dentro de uma pasta chamada "css" e o seu arquivo HTML, "index.html" esteja na raiz,como na ilustração:</p>
+    </div>
+    <pre>
+        <code>
+        &lt;head&gt;
+             &lt;link rel="stylesheet" type="text/css"
+              media="screen" href="css/estilos.css"&gt;
+       &lt;/head&gt;
+        </code>
+    </pre>
+    <p>Partindo do princípio que o documento CSS estja nomeado como "estilos.css" e que esteja dento de uma pasta chamada "css", o atibuto <em>href</em> deve dicar exatamente com esta informação: "css/estilo.css", que é a forma com que o navegador entenderá onde se encontra o arquivo CSS a ser linkado.</p>
+    <blockquote class="citacao">
+        O estilo linkado é a maneira mais usual para estilizar sites pois assim as folhas de estilos carregam mais rapido.
+    </blockquote>
+
+    <h4>2. Importadas</h4>
+   <p>O tipo de estilo das CSS importadas funciona igualmente ao tipo de estilo linkadas. O que difere aqui é somente a forma com que isto é feito, uma vez que, neste caso, é usada a diretiva <em>@import</em> dentro do elemento style, na seção &lt;head&gt; do documento HTML, como pode ser visto no exemplo:</p>
+   <pre>
+    <code>
+        &lt;head&gt;
+            &lt;style type=“text/css”&gt;
+                      @import url("css/estilos.css") screen,
+                       projection;
+            &lt;/style&gt;
+        &lt;head&gt;
+    </code>
+   </pre>
+   <blockquote class="citacao">
+    Se o desenvolvedor pretede ganhar velocidade, não é recomendado o uso de estilos importadas, pois o <em>@import</em> demora mais para carregar a folha de estilo.
+   </blockquote>
+   <h2>DIVS</h2>
+
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudos de HTML</title>
+    <link rel="shortcut icon" href="favicon (3).ico" type="image/x-icon">
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+    <header>
+        <h1>&lt;Tags de importância Semântica HTML&gt;</h1>
+        <img src="Graphics-Vibe-Developer-Html-5.ico" alt="html5">
+    </header>
+
+    <main>
+        <section class="centralizado">
+            <article>
+                <h2>Tag &lt;<dfn>header</dfn>&gt;</h2>
+                <p>O elemento HTML &lt;<dfn>header</dfn>&gt; representa um grupo de suporte introdutório ou
+                navegacional. Pode conter alguns elementos de cabeçalho mas também outros elementos como em logo, seções de cabeçalho, formulário de pesquisa, e outros.</p>
+                <p>O elemento &lt;<dfn>header</dfn>&gt; não é separador de conteúdo (sextioning content), portanto,não introduz uma nova seção no out line.</p>
+                <ul>
+                    <li>Tag usada para definir o cabeçalho do página. Contém semântica que facilita para o <abbr title="Search Engine Optimization">SEO</abbr> da página.</li>
+                    
+                    <li>Esta tag pode difinir um cabeçalho relativo ao seu contexto.
+                        
+                    <li>Normalmente esta tag possui tags de titulos h1, h2, h3, h4, h5 e h6.
+                        
+                    <li>Pode ser colocado um logotipo, ícone ou imagem em um&lt;<dfn>header</dfn>&gt;.
+                        
+                    <p>&lt;<dfn>header</dfn>&gt; não possui atributo próprio e aceita todos os atributos globais.</p>
+                </ul>
+
+                <h3>Exemplo:</h3>
+                <pre class="exemplos">
+                    <code>
+                        &lt;<dfn>header</dfn>&gt;
+                        &emsp; &emsp; &lt;h1&gt;Título da Página Principal&lt;/h1&gt;
+                        &emsp; &emsp; &lt;img src="mdn-logo-sm.png" alt="MDN logo"&gt;
+                        &lt;/<dfn>header</dfn>&gt;
+                    </code>
+                 </pre>
+            </article>
+        </section>
+
+        <section class="centralizado">
+            <article>
+                <h2>Tag &lt;<dfn>main</dfn>&gt;</h2>
+                <p>A tag &lt;<dfn>main</dfn>&gt; é entendida como conteúdo pricipal do documento HTML, e está
+                diretamente relacionado com o tópico central da página. Semânticamente tem função central da página aplicada no <abbr title="Search Engine Optimization">SEO</abbr>. O mesmo deve ser único na página, ou seja, o conteúdo dentro da tag &lt;<dfn>main</dfn>&gt; não pode se repetir em outras tags HTML.</p>
+                <p>A tag &lt;<dfn>main</dfn>&gt; não pode ser filho dos elementos &lt;article&gt;, &lt;aside&gt;, &lt;footer&gt;, &lt;header&gt; ou &lt;nav&gt;. Autores não devem incluir mais de um elemento &lt;main&gt; no mesmo documento.</p>
+                <p>Não possui atributo próprio. Aceita todos os atributos globais.</p>
+
+                <h3>Exemplo:</h3>
+                <pre class="exemplos">
+                    <code>
+                        &lt;main&gt;
+                        <span>&lt;h1&gt;Maçãs&lt;/h1&gt;</span>
+                        <span>&lt;p&gt;A maçã é a fruta pomácea da macieira.&lt;/p&gt;</span>
+                        <span>&lt;article&gt;</span>
+                        <span class="tabe">&lt;h2&gt;Vermelho delicioso&lt;/h2&gt;</span>
+                        <span class="tabe">&lt;p&gt;</span>Estas maçãs vermelhas brilhantes são as mais comumente encontradas em muitos supermercados.&lt;/p&gt;
+                        <span class="tabe">&lt;p&gt;</span>... &lt;/p&gt;
+                        <span class="tabe">&lt;p&gt;</span>... &lt;/p&gt;
+                        <span>&lt;/article&gt;</span>
+                        <span>&lt;article&gt;</span>
+                        <span class="tabe">&lt;h2&gt;</span>Granny Smith&lt;/h2&gt;
+                        <span class="tabe">&lt;p&gt;</span>Essas suculentas maçãs verdes, são um ótimo recheio para
+                        torta de maçã.&lt;/p&gt;
+                        <span class="tabe">&lt;p&gt;</span>... &lt;/p&gt;
+                        <span class="tabe">&lt;p&gt;</span>... &lt;/p&gt;
+                        <span>&lt;/article&gt;</span>
+                        &lt;/main&gt;
+                    </code>
+                </pre>
+            </article>
+        </section>
+
+        <section class="centralizado">
+            <article>
+                
+                <h2>Tag &lt;<dfn>section</dfn>&gt;</h2>
+                <p>O elemento HTML &lt;<dfn>section</dfn>&gt; representa uma seção genérica contida em um documento HTML, geralmente com um título, quando não existir um elemento semântico mais específico para representá-lo.</p>
+                <p>Por exemplo, um menu de navegação deve estar dentro de um elemento &lt;nav&gt;, mas uma lista de resultados de pesquisa ou a exibição de um mapa e seus controles não possuem elementos específicos, e podem ser colocados dentro de uma tag &lt;<dfn>section</dfn>&gt;</p>
+                <p>Não possui atributo próprio. Aceita todos os atributos globais.</p>
+                <ul>
+                    <li>Cada &lt;<dfn>section</dfn>&gt; seve ser identificado, geralmente incluindo um cabeçalho (elemento &lt;h1&gt; até &lt;h6&gt;) como um filho do elemento &lt;<dfn>section</dfn>&gt;.</li>
+
+                    <li>Se faz sentido distribuir separadamente o conte conteúdo de um elemento
+                    &lt;<dfn>section</dfn>&gt;, use um elemento &lt;article&gt; em seu lugar.</li>
+
+                    <li>Não use o elemento &lt;<dfn>section</dfn>&gt; como um container genérico; para isso existe a tag &lt;div&gt;, especialmente quando a seção é apenas com propósito de estilização. uma regra de ouro é "usar quando uma seção deve aparecer logicamente na estrutura de um documento"</li>
+                </ul>
+                <h3>Exemplo:</h3>
+                <pre class="exemplos">
+                    <code>
+                        &lt;<dfn>section</dfn>&gt;
+                        &lt;h2&gt;Conteúdo sem tag específica&lt;/h2&gt;
+                        &lt;p&gt;Este conteúdo não se encaixa em uma tag específica semânticamente,
+                        então empregamos a tag &lt;<dfn>section</dfn>&gt; para agrupar seus elementos&lt;/p&gt;
+                        &lt;<dfn>section</dfn>&gt;                           
+                </code>
+            </pre>
+            </article>
+        </section>
+
+        <section class="centralizado">
+            <article>
+                <h2>Tag &lt;<dfn>article</dfn>&gt;</h2>
+                <p>O elemento HTML &lt;<dfn>article</dfn>&gt; representa uma composição independente em um documento,
+                página, aplicação ou site, ou o que seja destinado a ser distribuído de forma independente ou
+                reutilizável. Este pode ser o post de um fórum, um artigo de revista ou jornal e etc... </p>
+                <p>Além do seu conteúdo principal o elemento &lt;<dfn>article</dfn>&gt; tipicamente contém um
+                cabeçalho
+                dentro de uma tag &lt;header&gt; e algumas vezes um rodapé. Para indentificar se o conteúdo é
+                independente do tópico principal temos que perceber de o mesmo sentido isoladamente em ralação ao
+                conteúdo principal.</p>
+                <ul>
+                    <li>Quando um elemento &lt;<dfn>article</dfn>&gt; está aninhado, o elemento interior representa um artigo relacionado com o elemento exterior. Por exemplo, os comentários do post de um blog podem
+                    ser elementos &lt;<dfn>article</dfn>&gt; aninhados a outro &lt;<dfn>article</dfn>&gt; representando o post do blog.
+                    
+                    <li>Informações sobre o autor de um elemento &lt;<dfn>article</dfn>&gt; podem ser fornecidas através
+                    do elemento &lt;address&gt;, mas não se aplicam aos elementos &lt;<dfn>article</dfn>&gt; aninhados.
+                    
+                    <li>A data e hora de publicação de um elemento &lt;<dfn>article</dfn>&gt; pode ser descrita usando o atributo <u>pubdate</u> de um elemento &lt;time&gt;
+                        
+                </ul>
+                <P>Não possui atributo próprio. Aceita todos os atributos globais.</P>
+                <h3>Exemplo:</h3>
+                <pre class="exemplos">
+                    <code>
+                            &lt;<dfn>article</dfn>&gt;
+                            &lt;h2&gt;Conteúdo independente&lt;/h2&gt;
+                            &lt;p&gt;Este conteúdo é independente em relação ao conteúdo
+                            principal, então devemos usar a tag semântica &lt;<dfn>article</dfn>&gt;,
+                            para que os navegadores possam indentificá-lo como 
+                            artigo.&lt;/p&gt;
+                            &lt;/<dfn>article</dfn>&gt;
+                    </code>
+                </pre>
+            </article>
+        </section>
+
+
+
+    </main>
+
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+/* Esta configuração de body é para centralizar a box filho para o centro do layaut  em relação aos dois eixos: X E Y. É preciso adicionar height com valor em "vh" para centralizar no eixo Y.*/
+body {   
+    background-image:linear-gradient(to bottom, #55555568, #fff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+/* Para titúlo h2 centralizar no eixo X, declaramos justify-center no estlo do elemento pai de h2; */
+h2 {
+    font-family: monospace;
+    font-size: 2.3em;
+    text-shadow: 3px 2px 2px #ffe4c44a;
+
+}
+dfn {
+    font-family: monospace;
+    font-style: normal;
+    font-weight: bold;
+    background-color: #ffe4c47a;
+    padding: 0px 5px;
+    border-radius: 5px;
+}
+
+.box-shadow {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color:#96eed188;
+    width: 500px;
+    height: fit-content;
+    font-size: 1.2em;
+    padding: 30px 15px;
+/*Os valores de box-shadow aplicados em shorthand: 1º Descomento horizontal; 2º Deslocamento vertical; 3º Embaçamento (blur); 4º Cor.*/
+    /* box-shadow: 6px 6px 15px #0e9769e2; */
+
+/* podemos aplicar valores negativos para os valores, assim eles mudam as direções para o inverso: */
+    /* box-shadow: -6px -6px 15px #0e9769e2; */
+
+/* Podemos aplicar outras formas de medidas além do pixel. */
+    /* box-shadow: 2em 2em 3em #0e9769e2; */
+
+/* Podemos aplicar um 4º valor (spread) que fará a sombra extender para os dois eixos. */
+    /* box-shadow: 6px 6px 15px 6px #0e9769e2; */
+
+/* Quando zeramos os valores dos dois eixos apenas, as sombras se extenderam por todos os 4 lados. */
+    /* box-shadow: 0px 0px 3em 2em #0e9769e2; */
+
+/* Aplicando o valor "inset" como primeiro valor a sombra passará para dentro da box.*/
+    /* box-shadow: inset 0px 0px 3em 1.2em #68fac9; */
+
+/* Podemos aplicar múltiplas box-shadows separando-as com uma virgula (,).  */
+    /* box-shadow: inset 15px 15px 3em 1.2em #68fac9,
+                inset -15px -15px 3em 1.2em rgb(241, 130, 8), 20px 20px 2em .3em #3408d1e2;*/
+
+/* Podemos aplicar box-shadow em apenas um lado quando aplicamos valor 0 para um do eixos */
+    /* box-shadow: 0px 20px 15px -15px #970e0ee2,
+                   20px 0px 15px -15px rgb(191, 3, 191); */
+
+/* Podemos simular bordas aplicando box-shadow, quando zeramos os valores dos eixos e o do blur. aplicamos somente o valor de spread mais a cor. podem ser até múltiplas bordas. */
+    /* box-shadow: 0px 0px 0px 15px rgba(150, 13, 13, 0.886), 
+                   0px 0px 0px 25px rgba(150, 145, 13, 0.886), 
+                   0px 0px 0px 35px rgba(52, 13, 150, 0.886); */
+                   box-shadow: 0px 0px 0px 15px rgba(236, 72, 72, 0.527);
+}                                              
+box-shadow ol {
+    list-style-position: inside;
+    margin-top: 15px;
+}
+.box-shadow p {
+    margin-top: 15px;
+}
+.box-shadow li{
+    margin:15px;
+}

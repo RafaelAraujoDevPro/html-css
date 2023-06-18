@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudos de CSS</title>
+    <link rel="stylesheet" href="/exercicios/exemples-html-css/exemplos.css">
+    <link rel="stylesheet" href="/exercicios/reset-colors/exercicios.css">
+</head>
+<body>
+<!-- Grid Container -->
+    <article>
+        <h1>Grid Contêiner</h1>
+        <h2>Exemplo 1: GRID container</h2>
+
+        <section class="gridContainer">
+            <div class="red">item 1</div>
+            <div class="blue">item 2</div>
+            <div class="green">item 3</div>
+            <div class="yellow">item 4</div>
+        </section>
+    </article>
+
+                    <hr>
+<!-- Grid Container inline -->
+    <article>
+        <h2>Exemplo 2: GRID containerinline</h2>
+        <section class="gridContainerinline">
+            <div class="red">item 1</div>
+            <div class="blue">item 2</div>
+            <div class="green">item 3</div>
+            <div class="yellow">item 4</div>
+        </section>
+    </article>
+
+                    <hr>
+<!-- Gtid estático (medida em pixel) -->
+    <article>
+        <h1> Trilas (tracks) de Gtid</h1>
+        <h2> <h2>Exemplo 1: tamanho em pixels.</h2></h2>
+        <section class="l_estatico">
+            <div class="red">1</div>
+            <div class="blue">2</div>
+            <div class="green">3</div>
+            <div class="yellow">4</div>
+            <div class="red">5</div>
+            <div class="blue">6</div>
+        </section>
+    </article>
+
+                    <hr>
+<!-- Grid dinâmico (medida em porcentagem) -->
+    <article>
+        <h2> <h2>Exemplo 2: tamanho em porcentagem.</h2></h2>
+        <section class="l_dinamico">
+            <div class="red">1</div>
+            <div class="blue">2</div>
+            <div class="green">3</div>
+            <div class="yellow">4</div>
+        </section>
+    </article>
+
+                    <hr>
+<!-- Medida em frações (fr)-->
+    <article>
+        <h2> <h2>Exemplo 3: tamanho em frações.</h2></h2>
+        <section class="l_fracionado">
+            <div class="red">1</div>
+            <div class="blue">2</div>
+            <div class="green">3</div>
+            <div class="yellow">4</div>
+        </section>
+    </article>
+
+                    <hr>
+<!-- Valor repeat() -->
+    <article>
+        <h2> <h2>Exemplo 4: repeat.</h2></h2>
+        <section class="l_repeat">
+            <div class="red">1</div>
+            <div class="blue">2</div>
+            <div class="green">3</div>
+            <div class="yellow">4</div>
+        </section>
+    </article>
+    
+                    <hr>
+<!-- Valor minmax() -->
+    <article>
+        <h2> <h2>Exemplo 5: tamanho min e max.</h2></h2>
+        <section class="l_min-max__1">
+            <div class="red">1</div>
+            <div class="blue">2</div>
+            <div class="green">3</div>
+            <div class="yellow">4</div>
+        </section>
+    
+        <section class="l_min-max__2">
+            <div class="red">1</div>
+            <div class="blue">2</div>
+            <div class="green">3</div>
+            <div class="yellow">4</div>
+        </section>
+    </article>
+    
+                    <hr>
+<!-- Grid explícito -->
+    <article>
+        <h2>Exemplo 6: Grid Explícito.</h2>
+        <pre>
+            <code>
+                .l_explicito {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr;
+                    grid-template-rows: 60px 60px 60px;
+                }
+            </code>
+        </pre>
+        <section class="l_explicito">
+            <div class="red">1</div>
+            <div class="blue">2</div>
+            <div class="green">3</div>
+            <div class="yellow">4</div>
+            <div class="red">5</div>
+            <div class="green">6</div>
+        </section>
+    </article>
+    
+                    <hr>
+<!-- Grid implícito -->
+    <article>
+
+        <h2>Exemplo 7: Grid Implícito</h2>
+        <pre>
+            <code>
+                .l_implicito {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr;
+                    grid-template-rows: 60px 60px;
+                }
+            </code>
+        </pre>
+        <section class="l_implicito">
+            <div class="red">1</div>
+            <div class="blue">2</div>
+            <div class="green">3</div>
+            <div class="yellow">4</div>
+            <div class="red">5</div>
+            <div class="green">6</div>
+            <div class="green">7</div>
+            <div class="green">8</div>
+            <div class="green">9</div>
+        </section>
+        
+        <pre>
+            <code>
+                .l_implicito {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr;
+                    grid-template-columns: 60px 60px;
+                    grid-auto-rows: 60px;
+                }
+            </code>
+        </pre>
+        <section class="l_implicito__auto">
+            <div class="red">1</div>
+            <div class="blue">2</div>
+            <div class="green">3</div>
+            <div class="yellow">4</div>
+            <div class="red">5</div>
+            <div class="green">6</div>
+            <div class="green">7</div>
+            <div class="green">8</div>
+            <div class="green">9</div>
+        </section>
+
+    </article>
+
+                    <hr>
+<!-- Posicionamento dos elementos itens -->
+        <article>
+            <h1>Exemplo 8: Posicionamento dos elementos itens</h1>
+            <h2></h2>
+            <section class="l_position">
+                <div class="red ex_top">top</div>
+                <div class="blue ex_aside">aside</div>
+                <div class="green ex_main">main</div>
+                <div class="yellow ex_footer">footer</div>
+            </section>
+            
+        </article>
+    
+
+                    <hr>
+    <!-- Object-fit -->
+    <article>
+        <section class="l_object__fit">
+            <figure>
+                <img src="/index-html/imagens/linhas-virtuais-grid.png" alt="linhnas virtuais">
+                <caption>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, velit.</caption>
+            </figure>
+            <figure>
+                <img src="/index-html/imagens/linhas-virtuais-grid.png" alt="linhnas virtuais">
+                <caption>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro, repudiandae!</caption>
+            </figure>
+            <figure>
+                <img src="/index-html/imagens/linhas-virtuais-grid.png" alt="linhnas virtuais">
+                <caption>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro, repudiandae!</caption>
+            </figure>
+            <figure>
+                <img src="/index-html/imagens/linhas-virtuais-grid.png" alt="linhnas virtuais">
+                <caption>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro, repudiandae!</caption>
+            </figure>
+            <figure>
+                <img src="/index-html/imagens/linhas-virtuais-grid.png" alt="linhnas virtuais">
+                <caption>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, repellendus.</caption>
+            </figure>
+            <figure>
+                <img src="/index-html/imagens/linhas-virtuais-grid.png" alt="linhnas virtuais">
+                <caption>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, repellendus.</caption>
+            </figure>
+            <figure>
+                <img src="/index-html/imagens/linhas-virtuais-grid.png" alt="linhnas virtuais">
+                <caption>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro, repudiandae!</caption>
+            </figure>
+            <figure>
+                <img src="/index-html/imagens/linhas-virtuais-grid.png" alt="linhnas virtuais">
+                <caption>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro, repudiandae!</caption>
+            </figure>
+        </section>
+    </article>
+
+                    <hr>
+                    <!-- grid auto flow -->
+    <article>
+        <h2>Grid Auto Flow</h2>
+        <div class="l_auto__flow">
+            <div>Item 1</div>
+            <div>Item 2</div>
+            <div>Item 3</div>
+            <div>Item 4</div>
+            <div>Item 5</div>
+            <div>Item 6</div>
+            <div>Item 7</div>
+            <div>Item 8</div>
+            <div>Item 9</div>
+            <div>Item 10</div>
+            <div>Item 11</div>
+            <div>Item 12</div>
+        </div>
+    </article>
+    
+
+</body>
+</html>

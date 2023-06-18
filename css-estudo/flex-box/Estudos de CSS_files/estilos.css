@@ -1,0 +1,269 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&display=swap');
+
+/*
+    Sintaxe para aplicar @font-face. Os valores """obrigatóriamente""" devem estar entre aspas simples ('valor')
+
+ @font-face {
+    font-family: 'sintaxe';
+    src: url('pasta/nome.tipo') format('tipodearquivo');
+ }
+
+*/
+
+
+@font-face {
+    font-family: 'good times';
+    src: url('exercicios/fontes/good\ times\ rg.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'inconsolata';
+    src: url('exercicios/fontes/Inconsolata.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'lora';
+    src: url('exercicios/fontes/Lora.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'roboto';
+    src: url('exercicios/fontes/Roboto.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'cleptocracia';
+    src: url('exercicios/fontes/kleptocracy\ titling\ lt.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Oxanium';
+    src: url('exercicios/fontes/Oxanium-Medium.ttf') format('truetype');
+}
+
+/* 
+    tipos de format()
+    -opentype (otf)
+    -truetype (ttf)
+    -embedded-opentype
+    -truetype-att (Aple Advanced Typography)
+    -svg
+*/
+
+ :root {
+    --azul-fort: #0170BA;
+    --azul-fraco: #0477BF; 
+    --azul-claro: #29A7D9;
+    --branco: #F2F2F2;
+    --branco-gelo: #CFCFCF;
+    --preto: #0D0D0D;
+    --titulo: 'good times';
+    --paragrafo: 'roboto';
+    --codigos: 'inconsolata';
+    --subtitulos: 'Oxanium';
+ }
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: linear-gradient(to right, var(--azul-fort), var(--azul-claro), var(--branco-gelo));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+   
+}
+
+header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 98%;
+    height: 120px;
+    padding: 40px 20px;
+    background-image: linear-gradient(to bottom, var(--azul-fort), var(--azul-claro));
+    box-shadow: inset 0px -6px 5px -5px #9BEEF7;
+}
+header img {
+    height: inherit;
+    padding-bottom: 10px; 
+}
+header h1 {
+    color:var(--branco-gelo);
+    font-size: 4em;
+    font-family: var(--titulo);
+    text-shadow: 2px 2px 5px var(--azul-claro);
+    max-width: 100%;
+    /* margin: auto; */
+}
+header nav {
+    align-self:flex-end;
+    
+
+}
+header a {
+    padding: 05px 10px;
+    background-color: var(--branco-gelo);
+    margin: 10px;
+    border-radius: 7px;
+    font-family: var(--subtitulos)
+}
+header a:hover {
+background-color: var(--azul-claro);
+color: var(--branco);
+box-shadow: inset 0px -5px 5px -3px var(--branco-gelo);
+}
+nav.guia {
+    background-color: var(--branco-gelo);
+    padding:20px 20px;
+    height: 110px;
+    min-width: 180px;
+    margin: 10px;
+}
+nav ul {
+    list-style-type: none; 
+}
+nav a {
+    text-decoration: none;
+}
+
+
+
+main {
+    background-color: var(--branco-gelo);
+    width: 800px;
+    padding: 30px;
+}
+main h2 {
+    font-family: var(--subtitulos);
+    font-size: 2em;
+    text-indent: 2em;
+}
+main h3 {
+    font-family: var(--subtitulos);
+    font-weight: 500;
+    font-size: 1.8em;
+}
+main p {
+    font-family: var(--paragrafo);
+    font-size: 1.3em;
+    line-height: 1.8em;
+    margin:1.7em 0em;
+    text-align: justify;
+    text-indent: 1.5em;
+}
+main ul {
+    font-family: var(--paragrafo);
+    font-size: 1.3em;
+    line-height: 1.8em;
+    text-align: justify;
+}
+main li {
+    margin: 1.8em 0em;
+    list-style: none;
+}
+main dfn {
+    font-family: var(--codigos);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.2em;
+    color: var(--azul-fort);
+
+}
+aside {
+    padding: 0px 20px;
+    height:500px;
+    width: 150px;
+    background-color: var(--branco-gelo);
+}
+
+footer {
+    background-color:var(--azul-fraco);
+    max-width: 900px;
+    min-width: 320px;
+    height: 100px;
+    padding-bottom:20px;
+    margin:20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+footer img {
+    height: inherit;
+}
+footer ul {
+    background-color: var(--branco-gelo);
+    width: 600px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: auto;
+}
+footer p {
+   margin: auto;
+}
+
+#FlexBox {
+    padding: 20px 0px;
+}
+
+.boxflex {
+    display:flex;
+    border: 2px dotted red;
+    padding: 5px; 
+}
+
+.boxflex div {
+    background-color: aquamarine;
+    border: 1px solid;
+    padding: 10px; 
+}
+
+.boxdirection {
+    display: flex;
+    flex-direction: row-reverse;
+    border: 2px dotted red;
+    padding: 5px;
+}
+
+.boxdirection div {
+    background-color: aquamarine;
+    border: 1px solid;
+    padding: 10px; 
+}
+
+.boxwrap {
+    display: flex;
+    flex-wrap: wrap;
+    border: 2px dotted red;
+    padding: 5px;
+}
+
+.boxwrap div {
+    background-color: aquamarine;
+    border: 1px solid;
+    padding: 10px; 
+    width: 40%;
+}
+
+.boxflow {
+    display: flex;
+    flex-flow: row wrap;
+    border: 2px dotted red;
+    padding: 5px;
+}
+
+.boxflow div {
+    background-color: aquamarine;
+    border: 1px solid;
+    padding: 10px; 
+    width: 40%;
+}

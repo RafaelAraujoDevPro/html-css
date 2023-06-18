@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listas com HTML5</title>
+    <link rel="shortcut icon" href="favicon (3).ico" type="image/x-icon">
+    <style>
+        body {
+            background-color: rgba(221, 110, 110, 0.761);
+        }
+    </style>
+</head>
+<body>
+    <h1>&emsp;Listas Ordenadas</h1>
+    <p>A HTML chama de <strong><em>ordered lists</em></strong> todas aquelas listas onde a ordem dos itens é algo muito importante, ou seja, onde há uma escala ordenada de importâcia dos itens.</p>
+    <p>Para criar uma <em>ordered list</em>, vamos usar a tag &lt;ol&gt; para delimitar a lista e &lt;li&gt; (<em>list item</em>) para identificar cada item da lista.</p>
+    <pre>
+        <code>
+    &lt;ol&gt;
+        &lt;li&gt;<strong>item 1</strong>&lt;/li&gt;
+        &lt;li&gt;<strong>item 2</strong>&lt;/li&gt;
+        &lt;li&gt;<strong>item 3</strong>&lt;/li&gt;
+        &lt;li&gt;<strong>item 4</strong>&lt;/li&gt;
+        &lt;li&gt;<strong>item 5</strong>&lt;/li&gt;
+    &lt;ol&gt;
+        </code>
+    </pre>
+    <h2>&emsp;exemplo:</h2>
+    <h3><u>Lista afazeres de uma rotina diária</u></h3>
+    <ol type="a"> <!--<ol> (ordered list) significa= lista ordenada.-->
+        <li>Acordar</li>
+        <li>Ligar pra Maria</li>
+        <li>Tomar café</li>
+        <li>Escovar os dentes</li>
+        <li>Ir para a faculdade</li>
+        <li>Almoçar</li>
+        <li>Ir pro trabalho</li>
+        <li>Voltar pra casa</li>
+        <li>Jantar</li>
+        <li>Dormir</li>
+    </ol>
+    <h3><strong><em><u>Observação</u></em></strong></h3>
+    <p><strong>&emsp;&rarr;IMPORTANTE!</strong> Segundo a <strong>W3C</strong>, a tag &lt;ol&gt; é de fechamento obrigatório (ou seja, devemos sempre usar &lt;/ol&gt;). Já a tag &lt;li&gt; tem seu fechamento <strong>opcional</strong> a partir da HTML5.</p>
+    <p>A tag &lt;ol&gt; possui um parâmetro type, onde configuramos o tipo de marcador da lista atual. As opções de valores para esse parâmetro são:
+        <ul type="disc"> <!--type tem três opções= "disc", "circle" e "square"-->
+             <li>1 - valor padrão. Cria listas numeradas. Ex: 1, 2, 3, 4, 5... <br></li>
+             <li>A - Cria lista alfabética em maiúsculas. Ex: A, B, C, D, E... <br></li>
+             <li>a - Cria lista alfabética em minúsculas. EX: a, b, c, d, e... <br></li>
+             <li>I - Cria lista com algorismos romanos maiúsculas. Ex: I, II, III, IV, V... <br></li>
+             <li>i - Cria listas com algorismos romanos em minusculas. Ex: i, ii, iii, iv, v... <br></li>
+        </ul>
+    </p>
+    <p>Você também pode indicar o inicio da contagem usando o parâmetro <em>start</em>.<br>
+    Por exemplo, a tag <code>&lt;ol type="I" start = "5"&gt; vai gerar itens numerados como V, VI, VII, VIII, IX, ...</code></p>
+    <h1>&emsp;Listas não Ordenadas</h1>
+    <p>As <strong><em>unordered list</em></strong>, também chamada de listas com marcadores, que são aquelas onde a ordem dos itens não influenciará no significado da lista. Ela é apenas uma maneira de organizar os itens sem uma classificação de importâcia.</p>
+    <p>Para criar uma unordered list, vamos usar a tag &lt;ul&gt; para delimitar a lista e a tag &lt;li&gt; para criar um dos seus itens internos.
+        <pre>
+            <code>
+    &lt;ul&gt;
+        &lt;li&gt;<strong>item 1</strong>&lt;/li&gt;
+        &lt;li&gt;<strong>item 2</strong>&lt;/li&gt;
+        &lt;li&gt;<strong>item 3</strong>&lt;/li&gt;
+        &lt;li&gt;<strong>item 4</strong>&lt;/li&gt;
+        &lt;li&gt;<strong>item 5</strong>&lt;/li&gt;
+    &lt;ul&gt;
+            </code>
+        </pre>
+    </p>
+    <p>O marcador padrão é o circulo preto preenhechido (circle), mas existe a opção de configurar a propriedade type da tag &lt;ul&gt; com os seguintes nalores:
+        <ul type ="disc">
+            <li><strong><em>disc</em> - padrão. Um circulo preto preenhechido</strong></li>
+            <li><strong><em>circle</em> - Um circulo preto sem preenhechido</strong></li>
+            <li><strong><em>square</em> - Um pequeno quadrado preto preenhechido</strong></li>
+            
+        </ul>
+    </p>
+
+    <h2>&emsp;Exemplo</h2>
+    <h3><u>Lista de compras</u></h3>
+    <ul type="square">
+        <li>pão</li>
+        <li>leite</li>
+        <li>tomate</li>
+        <li>carne</li>
+        <li>sabão</li>
+        <li>refrigerante</li>
+        <li>manteiga</li>
+    </ul>
+    <h1>&emsp;Misturando as coisas</h1>
+    <p>Podemos também criar listas mistas, configurando dentro de outras listas. Veja o exemplo aseguir:</p>
+    <pre>
+        <code>
+        &lt;ol&gt;
+            &lt;li&gt;<strong>item 1</strong>&lt;/li&gt;
+            &lt;li&gt;<strong>item 2</strong>&lt;/li&gt;
+            &lt;ol type="a"&gt;
+                &lt;li&gt;<strong>item 2.a</strong>&lt;/li&gt;
+                &lt;li&gt;<strong>item 2.b</strong>&lt;/li&gt;
+                &lt;li&gt;<strong>item 2.c</strong>&lt;/li&gt;
+        &lt;ol&gt;
+            &lt;li&gt;<strong>item 3</strong>&lt;/li&gt;
+            &lt;li&gt;<strong>item 4</strong>&lt;/li&gt;
+            &lt;li&gt;<strong>item 5</strong>&lt;/li&gt;
+            &lt;ol&gt;
+        </code>
+    </pre>
+    <p>O resultado visual do código que vimos anteriormente será semelhante ao que temos a seguir:
+        <ol>
+            <li><strong>item 1</strong></li>
+            <li><strong>item 2</strong></li>
+            <ol type="A">
+                <li><strong>item 2.a</strong></li>
+                <li><strong>item 2.b</strong></li>
+                <li><strong>item 2.c</strong></li>
+            </ol>
+            <li><strong>item 3</strong></li>
+            <li><strong>item 4</strong></li>
+            <li><strong>item 5</strong></li>
+        </ol>
+        <p>Note que os itens da lista interna (A, B, C, ...) está deslocado para a direita em relação ao item 2, do qual essa sub-lista é filha.
+            <h3><strong><em><u>DICA!</u></em></strong></h3>
+            <p>Além de <em>aninhar</em> listas ordenadas, podemos juntar listas com &lt;ol&gt; e vice-versa. As listas internas senpre terão deslocamento interno para direita.</p>
+            <h2>&emsp;exemplo:</h2>
+            <h3><u>Lista dos meus jogos favoritos</u></h3>
+            <ul type="disc">
+                <li>Nitendinho</li>
+                <ol>
+                    <li>Mario Bros</li>
+                    <ul type="square">
+                        <li>Super Mario Bros 3</li>
+                        <li>Mario Lost Levels</li>
+                    </ul>
+                    <li>Ninja Gaiden</li>
+                    <ul type="square">
+                        <li>Ninja Gaiden III</li>
+                    </ul>
+                </ol>
+                <li>Super Nintendo</li>
+                <ol>
+                    <li>Super Mario Word</li>
+                    <li>Donkey kong</li>
+                    <ul type="square">
+                        <li>Donkey kong Coutry III</li>
+                        <li>Diddy's Kong Quest</li>
+                    </ul>
+                </ol>
+                <li>playStation 1</li>
+                <ol>
+                    <li>Final Fantasy</li>
+                    <ul type="square">
+                        <li>Final Fantasy III</li>
+                        <li>Final Fantasy IX</li>
+                    </ul>
+                    <li>Castlevania</li>
+                    <ul type="square">
+                        <li>Simphony of the Night</li>
+                    </ul>
+                </ol>
+                
+            </ul>
+            <h1>&emsp;Listas de Definições</h1><br>
+            <p>É como se fosse um dicionário, temos os termos e as suas descrições. É uma lista sem dimarcadores, mas bem útil em alguns casos.</p>
+            <p>Toda lista de Definições está dentro de uma tag &lt;dl&gt; &lt;/dl&gt; (<em><strong>definition list</strong></em>). Cada termo é um &lt;dt&gt; (<em><strong>definition term</strong></em>) e cada descrição é um &lt;dd&gt; (<em><strong>definition description</strong></em>). Assim como os itens da lista, essas duas últimas tags possuem fechamento opcional, segundo a referência oficial da HTML5.  </p>
+            <h2>&emsp;exemplo:</h2>
+            <dl><!--Definition list-->
+                <dt>HTML</dt><!--Definition term-->
+                <dd>Linguagem de marcação ultilizada para criar conteúdo de sites.</dd><!--Definition description-->
+                <dt>CSS</dt>
+                <dd>Linguagem de marcação usada para a especificação de estilos em sites.</dd>
+                <dt>JavaScript</dt>
+                <dd>Linguagen de programação para criar interatividades em sites.</dd>
+            </dl>
+</html>

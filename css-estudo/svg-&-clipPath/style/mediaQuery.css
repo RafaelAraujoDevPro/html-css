@@ -1,0 +1,16 @@
+@charset 'UTF-8';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@media screen and (max-width: 1140px) {
+    .container_article:nth-child(odd) {
+        justify-self: center;
+    }
+
+    .ilustrationSVG {
+        display: none;
+}
+}

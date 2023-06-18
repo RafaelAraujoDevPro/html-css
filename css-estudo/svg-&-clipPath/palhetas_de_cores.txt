@@ -1,0 +1,7 @@
+#FBFDFE branco
+#B7C4C9 cinza
+#071E27 preto
+#176583 verde-ciano-escuro
+#29A7D9 azul-oceano
+#A9F0E1 verde-oceano
+#D95B29 laranja-forte

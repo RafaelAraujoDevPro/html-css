@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>trabalhando com links</title>
+    <link rel="shortcut icon" href="favicon (3).ico" type="image/x-icon">
+    <style>
+        body {
+            background-color: rgba(89, 63, 113, 0.379);
+        }
+    </style>
+</head>
+<body>
+    <h1>Usando links externos</h1>
+    <p>&emsp;Os <em><strong>hyperlinks</strong></em> são um dos conceitos mais antigos da história da linguagem HTML. Eles permitem que você ligue um ponto a outro  na <em><strong>Word Wide Web.</strong></em> Toda vez que você esta acessando um site ou até para baixar um arquivo, você está interagindo com um <em><strong>hyperlinks</strong></em>.</p> 
+    <p>&emsp;Até os mecanismos de busca de utilizam dos hyperlinks de um site. O <strong>Google</strong>, por exemplo, para achar um determinado site, fica vasculhando constantemente todos os outros sites da internet procurando por links para descobrir novos conteúdos. Por isso é tão importante conseguir links válidos de outros sites para o nosso próprio site.</p>
+    <p>&emsp;Para criar um hyperlink, devemos criar <strong>âncoras</strong> através da tag &lt;a&gt;. Vamos ver um exemplo simples:</p>
+     <pre>
+        <code>
+    &lt;p&gt;Você pode acessar o &lt;a href="https://gustavoguanabara.gitjub.io" 
+    target="_blank" rel="external"&gt;meu 
+    repositório público no GitHub&lt;/a&gt;&lt;/p&gt;
+        </code>
+    </pre>
+    <p>voce pode acessar o <a href="https://gustavoguanabara.github.io" target="_blank" rel="external">meu repositório público no GitHub</a></p>
+   
+    <blockquote><q>Note que dentro do atributo <strong>href, o que colocamos fou uma <strong>URL</strong></strong> completa para outro site.</q></blockquote>
+    <p>&emsp;Outro atributo bem útil da tag de âncora é o <em>hreflang</em>, que permite indicar qual é o idioma principal do site para onde o link entá desviando o fluxo e navegação. Isso nai permitir avisar ao navegador e a softwares de tradução como lidar caso o visitante opte por traduzir automaticamente os conteúdos.</p>
+    <h2>&emsp;<strong><em><ins>Exemplo</ins></em></strong>:</h2>
+    <pre>
+        <code>
+            &lt;a href="https://www.w3schools.com/html/" hreflang="pt-br"&gt;
+            Site da w3schools (em português Brasil)
+        </code>
+    </pre>
+    <p>&emsp;Por padrão, sempre que um visitante clique em um hyperlink, o site de destino abre na mesma janela do site que continha esse link, Ou seja, o conteúdo anterior vai deixar de ser exibido para mostrar o novo conteúdo.</p>
+    <p>&emsp;Pra poder controlar onde o site de destino vai abrir, podemos usar o atributo <strong><em>target</em></strong>, que suporta os seguintes valotes:</p>
+    <dl>
+        <dt>_blank</dt>
+        <dd><em>vai abrir o link em uma nova janela em branco.</em></dd>
+        <dt>_self</dt>
+        <dd><em>vai abrir o link na janela ou frame atual (padrão).</em></dd>
+        <dt>_top</dt>
+        <dd><em>vai desfazer todos os frames e abrir o destino no navegador completo.</em></dd>
+        <dt>_parent</dt>
+        <dd><em>Similar ao uso do <strong>_top</strong> em uma referência á janela mãe nome-do-frame caso esteja usando frames, indicar o nome da janela a abrir.</em></dd>
+    </dl>
+    <h2>&emsp;<em><ins>Exemplo</ins></em></h2>
+        <h3>_blank</h3>
+    <p>Você também pode acessar o meu canal gratúito no <a href="https://youtube.com/cursoemvideo/" target="_blank" rel="external">you tube</a></p>
+        <h3>_self</h3>
+    <p>Você também pode acessar o meu canal gratúito no <a href="https://youtube.com/cursoemvideo/" target="_self" rel="external">you tube</a></p>
+        <h3>_top</h3>
+    <p>Você também pode acessar o meu canal gratúito no <a href="https://youtube.com/cursoemvideo/" target="_top" rel="external">you tube</a></p>
+    <h3>_parent</h3>
+    <p>Você também pode acessar o meu canal gratúito no <a href="https://youtube.com/cursoemvideo/" target="_parent" rel="external">you tube</a></p>
+
+        <blockquote><em><ins>Observação</ins></em>:  <q>Porém o uso de frames é uma técnica  quase em desuso, vamos nos basear apenas nas duas primeiras opções _blank e _self.</q></blockquote>
+        <h2>Propriedade <em>rel</em></h2>
+        <p>Existe um recurso bem interessante para links que é a natureza do destino usando o atributo <em>rel</em>. Esse atributo aceita vários valores. Veja:</p>
+        <dl>
+            <dt>next</dt>
+            <dd><em>Indica que o link é para a próxima parte do documento atual.</em></dd>
+            <dt>prev</dt>
+            <dd><em>Indica que o link é para a parte anterior do documento atual.</em></dd>
+            <dt>author</dt>
+            <dd><em>Indica que é um link para i site do autor do artigo atual.</em></dd>
+            <dt>external</dt>
+            <dd><em>Indica que é um link para outro site que não faz parte do site atual.</em></dd>
+            <dt>nofollow</dt>
+            <dd><em>Indica que é um link para uma site não endossado, como um link pago.</em></dd>
+        </dl>
+        <h2>Link interno</h2>
+    <p>&emsp;Essa é a primeira página do site. Se você quiser, pode acessar também a <a href="pag002.html" rel="next">minha segunda página.</a></p>
+    <p>Você também pode acessar nosso <a href="notícias/pag003.html">página de notícias!</a></p>
+    <h2>Links para downloads</h2>
+    <p>Outra coisa que aparece bastante em sites são os links para efetuar downloads de algum material em PDF, ou de um arquivo ZIP qualquer. A partir da versão HTML5, as âncoras receberam atributos especiais para isso. Basta fazer o link diretamente para o arquivo que se deseja efetuar o download adicionar o atributo download com o valor configurado para o nome do arquivo a ser baixado e o atributo <em>type</em> para indicar ao navegador que tipo de arquivo está sendo baixado. vamos ver um exemplo:</p>
+    <pre>
+        <code>
+            &lt;a href="arquivos/meulivro.pdf" download="meulivro.pdf" type="application/pdf"&gt;
+                Baixe aqui o PDF do meu livro
+                &lt;/a&gt;
+        </code>
+    </pre>
+    <p>Aqui não alguns media types bem usados no nosso dia-a-dia:</p>
+   <ul>
+    <li>application/zip</li>
+    <li>text/html</li>
+    <li>text/css</li>
+    <li>text/javascript</li>
+    <li>video/mp4</li>
+   </ul>
+   
+
+</body>
+</html>

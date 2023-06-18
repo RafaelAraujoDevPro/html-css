@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tags de HTML</title>
+    <link rel="shortcut icon" href="Graphics-Vibe-Developer-Html-5.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../estilos.css">
+</head>
+<body>
+
+    <header>
+        <h1>&lt;Tags de importância Semântica HTML&gt;</h1>
+        <img src="Graphics-Vibe-Developer-Html-5.ico" alt="html5">
+    </header>
+
+    <main>
+        <section class="centralizado">
+            <article>
+                <h2>Tag <mark>&lt;table&gt;</mark></h2>
+                <h4>O que é uma tabela HTML?</h4>
+                <p>Uma tabela é uma representação de dados organizados em linhas e colunas. Realmente, é mais como uma planilha. Em HTML, com a ajuda de tabelas, podemos organizar dados como imagens, texto, links e assim por diante em linhas e colunas de células.</p>
+                <p>Para criar uma tabela em HTML vamos precisar da tag &lt;<dfn>table</dfn>&gt; que funcionará como um container principal da tabela para agrupar os elementos filho dela.</p>
+                <p>As tags filhas de <mark>&lt;table&gt;</mark></p> aparecem a seguir:</p>
+                <ul>
+                    <li>&lt;<dfn>tr</dfn>&gt;&rarr; representa linhas.</li>
+                    <li>&lt;<dfn>td</dfn>&gt;&rarr; usado para criar células de dados.</li>
+                    <li>&lt;<dfn>th</dfn>&gt;&rarr; usado para adinionar títulos de tabela</li>
+                    <li>&lt;<dfn>caption</dfn>&gt;&rarr; usado para inserir legendas.</li>
+                    <li>&lt;<dfn>thead</dfn>&gt;&rarr; adiciona cabeçalho separado à tabela.</li>
+                    <li>&lt;<dfn>tbody</dfn>&gt;&rarr; mostra o corpo principal da tabela.</li>
+                    <li>&lt;<dfn>tfoot</dfn>&gt;&rarr; cria um rodapé separado para a tabela.</li>
+                </ul>
+
+                    <h3>Exemplo</h3>
+                    <p>Veja a sintáxe de tabela HTML</p>
+                    <span class="tabe"></span>
+                <pre class="exemplos">
+                    <code>
+                        &lt;table&gt;
+                         <span>&lt;tr&gt;</span>
+                            <span class="tabe">&lt;td&gt;</span>cell 1&lt;/td&gt;
+                            <span class="tabe">&lt;td&gt;</span>cell 2&lt;/td&gt;
+                            <span class="tabe">&lt;td&gt;</span>cell 3&lt;/td&gt;
+                         <span>&lt;/tr&gt;</span>
+                         <span>&lt;tr&gt;</span>
+                            <span class="tabe">&lt;td&gt;</span>cell 4&lt;/td&gt;
+                            <span class="tabe">&lt;td&gt;</span>cell 5&lt;/td&gt;
+                            <span class="tabe">&lt;td&gt;</span>cell 6&lt;/td&gt;
+                         <span>&lt;/tr&gt;</span>
+                        &lt;/table&gt;
+                    </code>
+                </pre>
+                <p>Corresponde assim:</p>
+                <table>
+                    <tr>
+                        <td>cell 1</td>
+                        <td>cell 2</td>
+                        <td>cell 3</td>
+                    </tr>
+                    <tr>
+                        <td>cell 4</td>
+                        <td>cell 5</td>
+                        <td>cell 6</td>
+                    </tr>
+                </table>
+
+                <h4>Como adicionar um título de tabela HTML</h4>
+                <p>O &lt;<dfn>th</dfn>&gt; é usado para adicionar títulos ás tabelas. Em designs básicos, o cabeçalho da tabela sempre ficará na linha superior, o que significa que teremos o <mark>&lt;th&gt;</mark> declarando em nossa primeira linha da tabela seguido pelos dados reais na tabela.</p>
+                <h3>Exemplo</h3>
+
+                <pre class="exemplos">
+                    <code>
+                        &lt;table&gt;
+                            <span>&lt;tr&gt;</span>
+                                <span class="tabe">&lt;th&gt;</span>First Name&lt;/th&gt;
+                                <span class="tabe">&lt;th&gt;</span>Last Name&lt;/th&gt;
+                                <span class="tabe">&lt;th&gt;</span>Email Address&lt;/th&gt;
+                            <span>&lt;/tr&gt;</span>
+                            <span>&lt;tr&gt;</span>
+                                <span class="tabe">&lt;td&gt;</span>Rafael&lt;/td&gt;
+                                <span class="tabe">&lt;td&gt;</span>>Araújo&lt;/td&gt;
+                                <span class="tabe">&lt;td&gt;</span>table@gmail.com&lt;/td&gt;
+                            <span>&lt;/tr&gt;</span>
+                            <span>&lt;tr&gt;</span>
+                                <span class="tabe">&lt;td&gt;</span>Fulano&lt;/td&gt;
+                                <span class="tabe">&lt;td&gt;</span>Beltrano&lt;/td&gt;
+                                <span class="tabe">&lt;td&gt;</span>developer@gmail.com&lt;/td&gt;
+                            <span>&lt;/tr&gt;</span>
+                        &lt;/table&gt;
+                    </code>
+                </pre>
+
+                <table>
+                    <tr>
+                        <th>Name</th>
+                        <th>Last Name</th>
+                        <th>Email Address</th>
+                    </tr>
+                    <tr>
+                        <td>Rafael</td>
+                        <td>Araújo</td>
+                        <td>table@gmail.com</td>
+                    </tr>
+                    <tr>
+                        <td>Fulano</td>
+                        <td>Beltrano</td>
+                        <td>developer@gmail.com</td>
+                    </tr>
+                </table>
+
+
+                    <blockquote>A partir do exemplo acima, podemos dizer qual coluna contém quais informações. Isso é possível com o uso de <mark>&lt;th&gt;</mark></blockquote>
+
+
+                <h4>Adicionar legenda em tabelas</h4>
+                <p>O principal uso de adicionar uma legenda à tabela é fornecer uma descrição sobre os dados representados na tabela. A legenda pode ser colocada na parte superior ou inferior e, por padrão, estará sempre centralizada. A tag <dfn>&lt;caption&gt;</dfn> é usada para inserir legendas em tabelas. </p>
+                <p>Veja um exemplo da Sintaxe de <mark>&lt;caption&gt;</mark></p>
+                <pre class="exemplos">
+                    <code>
+                        &lt;table&gt;
+                        <span>&lt;caption&gt;&lt;/caption&gt;</span>
+                        <span>&lt;tr&gt;&lt;/tr&gt;</span>
+                        &lt;/table&gt;
+                    </code>
+                </pre>
+
+                <h3>Exemplo</h3>
+                <pre class="exemplos">
+                    <code>
+                        &lt;table&gt;
+                            <span>&lt;caption&gt;</span>Free coding resources&lt;caption&gt;
+                            <span>&lt;tr&gt;</span>
+                                <span class="tabe">&lt;th&gt;Sites&lt;/th&gt;</span>
+                                <span class="tabe">&lt;th&gt;Youtube Channels&lt;/th&gt;</span>
+                                <span class="tabe">&lt;th&gt;Mobile Appss&lt;/th&gt;</span>
+                            <span>&lt;/tr&gt;</span>
+                            <span>&lt;tr&gt;</span>
+                                <span class="tabe">&lt;td&gt;Freecode Camp&lt;/td&gt;</span>
+                                <span class="tabe">&lt;td&gt;Freecode Camp&lt;/td&gt;</span>
+                                <span class="tabe">&lt;td&gt;Enki&lt;/td&gt;</span>
+                            <span>&lt;/tr&gt;</span>
+                            <span>&lt;tr&gt;</span>
+                                <span class="tabe">&lt;td&gt;W3Schools&lt;/td&gt;</span>
+                                <span class="tabe">&lt;td&gt;Academind&lt;/td&gt;</span>
+                                <span class="tabe">&lt;td&gt;Programming Hero&lt;/td&gt;</span>
+                            <span>&lt;/tr&gt;</span>
+                            <span>&lt;tr&gt;</span>
+                                <span class="tabe">&lt;td&gt;Khan Academy&lt;/td&gt;</span>
+                                <span class="tabe">&lt;td&gt;The Coding&lt;/td&gt;</span>
+                                <span class="tabe">&lt;td&gt;Solo Learn&lt;/td&gt;</span>
+                            <span>&lt;/tr&gt;</span>
+                            &lt;/table&gt;
+                    </code>
+                </pre>
+
+                <table>
+                    <caption>Free Coding Resources</caption>
+                    <tr>
+                        <th>Sites</th>
+                        <th>Youtube Channels</th>
+                        <th>Mobile Apps</th>
+                    </tr>
+                    <tr>
+                        <td>Freecode Camp</td>
+                        <td>Freecode Camp</td>
+                        <td>Enki</td>
+                    </tr>
+                    <tr>
+                        <td>W3Schools</td>
+                        <td>Academind</td>
+                        <td>Programming</td>
+                    </tr>
+                    <tr>
+                        <td>Khan Academy</td>
+                        <td>The coding Train</td>
+                        <td>Solo Learn</td>
+                    </tr>
+                </table>
+
+                <h4>Atributo <mark>scope</mark> em tabelas HTML</h4>
+                <P>O atributo <dfn>scope</dfn> é usado para definir se um título específico é destinado à uma coluna, linha ou grupo de ambos. O objetivo principal de <mark>scope</mark> é mostrar os dados de destino para que o usuário não precise confiar em suposições.</P>
+                <p>O atributo é declarado na célula de título e assim a tag <mark>&lt;th&gt;</mark> recebe valores <mark>col</mark>, <mark>row</mark>, <mark>colgroup</mark> e <mark>rowgroup</mark>. Os valores <dfn>col</dfn> e <dfn>row</dfn> indicaram que a célula de título está fornecendo informações para as linhas ou colunas, respectamente.</p>
+                <p>Veja um exemplo de sintaxe da propriedade <mark>scope</mark>.</p>
+
+                <pre class="exemplos">
+                    <code>
+                        &lt;table&gt;
+                        <span>&lt;tr&gt;</span>
+                        <span class="tabe">&lt;th scope="value"&gt;&lt;/th&gt;</span>
+                        <span>&lt;/tr&gt;</span>
+                        &lt;/table&gt;
+                    </code>
+                </pre>
+
+                <h3>Exemplo:</h3>
+                <pre class="exemplos">
+                    <code>
+                        &lt;table&gt;
+                            <span>&lt;tr&gt;</span>
+                                <span class="tabe">&lt;th&gt;&lt;/th&gt;</span>
+                                <span class="tabe">&lt;th scope="col"&gt;Semester&lt;/th&gt;</span>
+                                <span class="tabe">&lt;th scope="col"&gt;Grade&lt;/th&gt;</span>
+                            <span>&lt;/tr&gt;</span>
+                            <span>&lt;tr&gt;</span>
+                                <span class="tabe">&lt;td&gt;1&lt;/td&gt;</span>
+                                <span class="tabe">&lt;td&gt;Jan - April&lt;/td&gt;</span>
+                                <span class="tabe">&lt;td&gt;Credit&lt;/td&gt;</span>
+                            <span>&lt;/tr&gt;</span>
+                            <span>&lt;tr&gt;</span>
+                                <span class="tabe">&lt;td&gt;2&lt;/td&gt;</span>
+                                <span class="tabe">&lt;td&gt;May - August&lt;/td&gt;</span>
+                                <span class="tabe">&lt;td&gt;Pass&lt;/td&gt;</span>
+                            <span>&lt;/tr&gt;</span>
+                            <span>&lt;tr&gt;</span>
+                                <span class="tabe">&lt;td&gt;2&lt;/td&gt;</span>
+                                <span class="tabe">&lt;td&gt;September - December&lt;/td&gt;</span>
+                                <span class="tabe">&lt;td&gt;Distinction&lt;/td&gt;</span>
+                            <span>&lt;/tr&gt;</span>
+                            &lt;/table&gt;
+                    </code>
+                </pre>
+
+                <table>
+                    <tr>
+                        <th></th>
+                        <th scope="col">Semester</th>
+                        <th scope="col">Grade</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Jan - April</td>
+                        <td>Credit</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>May - August</td>
+                        <td>Pass</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>September - December</td>
+                        <td>Distinction</td>
+                    </tr>
+                </table>
+
+            <blockquote>O que o atributo <mark>scope</mark> faz é mostrar se uma célula de cabeçalho pertence à coluna, à linha ou a um grupo de ambas. Neste caso, os cabeçalhos pertencem à coluna porque é o que definimos no código.</article>
+
+                <h4>Divisão de células em tabelas HTML</h4>
+                <p>Quando uma tabela esta estendida sobre duas ou mais linhas ou colunas chamamos isso de extensão celular. Para isso usamos dois atributos na célula: <mark>colspan</mark> para expansão horizontal e <mark>rowspan</mark> para expansão vertical. Para os dois atributos inserimos o número maior que zero, que são a quantidade de células que queremos abranger.</p>
+
+                <h3>Exemplo</h3>
+                <pre class="exemplos">
+                    <code>
+                        &lt;table&gt;
+                            <span>&lt;tr&gt;</span>
+                                <span class="tabe">&lt;th&gt;Name&lt;/th&gt;</span>
+                                <span class="tabe">&lt;th&gt;Subject&lt;/th&gt;</span>
+                                <span class="tabe">&lt;th&gt;Marks&lt;/th&gt;</span>
+                            <span>&lt;/tr&gt;</span>
+                            <span>&lt;tr&gt;</span>
+                                <span class="tabe">&lt;td rowspan="2"&gt;Hillary&lt;/td&gt;</span>
+                                <span class="tabe">&lt;td&gt;advanced Web&lt;/td&gt;</span>
+                                <span class="tabe">&lt;td&gt;75&lt;/td&gt;</span>
+                            <span>&lt;/tr&gt;</span>
+                            <span>&lt;tr&gt;</span>
+                                <span class="tabe">&lt;td&gt;Operating Syatem&lt;/td&gt;</span>
+                                <span class="tabe">&lt;td&gt;60&lt;/td&gt;</span>
+                            <span>&lt;/tr&gt;</span>
+                            <span>&lt;tr&gt;</span>
+                                <span class="tabe">&lt;td rowspan="2"&gt;Lary&lt;/td&gt;</span>
+                                <span class="tabe">&lt;td&gt;Advanced&lt;/td&gt;</span>
+                                <span class="tabe">&lt;td&gt;80&lt;/td&gt;</span>
+                            <span>&lt;/tr&gt;</span>
+                            <span>&lt;tr&gt;</span>
+                                <span class="tabe">&lt;td&gt;Operating Syatem&lt;/td&gt;</span>
+                                <span class="tabe">&lt;td&gt;75&lt;/td&gt;</span>
+                            <span>&lt;/tr&gt;</span>
+                            <span>&lt;tr&gt;</span>
+                                <span class="tabe">&lt;td&gt;&lt;/td&gt;</span>
+                                <span class="tabe">&lt;td rowspan="3"&gt;Total Average: 72.5&lt;/td&gt;</span>
+                            <span>&lt;/tr&gt;</span>
+                        &lt;/table&gt;
+                    </code>
+                    <table>
+                        <tr>
+                            <th>Name</th>
+                            <th>Subject</th>
+                            <th>Marks</th>
+                        </tr>
+                        <tr>
+                            <td rowspan="2">Hillary</td>
+                            <td>Advnaced</td>
+                            <td>75</td>
+                        </tr>
+                        <tr>
+                            <td>Operatin Syatem</td>
+                            <td>60</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2">Lary</td>
+                            <td>Advanced</td>
+                            <td>80</td>
+                        </tr>
+                        <tr>
+                            <td>Operating Syatem</td>
+                            <td>75</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td colspan="3">Total Average</td>
+                        </tr>
+                    </table>
+                </pre>
+
+            <blockquote>No exemplo acima, temos uma célula que abrange 2 células nas linhas, e 3 células na coluna, conforme indincado. E ao usar os atributos <mark>colspan</mark> e <mark>rowspan</mark>, devemos declarar valores corretamente para evitar a sobrepodição de células.</blockquote>
+
+            <h4>Cabeçalho, corpo e rodapé em tabelas HTML</h4>
+            <P>Assim como em um site ou qualquer outo documento tem três seções principais: o cabeçalho, o corpo e o rodapé. Também acontece o mesmo com tabela HTML. para indentificar essas seões usamos as tags <mark>&lt;thead&gt;</mark>, <mark>&lt;tbody&gt;</mark> e <mark>&lt;tfoot&gt;</mark></P>
+            <ul>
+                <li><dfn>&lt;thead&gt;</dfn> &rarr; fornece um cabeçalho separado da tabela.
+                <li><dfn>&lt;tbody&gt;</dfn> &rarr; contém o conteúdo principal da tabela.</li>
+                <li><dfn>&lt;tfoot&gt;</dfn> &rarr; cria um rodapé separado para a tabela.</li>
+            </ul>
+            <p>Vamos ver um exemplo com o uso de <mark>&lt;thead&gt;</mark>, <mark>&lt;tbody&gt;</mark> e <mark>&lt;tfoot&gt;</mark></p>
+            <h3>Exemplo:</h3>
+            <pre class="exemplos">
+                <code>
+                    &lt;table&gt;
+                        <span>&lt;thead&gt;</span>
+                            <span class="tabe">&lt;tr&gt;</span>
+                                <span class="tabe1">&lt;th colspan="2"&gt;October&lt;/th&gt;</span>
+                                <span class="tabe1">&lt;th colspan="2"&gt;Nobember&lt;/th&gt;</span>
+                            <span class="tabe">&lt;/tr&gt;</span>
+                        <span>&lt;/thead&gt;</span>
+                        <span>&lt;tbody&gt;</span>
+                            <span class="tabe">&lt;tr&gt;</span>
+                                <span class="tabe1">&lt;td&gt;Sales&lt;/td&gt;</span>
+                                <span class="tabe1">&lt;td&gt;Profit&lt;/td&gt;</span>
+                                <span class="tabe1">&lt;td&gt;Sales&lt;/td&gt;</span>
+                                <span class="tabe1">&lt;td&gt;Profit&lt;/td&gt;</span>
+                            <span class="tabe">&lt;/tr&gt;</span>
+                            <span class="tabe">&lt;tr&gt;</span>
+                                <span class="tabe1">&lt;td&gt;200,00&lt;/td&gt;</span>
+                                <span class="tabe1">&lt;td&gt;50,00&lt;/td&gt;</span>
+                                <span class="tabe1">&lt;td&gt;300,00&lt;/td&gt;</span>
+                                <span class="tabe1">&lt;td&gt;70,00&lt;/td&gt;</span>
+                            <span class="tabe">&lt;/tr&gt;</span>
+                        <span>&lt;/tbody&gt;</span>
+                            <span class="tabe">&lt;tr&gt;</span>
+                                <span class="tabe1">&lt;th colspan="4"&gt;November was more produstive&lt;/th&gt;</span>
+                            <span class="tabe">&lt;/tr&gt;</span>
+                        &lt;/tfoot&gt;
+                    &lt;/table&gt;
+                </code>
+            </pre>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="2">October</th>
+                        <th colspan="2">November</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Sales</td>
+                        <td>Profit</td>
+                        <td>Sales</td>
+                        <td>Profit</td>
+                    </tr>
+                    <tr>
+                        <td>200,00</td>
+                        <td>50,00</td>
+                        <td>300,00</td>
+                        <td>70,00</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th colspan="4">November was more produstive</th>
+                    </tr>
+                </tfoot>
+            </table>
+
+            <blockquote>
+                No exemplo acima, o cabeçalho é representado pelo nome dos meses, a parte dos números de vendas e lucro representa o corpo da tabela e, por fim, a parte com o comando representa o rodapé da tabela.
+            </blockquote>
+
+            <h4>Minha tabela estizada com css</h4>
+
+            <table>
+                <caption>tabela dos elementos para criar tabela em <abbr title="Hyper Text Markup Language">HTML</abbr></caption>
+                <thead>
+                    <tr>
+                        <th class="thead">Elmento</th>
+                        <th class="thead">Descrição</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th colspan="2">os elementos da tabela HTML</th>
+                    </tr>
+                    <tr>
+                        <td>&lt;<dfn>table</dfn>&gt;</td>
+                        <td>Container principal da tabela</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;<dfn>tr</dfn>&gt;</td>
+                        <td>Representa as linhas da tabela</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;<dfn>td</dfn>&gt;</td>
+                        <td>Representa as células de dados da tabela</td>
+                    </tr>
+                    <tr>
+                        <th colspan="2">Cabeçalho de tabela HTML</th>
+                    </tr>
+                    <tr>
+                        <td>&lt;<dfn>th</dfn>&gt;</td>
+                        <td>Indica os títulos para a tabela</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;<dfn>thead</dfn>&gt;</td>
+                        <td>Cria um cabeçalho separado para a tabela</td>
+                    </tr>
+                    <tr>
+                        <th colspan="2">Outros atributos</th>
+                    </tr>
+                    <tr>
+                        <td><dfn>scope</dfn></td>
+                        <td>Define se um título específico representará uma coluna, linha ou grupo de ambos.</td>
+                    </tr>
+                    <tr>
+                        <td><dfn>caption</dfn></td>
+                        <td>Insere uma legenda na parte superior ou inferior da tabela </td>
+                    </tr>
+                    <tr>
+                        <td><dfn>colspan & <br> rowspan</dfn></td>
+                        <td>Estende uma célula sobre uma linha horizontal (<mark>colspan</mark>) ou uma coluna vertical (<mark>rowspan</mark>) </td>
+                    </tr>
+                    <tr>
+                        <td>&lt;<dfn>tbody</dfn>&gt;</td>
+                        <td>Indinca o conteúdo principal da tabela.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;<dfn>tfoot</dfn>&gt;</td>
+                        <td>Cria um rodapé para a tabela.</td>
+                    </tr>
+                    <tfoot>
+                        <tr>
+                            <td colspan="2">Estudo sobre tabelas HTML baseado no artigo <a href="https://www.freecodecamp.org/news/html-tables-table-tutorial-with-css-example-code/" target="_blank" rel="external">Tabelas HTML</a></td>
+                        </tr>
+                    </tfoot>
+
+                </tbody>
+            </table>
+
+    </main>
+
+</body>
+</html>

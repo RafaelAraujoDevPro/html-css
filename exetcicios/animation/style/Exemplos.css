@@ -1,0 +1,95 @@
+.degrade {
+    animation: gradiente 14s ease infinite alternate;
+    width: 30rem;
+    height: 30rem;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab) no-repeat;
+    background-size: 200% 200%;
+    border: 3px solid #aaa;
+    
+}
+@keyframes gradiente {
+    from {
+        background-position: 0 50%;
+    }
+    to {
+        background-position: 100% 50%;
+    }
+}
+.flexa {
+    width: 20rem;
+    height: 20rem;
+    border: 3px solid #b11;
+}
+.flexa img {
+    animation: setaBaixo 1s cubic-bezier(0.38, 0.21, 0.34, 1.04) infinite alternate;
+}
+@keyframes setaBaixo {
+to {
+    transform: translateY(1rem);
+}
+}
+.flexa span {
+    display: block;
+    
+}
+.digitacao {
+    width: 20rem;
+    height: 20rem;
+    border: 3px solid #b11;
+    
+}
+.digitacao h2{
+    position: relative;
+    overflow: hidden;
+     animation: titulo 1ms 0.5s forwards;
+    opacity: 0;
+
+}
+
+.digitacao h2::after {
+    animation: efeito 2s ease  forwards;
+    content:'';
+    background-color: #b11;
+    display: block;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+@keyframes efeito {
+    from {
+        transform: translateX(-101%);
+    }
+    to {
+        transform: translateX(101%);
+    }
+}
+@keyframes titulo {
+    to {
+        opacity: 1;
+    }
+}
+.maqEscrever {
+    width: 25rem;
+    height: 10rem;
+    border: 3px solid #b11;
+
+}
+.maqEscrever h2 {
+    border-right: 4px solid #000;
+    width: 23ch;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: texto 2s steps(23), efeitoMaquina 0.5s infinite step-end alternate;
+}
+@keyframes texto {
+    0% {
+        width: 0;
+    }
+}
+@keyframes efeitoMaquina {
+    50% {
+        border-color: transparent; 
+    }
+}

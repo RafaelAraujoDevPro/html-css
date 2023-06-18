@@ -1,0 +1,82 @@
+@charset "UTF-8";
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: 'conterStrike';
+    src: url('/componets/cs_regular.ttf') format('truetype');
+}
+
+:root {
+    --destaque: 'conterStrike';
+}
+
+
+body {
+    display:flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    flex-direction: column;
+    height: 300vh;
+}
+.container {
+    width: 38rem;
+    padding: 2rem;
+    background-color:azure;
+}
+.container h2 {
+    margin: 1.5em 0;
+}
+/* Estilo da primeira linha do elemento paragráfo */
+.firstLine::first-line {
+    font-family: var(--destaque);
+    font-weight: 700;
+    color: rebeccapurple;
+    font-size: 1.5em;
+    
+}
+
+/* Estilo da primeira letra do paragráfo */
+.firstLetter::first-letter {
+    font-family: var(--destaque);
+    font-size: 3em;
+    font-weight: 700;
+    color: rebeccapurple;
+    text-shadow: 3px 3px 6px gray;
+}
+.selection::selection {
+    background-color: brown;
+    color: azure;
+}
+ul.marker li::marker {
+    content:'-';
+    color: blue;
+    font-family: 'conterStrike';
+    letter-spacing: 1em;
+    
+}.plaxeholder::placeholder {
+    font-family: var(--destaque);
+    letter-spacing: 3px;
+    color:rgb(112, 5, 5);
+}
+.before::before {
+    content: url('./componets/check_box_FILL0_wght400_GRAD0_opsz48.svg');
+    
+   
+}
+.after::after {
+    content: "";
+    display: block;
+    width: 200px;
+    height: 5px;
+    background-color:rgb(112, 5, 5);
+    box-shadow: 0px 3px 6px gray;
+    margin: 10px 0;
+    color: green;
+    font-weight: bold;
+    font-family: var(--destaque);
+}   
+

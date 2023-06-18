@@ -1,0 +1,120 @@
+@charset "UTF-8";
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding:0px;
+}
+body {
+    display: grid;
+}
+.l_header__ex {
+    display: grid;
+    grid-template-columns: minmax(150px, 1fr) 4fr minmax(300px, 2fr);
+    grid-template-rows: 300px;
+    align-items: center;
+    background-image: url('/index-html/imagens/estudo-css-background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 90vh;
+}
+.l_header__ex > h1 {
+    
+    width: 100%;
+    color: #fff;
+    text-align: center;
+   
+
+    /* font-size: min() --> flexiona o tamanho  da font entre o valor fixo com "px" até a porcentagem "view-width" do menor tamanho de tela possível. Depois do valor em "px" a font para de crescer. */
+    font-size: min(5.5vw, 50px); 
+
+    /* font-size: max() --> flexiona o tamanho da font apartir do valor fixo em "px" para a porcentagem "view-widtn" do maior tamanho possível da tela. Quando atinge o valor em "px" a font para de diminuir. */
+    font-size: max(30px, 5vw);
+}
+
+.l_imagem__ex figure {
+   display: grid;
+}
+.l_imagem__ex > h3 {
+    width: 100%;
+    font-size: min(3vw, 17px);
+    text-align: center;
+}
+.l_imagem__ex > img {
+    height: 20vh;
+    width: 100%;
+    object-fit: contain;
+}
+.l_botoes_ex {
+    /* display: grid; */
+    align-self: flex-end;
+    justify-self: center;
+    font-size: 19px;
+    
+}
+.l_botoes_ex a {
+    margin-left: 20px;
+}
+@media (max-width: 800px) {
+.l_header__ex {
+    display: grid;
+    grid-template-columns: minmax(150px, 1fr) 3fr;
+    grid-template-rows: 260px 40px;
+
+}
+.l_botoes_ex {
+    grid-column: 2;
+    align-self: center;
+    justify-self: flex-end;
+}
+}
+/* Main: Grid Layout */
+
+.l_container__main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 350px;
+    grid-auto-rows: 200px;
+    grid-gap: .7vh 2vw;
+    justify-self: center;
+    max-width: 1000px;
+    margin: 10px;
+}
+.l_noticia__grid {
+    background-color: rgba(255, 0, 0, 0.605);
+    display: grid;
+    width: 100%;
+    height: 100%;
+}
+.l_noticia__grid img {  
+    width:100%;
+    height: 100%;
+    object-fit: cover;
+}
+ .l_noticia__grid:nth-child(n+4) {
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 0px 5px;
+    align-items: center;
+}  
+.l_noticia__grid:nth-child(7) {
+    grid-template-columns: 1fr;
+    grid-column: 1;
+    grid-row: 2/5;
+    text-align: center;
+}
+ @media (max-width: 950px) {
+    .l_container__main {
+        grid-template-rows: 4fr 3fr 3fr;
+        grid-auto-rows: 3fr;
+    }
+    .l_noticia__grid:nth-child(7) {
+        grid-row: 2/4;
+    } 
+} 
+@media (max-width: 600px) {
+    .l_container__main {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 3fr repeat(4, 2fr);
+        grid-auto-rows: 2fr;
+
+    }
+}

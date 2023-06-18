@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo-Classes</title>
+    <link rel="shortcut icon" href="favicon (3).ico" type="image/x-icon">
+    <link rel="stylesheet" href="pseudo-class.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+    
+
+</head>
+<body onresize="bigLayout()">
+    <header class="cabecalho">
+        <figure class="logo">
+            <span>Estudos de CSS3</span>
+            <img src="/img/logo-css3-150px.png" alt="Logo do css ">
+        </figure>
+        <figure class="banner">
+            <img src="/img/banner-azul-gradiente.svg" alt="Imagem de banner ">
+        </figure>
+        <figure class="ilustracao">
+            <img src="/img/img_man-development_blue.svg" alt="Imagem de banner ">
+        </figure>
+        <section class="conceito">
+            <h1>Pseudo-Classes</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed saepe eum consequuntur dicta velit possimus amet eveniet. Quo facilis illo possimus voluptas voluptatem eligendi at, cupiditate odit, dolor dolores illum.</p>
+        </section>
+    </header>
+    <div id="iconMenu" class="flexContainer">
+        <div id="styleIcon" class=" border">
+            <span class="material-symbols-outlined" onclick="clickMenu()">menu</span>
+        </div>
+    </div>
+    <nav id="menu" class="navList flexContainer">
+        <ul class="flexContainer">
+            <li class="navItems border"><a href="#" class="navLink">Home</a></li>
+            <li class="navItems border"><a href="#" class="navLink">Contato</a></li>
+            <li class="navItems border"><a href="#" class="navLink">Sobre</a></li>
+            <li class="navItems border"><a href="#" class="navLink">Projetos</a></li>
+            <li class="navItems border"><a href="#" class="navLink">Mais CSS</a></li>
+        </ul>
+    </nav>
+    <main class="container-main">
+        <section class="container-article">
+            <h2>Pseudo-Classes</h2>
+            <p>Uma <dfn>pseudo-classe</dfn> de CSS é uma palavra-chave especificada selecionada para um elemento especial selecionado. Por exemplo, <mark>:hover</mark> pode ser usado para alterar um botão quado o usuário passar o cursor sobre ele.</p>
+            <h4>Sintaxe</h4>
+            <pre>
+                <code>
+                    seletor:pseudo-classe {
+                        propriedade: valor;
+                    }
+                </code>
+            </pre>
+            <p>As pseudo-classes permitem que você não aplique um estilo a um elemento em relação ao conteúdo da árvore do documento, mas também em relação aos fatores externos como o histórico de navegação (<mark>:visited</mark> por exemplo), o status do conteúdo (como <mark>:checked</mark> em certos elementos de um formulário), ou à posição do mouse (como <mark>:houver</mark>, que permite saber se o mouse está sobre um elemento ou não).</p>
+            <p>Podemos usar as pseudo-classes para aplicar estilos à um determinado elemento, assim como qualquer seletor, porérm possuem uma diferença signidicativa com relação aos demais seletores que é a seleção de um elemento HTML de acordo com o seu estado, ou então à seleção de uma parte específica de um elemento HTML ao invés dele como um todo.</p>
+            <p>Geralmente uma pseudo-classe está associada à algum seletor definido, através de seletores de tag, id, class e atributo. A pseudo-classe inicia com :(dois pontos) sem (espaço), logo após o seletor, e em seguida o nome da dela.</p>
+            <h4>Exemplo</h4>
+            <pre>
+                <code>
+                    button:hover {
+                        color: blue;
+                    }
+                    #lista:ferst-child {
+                        font-style: italic;
+                    }
+                    .btnActive:active {
+                    }
+                    input[type = text]:focus {
+                        /*formatação*/
+                    }
+                </code>
+            </pre>
+        </section>
+
+        <div class="aviso">
+            <p>As pseudo-classe mais usudas normalmente serão listadas a seguir:</p>
+        </div>
+
+        <section class="container-article">
+            <h2>Estados</h2>
+            <p>Um estado da pseudo-classe acontece quando o usuário desencadeia uma ação. Uma "ação" em CSS pode ser também um "não ação" como no casode um link que ainda não tenha sido visitado.</p>
+            <article>
+                <h3>:link</h3>
+                <p>A pseudoclasse <dfn>:link</dfn> é usada para estilizar elementos ancorados por links, que ainda não foram viditados. É recomendado que ela seja a primeira a ser declarada entre todas as pseudo-classes destinadas à estilizar os estados de links. A ordem de declaração dos quatro estados é: <mark>:link</mark>, <mark>:visited</mark>, <mark>:houver</mark>, <mark>:active</mark></p>
+            </article>
+            <article>
+                <h3>:visited</h3>
+                <p>A pseudo-classe <dfn>:visited</dfn> é usada para estilizar links visitados deve ser a segunda a ser declarada (depois de  <mark>:link</mark>)</p>
+            </article>
+            <article>
+                <h3>:houver</h3>
+                <p><dfn>:houver</dfn> é usada para estilizar elementos para que quando o usuário passe o cursor sobre ele mude o estado do estilo deste elemento para o estilo definido na pseudo-classe.</p>
+            </article>
+            <article>
+                <h3>:active</h3>
+                <p>A pseudo-classe <dfn>:active</dfn> é usada para estilizar elementos para que quando o usuário torne este elemento "ativo" através de um click por exemplo, mude o estado de estilo dele para o estilo definido na pseudo-classe.</p>
+            </article>
+            <article>
+                <h3>:focus</h3>
+                <p><dfn>:focus</dfn> é parecida com <mark>:houver</mark>, porém é mais usada em caixa de formulário, para que quando, ela receba fóco através do cursor passando sobre, mude para o estilo definido na pseudo-classe.</p>
+            </article>
+        </section>
+
+        <section class="container-article">
+            <h2>Pseudo-classes estrururais</h2>
+            <p>Pseudo-Classes estruturais casam com porções da árvore do documento (ou DOM) que não podem ser casadas com uso de outros tipos de seletores ou elementos de combinações de seletores.</p>
+            <article>
+                <h3>:first-child</h3>
+                <p>A estilização de <dfn>:first-child</dfn> casará com o elemento do primeiro filho de seu elemento pai.</p>
+                <pre>
+                    <code>
+                        HTML
+                        &lt;ul&gt;
+                            &lt;li&gt;Este é o primeiro elemento&lt;/li&gt;
+                            &lt;li&gt;Este é o segundo elemento&lt;/li&gt;
+                            &lt;li&gt;Este é o último elemento&lt;/li&gt;
+                        &lt;/ul&gt;
+                    </code>
+                </pre>
+                
+                <pre>
+                    <code>
+                        CSS
+                        li:first-child {
+                            color: orange;
+                        }
+                    </code>
+                </pre>
+                <h4>Resultado</h4>
+                <div class="resultado_1 exemplo">
+                    <ul>
+                        <li>Este é o primeireo elemento</li>
+                        <li>Este é o segundo elemento</li>
+                        <li>Este é o último elemento</li>
+                    </ul>
+                </div>
+            </article>
+            <article>
+                <h3>:first-of-type</h3>
+                <p>A pseudo-classe <dfn>:first-of-type</dfn> casa com o primeiro elemento de um determinado tipo que seja filho de seu elemento pai;</p>
+                <h4>HTML</h4>
+                <pre>
+                    <code>
+                        HTML
+                        &lt;dl&gt;
+                            &emsp;  &lt;dt&gt;Este é o primeiro elemento&lt;/dt&gt;
+                            &emsp;  &lt;dd&gt;Este é o segundo elemento. &lt;span&gt;Tipo especifico&lt;/span&gt;&lt;/dd&gt;
+                            &emsp;  &lt;dd&gt;Este é o último elemento&lt;/dd&gt;
+                        &lt;/dl&gt;
+                    </code>
+                </pre>
+                <pre>
+                    <code>
+                        CSS
+                        ul:first-of-type {
+                           &emsp;   color: red;
+                        }
+                    </code>
+                </pre>
+                <h4>Resultado</h4>
+                <div class="resultado_2 exemplo">
+                    <dl>
+                        <dt>Este é o primeireo elemento</dt>
+                        <dd>Este é o segundo elemento, <span>o tipo específicado</span></dd>
+                        <dd>Este é o último elemento</dd>
+                    </dl>
+                </div>
+            </article>
+            <article>
+                <h3>:last-child</h3>
+                <p>A pseudo-classe <dfn>:last-child</dfn> casa com o último elemento de seu elemento pai. No exemplo a seguir o último <mark>li</mark> será estilizado através da pseudo-classe.</p>
+                <pre>
+                    <code>
+                        HTML
+                        &lt;ul&gt;
+                            &lt;li&gt;Este é o primeiro elemento&lt;/li&gt;
+                            &lt;li&gt;Este é o segundo elemento&lt;/li&gt;
+                            &lt;li&gt;Este é o último elemento&lt;/li&gt;
+                        &lt;/ul&gt;
+                    </code>
+                </pre>
+                <pre>
+                    <code>
+                        CSS
+                        li:last-child {
+                            color: red;
+                        }
+                    </code>
+                </pre>
+                <h4>Resultado</h4>
+                <div class="resultado_3 exemplo">
+                    <ul>
+                        <li>Este é o primeireo elemento</li>
+                        <li>Este é o segundo elemento</li>
+                        <li>Este é o último elemento</li>
+                    </ul>
+                </div>
+            </article>
+            <article>
+                <h3>:last-of-type</h3>
+                <p>A pseudo-classe <dfn>:last-of-type</dfn> casa com o último elemento de um determinado tipo que seja filho de seu elemento pai. No exemplo a seguir o último <mark>li</mark> com <mark>span</mark> será estilizado.</p>
+                <pre>
+                    <code>
+                        HTML
+                        &lt;dl&gt;
+                        &emsp;  &lt;dt&gt;Este é o primeiro elemento&lt;/dt&gt;
+                        &emsp;  &lt;dd&gt;Este é o segundo elemento. &lt;/dd&gt;
+                        &emsp;  &lt;dd&gt;Este é o último elemento, &lt;span&gt;Tipo especifico&lt;/span&gt;&lt;/dd&gt;
+                    &lt;/dl&gt;
+                    </code>
+                </pre>
+                <pre>
+                    <code>
+                        CSS
+                        li:last-of-type {
+                            color: darkgreen;
+                        }
+                    </code>
+                </pre>
+                <h4>Resultado</h4>
+                <div class="resultado_4 exemplo">
+                    <dl>
+                        <dt>Este é o primeireo elemento</dt>
+                        <dd>Este é o segundo elemento, <span>o tipo específicado</span></dd>
+                        <dd>Este é o último elemento</dd>
+                    </dl>
+                </div>
+            </article>
+            <article>
+                <h3>:not</h3>
+                <p>A pseudo-classe <dfn>:not</dfn> é também como pseudo-classe de negação. Ela aceita um argumento (basicamente um outro seletor) escrito entre sinais de parênteses. O argumento poderá ser, também, uma pseudo-classe encadeada porém não pode conter outro seletor <mark>:not</mark>.</p>
+                <p>No exemplo a seguir os elementos de <mark>li</mark> estarão estilizados através do seletor de tag <mark>ul</mark> exceto a <mark>li</mark> que receberá uma classe específica.</p>
+                <pre>
+                    <code>
+                        HTML
+                        &lt;ul&gt;
+                            &emsp;  &lt;li&gt;Este é o primeiro elemento&lt;/li&gt;
+                            &emsp;  &lt;li clas="destaque"&gt;Este é o segundo elemento, porem estará negado a estilização.&lt;/li&gt;
+                            &emsp;  &lt;li&gt;Este é o terceiro elemento&lt;/li&gt;
+                            &emsp;  &lt;li&gt;Este é o último elemento&lt;/li&gt;
+                        &lt;/ul&gt;
+                    </code>
+                </pre>
+                <pre>
+                    <code>
+                        CSS
+                        li:not(.destaque) {
+                            &emsp;  background-color: yellow;
+                            &emsp;  color: blue;
+                        }
+                    </code>
+                </pre>
+                <h4>Resultado</h4>
+                <div class="resultado_5 exemplo">
+                    <ul>
+                        <li>Este é o primeireo elemento</li>
+                        <li class="destaque">Este é o segundo elemento, porem estará negado a estilização.</li>
+                        <li>Este é o terceiro elemento</li>
+                        <li>Este é o último elemento</li>
+                    </ul>
+                </div>
+            </article>
+            <article>
+                <h3>:nht-child</h3>
+                <p>A pseudo-classe <dfn>nht-child</dfn> casa com um ou mais elementos dependendo da ordem em que eles aparecem na marcação HTML. Esta pseudo-classe é uma das mais versáteis e robustas da CSS. <mark>:nth</mark> adimite um argumento que consiste em uma fórmula a ser inserida entre parênteses. A fórmula poderá ser um simples número inteiro, algo do tipo <mark>an+b</mark> ou as palavras <mark>odd</mark> (impar) ou <mark>even</mark> (par).</p>
+                <p>A fórmula <mark>an+b</mark>:</p>
+                <ul>
+                    <li>a letra <em>a</em> é um número inteiro;</li>
+                    <li>a letra <em>n</em> é o literal <em>n</em> (ou seja, a própria letra <em>n</em>);</li>
+                    <li>o sinal <em>+</em> é o operador matemático que pode ser soma (+) ou subtração (-);</li>
+                    <li>a letra <em>b</em> é um número inteiro que deverá estar presente na fórmula somente se for usado o operador matemático.</li>
+                </ul>
+                <p>O exemplo a seguir mostrará um lista do alfabeto grego de acordo com a estrutura HTML.</p>
+                <pre>
+                    <code>
+                        HTML
+                        &lt;ul&gt;
+                            &lt;li&gt;Alfa&lt;/li&gt;
+                            &lt;li&gt;Beta&lt;/li&gt;
+                            &lt;li&gt;Gamma&lt;/li&gt;
+                            &lt;li&gt;Delta&lt;/li&gt;
+                            &lt;li&gt;Epdilon&lt;/li&gt;
+                            &lt;li&gt;Zeta&lt;/li&gt;
+                            &lt;li&gt;Eta&lt;/li&gt;
+                            &lt;li&gt;Theta&lt;/li&gt;
+                            &lt;li&gt;Iota&lt;/li&gt;
+                            &lt;li&gt;Kappa&lt;/li&gt;
+                        &lt;/ul&gt;
+                    </code>
+                </pre>
+                
+                <div>
+                    <p>Vamos estilizar na cor laranja (orange) o terceiro filho, ou seja, a palavra "Gamma" será estilizada.</p>
+                    <pre>
+                        <code>
+                            CSS
+                            ul :nht-child(3) {
+                                color: orange;
+                            }
+                        </code>
+                    </pre>
+                    <h4>Resultado</h4>
+                    <div class="resultado_6 exemplo">
+                        <ul>
+                            <li>Alfa</li>
+                            <li>Beta</li>
+                            <li>Gamma</li>
+                            <li>Delta</li>
+                            <li>Epdilon</li>
+                            <li>Zeta</li>
+                            <li>Eta</li>
+                            <li>Theta</li>
+                            <li>Iota</li>
+                            <li>Kappa</li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <p>Vamos estilizar na cor laranja (orange) os elementos filhos, de dois em dois a partir do segundo, ou seja, as palavras "Beta", "Delta", "Zeta", "Theta" e "Kappa" </p>
+                    <pre>
+                        <code>
+                            CSS
+                            ul :nht-child(2n) {
+                                color: orange;
+                            }
+                        </code>
+                    </pre>
+                </div>
+                <h4>Resultado</h4>
+                    <div class="resultado_7 exemplo">
+                        <ul>
+                            <li>Alfa</li>
+                            <li>Beta</li>
+                            <li>Gamma</li>
+                            <li>Delta</li>
+                            <li>Epdilon</li>
+                            <li>Zeta</li>
+                            <li>Eta</li>
+                            <li>Theta</li>
+                            <li>Iota</li>
+                            <li>Kappa</li>
+                        </ul>
+                    </div>
+                <div>
+                    <p>Vamos estilizar na cor laranja (orange) todos os elementos que ocupam a posição par dentro da lista. </p>
+                    <pre>
+                        <code>
+                            CSS
+                            ul :nht-child(even) {
+                                color: orange;
+                            }
+                        </code>
+                    </pre>
+                </div>
+                <h4>Resultado</h4>
+                <div class="resultado_8 exemplo">
+                    <ul>
+                        <li>Alfa</li>
+                        <li>Beta</li>
+                        <li>Gamma</li>
+                        <li>Delta</li>
+                        <li>Epdilon</li>
+                        <li>Zeta</li>
+                        <li>Eta</li>
+                        <li>Theta</li>
+                        <li>Iota</li>
+                        <li>Kappa</li>
+                    </ul>
+                </div>
+                <div>
+                    <p>Vamos estilizar na cor laranja (orange) todos os elementos filhos a partir do sexto, ou seja, as palavras "Zeta", "Theta" e "Kappa"</p>
+                    <pre>
+                        <code>
+                            CSS
+                            ul :nht-child(2n+6) {
+                                color: orange;
+                            }
+                        </code>
+                    </pre>
+                </div>
+                <h4>Resultado</h4>
+                <div class="resultado_9 exemplo">
+                    <ul>
+                        <li>Alfa</li>
+                        <li>Beta</li>
+                        <li>Gamma</li>
+                        <li>Delta</li>
+                        <li>Epdilon</li>
+                        <li>Zeta</li>
+                        <li>Eta</li>
+                        <li>Theta</li>
+                        <li>Iota</li>
+                        <li>Kappa</li>
+                    </ul>
+                </div>
+            </article>
+            <article>
+                <h3>:nth-last-child</h3>
+                <p>A pseudo-classe <dfn>:nth-last-child</dfn> é idêntica à pseudo-classe <mark>:nht-child</mark> exceto que o casamento se dá contando os elementos de trás para frente. </p>
+                <div>
+                    <p>Vamos estilizar na cor laranja (orange) o terceiro filho contando de trás pra frente, ou seja, a palavra "Theta" será estilizada.</p>
+                    <pre>
+                        <code>
+                            CSS
+                            ul :nht-last-child(3) {
+                                color: orange;
+                            }
+                        </code>
+                    </pre>
+                    <p>E assim sucessivamente repetindo os exemplos de <mark>:nht-child</mark> de trás pra frente.</p>
+                </div>
+                <h4>Resultado</h4>
+                <div class="resultado_10 exemplo">
+                    <ul>
+                        <li>Alfa</li>
+                        <li>Beta</li>
+                        <li>Gamma</li>
+                        <li>Delta</li>
+                        <li>Epdilon</li>
+                        <li>Zeta</li>
+                        <li>Eta</li>
+                        <li>Theta</li>
+                        <li>Iota</li>
+                        <li>Kappa</li>
+                    </ul>
+                </div>
+            </article>
+            <article>
+                <h3>nth-of-type</h3>
+                <p>A pseudo-classe <dfn>:nth-of-type</dfn> é idêntico à pseudo-classe <mark>:nht-child</mark>. A principal diferença é que se trata de um seletor mais específico, pois casa com elementos filhos de determinado tipo.</p>
+                <div>
+                    <p>No exemplo a seguir o segundo paragrafo contido no elemento pai &lt;article&gt; será estilizado na cor de fonte laranja.</p>
+                    <pre>
+                        <code>
+                            &lt;div&gt;
+                                &lt;h2&gt;Aqui há um titulo&lt;/h2&gt;
+                                &lt;p&gt;Lorem ipsum dolor sit.&lt;/p&gt;
+                                &lt;a href="#"&gt;&lt;img src="images/foto.jpeg" alt="foto"&gt;&lt;/a&gt;
+                                &lt;p&gt;Este elemento será na cor laranja.&lt;/p&gt;
+                            &lt;/div&gt;
+                        </code>
+                    </pre>
+                    <pre>
+                        <code>
+                            p:nth-of-type(2) {
+                                color: orange;
+                            }
+                        </code>
+                    </pre>
+                </div>
+                <h4>Resultado</h4>
+                <div class="resultado_11 exemplo">
+                    <h2>Aqui há um título</h2>
+                    <p>Lorem ipsum dolor sit.</p>
+                    <a href="#"><img src="/img/favicon.ico" alt="foto"></a>
+                    <p>Este elemento será na cor laranja.</p>
+                </div>
+            </article>
+            <article>
+                <h3>nht-last-of-type</h3>
+                <p>A pseudo-classe <dfn>:nht-last-of-type</dfn> é idêntico a pseudo-classe <mark>:nth-of-type</mark> exceto que o casamento se dá contando de trás pra frente.</p>
+                <div>
+                    <p>No exemplo a seguir o segundo paragrafo contando de trás pra frente contido no elemento pai &lt;article&gt; será estilizado com a cor de fonte laranja.</p>
+                    <pre>
+                        <code>
+                            &lt;article&gt;
+                                &lt;h2&gt;Aqui há um titulo&lt;/h2&gt;
+                                &lt;p&gt;Este elemento será na cor laranja.&lt;/p&gt;
+                                &lt;a href=""&gt;&lt;img src="images/foto.jpeg" alt="foto"&gt;&lt;/a&gt;
+                                &lt;p&gt;Lorem ipsum dolor sit.&lt;/p&gt;
+                            &lt;/article&gt;
+                        </code>
+                    </pre>
+                    <pre>
+                        <code>
+                            p:nth-last-of-type(2) {
+                                color: orange;
+                            }
+                        </code>
+                    </pre>
+                </div>
+                <h4>Resultado</h4>
+                <div class="resultado_12 exemplo">
+                    <h2>Aqui há um título</h2>
+                    <p>Este elemento será na cor laranja.</p>
+                    <a href="#"><img src="/img/favicon.ico" alt="foto"></a>
+                    <p>Lorem ipsum dolor sit.</p>
+                </div>
+            </article>
+            <article>
+                <h3>:only-child</h3>
+                <p>A pseudo-classe <dfn>:only-child</dfn> casa com o elemento filho único dentro de um elemento pai.</p>
+                <div>
+                    <p>No exemplo a seguir o primeiro <em>ul</em> tem um único elemento filho cújo o texto será estilizado na cor laranja (orange). O segundo elemento <em>ul</em> tem varios elementos filhos <em>li</em>, neste caso nenhum deles seram estilizados quando se usa a pseudo-classe <mark>:only-child</mark></p>
+                    <pre>
+                        <code>
+                            &lt;ul&gt;
+                                &lt;li&gt;Este será cor laraja.&lt;/li&gt;
+                            &lt;/ul&gt;
+                            &lt;ul&gt;
+                                &lt;li&gt;Lorem ipsum dolor sit.&lt;/li&gt;
+                                &lt;li&gt;Lorem ipsum dolor sit.&lt;/li&gt;
+                            &lt;/ul&gt;
+                        </code>
+                    </pre>
+                    <pre>
+                        <code>
+                            ul li:only-child {
+                                color: orange;
+                            }
+                        </code>
+                    </pre>
+                </div>
+                <h4>Resultado</h4>
+                <div class="resultado_13 exemplo">
+                    <ul>
+                        <ul>
+                            <li>Este será cor laraja</li>
+                        </ul>
+                        <li>Este é o segundo elemento</li>
+                        <li>Este é o último elemento</li>
+                    </ul>
+                </div>
+            </article>
+            <article>
+                <h3>only-of-type</h3>
+                <p>A pseudo-classe <dfn>:only-of-type</dfn> casa com elementos que não têm irmãos do seu tipo. Ele é idêntico  ao elemento <mark>:only-child</mark> exceto pelo fato de que casa com um determinado tipo de elemento, o que faz com que o seletor seja mais específico.</p>
+                
+                <div>
+                    <p></p>
+                    <pre>
+                        <code>
+                            &lt;div&gt;
+                                &lt;h2&gt;Aqui há um titulo&lt;/h2&gt;
+                                &lt;p&gt;Lorem ipsum dolor sit.&lt;/p&gt;
+                                &lt;p&gt;Este &lt;span&gt;elemento&lt;/span&gt; será na cor laranja.&lt;/p&gt;
+                                &lt;h2&gt;Aqui há um titulo&lt;/h2&gt;
+                                &lt;p&gt;Lorem ipsum dolor sit.&lt;/p&gt;
+                            &lt;/div&gt;
+                        </code>
+                    </pre>
+                    <pre>
+                        <code>
+                                p :only-of-type {
+                                color: orange;
+                            }
+                        </code>
+                    </pre>
+                </div>
+                <h4>Resultado</h4>
+                <div class="resultado_14 exemplo">
+                    <h2>Aqui há um titulo</h2>
+                    <p>Lorem ipsum dolor sit.</p>
+                    <p>Este <span>elemento</span> será na cor laranja.</p>
+                    <h2>Aqui há um titulo</h2>
+                    <p>Lorem ipsum dolor sit.</p>
+                </div>
+            </article>
+            <article>
+                <h3>:target</h3>
+                <p>A pseudo-classe <dfn>:target</dfn> pode ser usado para estilizar um elemento-destino específico, que está vinculado à um link de navegação da página, através da tag &lt;a&gt;. Para isso o <mark>href</mark> indentificador de fragmentação deve ser o nome do seletor <em>id</em>, que deve estar dentro de qualquer tipo de elemento no documento HTML, como atributo.</p>
+                <p>Depois então no CSS declaramos o elemento que contém o <mark>id</mark>, adicionamos a pseudo pseudo-classe <mark>:target</mark> e a formatação do estilo. Exemplo de Sintaxe: <code>section:target {*/formatação*/} </code>.</p>
+                <div>
+                    <p>No exemplo a seguir, o elemento que será destino do elemento de navegação, receberá estilização através da pseudo-classe <mark>:target</mark> quando a rolagem automática acontecer.</p>
+                    <pre>
+                        <code>
+                            HTML
+                            &lt;nav&gt;
+                                &lt;ul&gt;
+                                    &lt;li&gt;&lt;a href="#exemplo1"&gt;e.elemento 1&lt;/a&gt;&lt;/li&gt;
+                                    &lt;li&gt;&lt;a href="#exemplo2"&gt;e.elemento 2&lt;/a&gt;&lt;/li&gt;
+                                    &lt;li&gt;&lt;a href="#exemplo3"&gt;e.elemento 3&lt;/a&gt;&lt;/li&gt;
+                                &lt;/ul&gt;
+                            &lt;/nav&gt;
+                            &lt;article id="#exemplo1"&gt;
+                            &lt;h3&gt;elemento 1&lt;/h3&gt;
+                                &lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, praesentium.&lt;p/&gt;
+                            &lt;/article&gt;
+                            &lt;article id="#exemplo2"&gt;
+                            &lt;h3&gt;elemento 2&lt;/h3&gt;
+                                &lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, praesentium.&lt;p/&gt;
+                            &lt;/article&gt;
+                            &lt;article id="#exemplo3"&gt;
+                            &lt;h3&gt;elemento 3&lt;/h3&gt;
+                                &lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, praesentium.&lt;p/&gt;
+                            &lt;/article&gt;
+                        </code>
+                    </pre>
+                    <p>Neste exemplo há um lista conteúdos da página para o usuário navegar. Quando isso acontecer o conteúdo será mostrado com a estilização da pseudo-classe <mark>:target</mark></p>
+                    <pre>
+                        <code>
+                            CSS
+                            article:target {
+                                outline: 3px dotted red;
+                            }
+                        </code>
+                    </pre>
+                </div>
+            </article>
+        </section>
+
+        <section class="container-article">
+            <h2>Pseudo-Classes de Validação</h2>
+            <p></p>
+        </section>
+
+        
+    </main>
+    <script>
+        function bigLayout() {
+            if (window.innerWidth >= 780) {
+                iconMenu.style.display = 'none';
+                menu.style.display = 'flex';
+            } else {
+                iconMenu.style.display = 'flex';
+                menu.style.display = 'none';
+            }
+        }
+
+        function clickMenu() {
+            if (menu.style.display =='flex') {
+                menu.style.display = 'none';
+            } else {
+                menu.style.display = 'flex';
+            }
+        }
+    </script>
+</body>
+</html>

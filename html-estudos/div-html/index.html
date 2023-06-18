@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML div</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="shortcut icon" href="favicon (3).ico" type="image/x-icon">
+</head>
+<body>
+     
+     <header id="cabecalho">
+        <h1>HTML div: estilizando páginas com a tag &lt;div&gt;</h1>
+        <p>Estudo de artigo.</p>
+    </header>
+    <article>
+        <div class="centralizado">
+            <h2>O que é e para que serve a tag &lt;div&gt; no HTML?</h2>
+            <p>A tag &lt;div&gt;, que correspode a abreviatura de <em>Division</em>, <strong>é um elemento HTML utilizado para dividir e agrupar os itens que serão exibidos em uma página</strong>. Por isso, ele funciona como em container,que pode receber diferentes tipos de conteúdo e orgnizá-los de várias maneiras.</p>
+            <p>Para organizar as tags divs em uma <u>página <abbr title="Hyper Text Markup Language">HTML</abbr></u>, é preciso utilizar os estilos <u><abbr title="Cascading Style Sheets">CSS</abbr></u>. São eles que ajudam a definir as características de cada container, como o tamanho, o posicionamento e muitas outras difinições para que seja possível realizar a organização desejada dos elementos inseridos na &lt;div&gt;.</p>
+            <p>Apesar de ser muito utilizada para a construção de layouts, a tag &lt;div&gt; não interfere no SEO &rarr; <em>Search Engine Optimization</em> &larr; da página, pois <strong>não faz parte do grupo de elementos semânticos do HTML,</strong> que são as tags que indicam o que cada parte do conteúdo representa, como os elmentos &lt;header&gt;, &lt;section&gt;, entre outras. Portanto, os mecanismos de buscas não utilizam essa tag para classificar o conteúdo do site.</p>
+        </div>
+
+        <div class="centralizado">
+            <h2>Como usar a tag &lt;div&gt;?</h2>
+            <p>A tag &lt;div&gt; é utilizada para separar e agrupar conteúdos. Para isso, <strong>todos os elementos que pertencem a ela devem ser declarados entre a tag de início &lt;div&gt; e a tag de fechamento &lt;/div&gt;. Assim, os estilos aplicados sobre a &lt;div&gt; refletirão nos itens inseridos nela.</strong></p>
+            <p>Para que o elemento &lt;div&gt; cumpra seu papel de separar e agrupar outros elementos, ele deve trabalhar em conjunto com os estilos CSS. Isso porque essas definições são responsávis por proporcionar características específicas à ele.</p>
+            <p><strong>Por padrão, a tag &lt;div&gt; contém a característica de inserir uma quebra de linha antes de sua declação</strong>, já que ela tem a função de separar elementos na página. Isso acontece, pois a maioria dos navegadores atribui o estilo "display: block" à tag &lt;div&gt;. Entretanto, é possível alterar o posicionamento por meio da aplicação de estilos.</p>
+        </div>
+        <div class="centralizado">
+            <h2>Os principais atributos da tag HTML &lt;div&gt;</h2>
+            <p>Assim como outros elementos HTML, a tag &lt;div&gt; suporta os atributos e eventos globais da linguagem. Dessa forma, <strong>é possível atribuir características por meio de estilos CSS</strong> e ralizar alterações por meio de códigos <u>JavaScript</u>. Confira os principais atributos do elemento &lt;div&gt;</p>
+            <h3>Estilizado o elemento &lt;div&gt;: Class e ID</h3>
+            <p>O atributo <em>class</em> é declarado com um ponto "." da denominação da classe, por exemplo, ".teste" e referenciado no atributo <em>"class"</em> do elemento. Ele pode ser aplicado em qualquer elemento e diversas vezes em uma página.</p>
+        <div class="exemplos">
+            <code>&lt;div class="teste"&gt;&lt;/div&gt;</code>
+        </div>
+            <p>Já o conteúdo do atributo <strong>id</strong> só pode ser atribuido em um único elemento na página, pois ele representa a sua identificação, que não pode se repetir. A declaração de <strong>id</strong> em CSS é feita usando o caractere "#" antes do nome do <strong>id</strong>. por exemplo: "#idTeste". </p>
+        <div class="exemplos">
+            <code>&lt;div id="idTeste"&gt;&lt;/div&gt;</code>
+        </div>
+            <p>A diferença entre estes dois atributos está em relação a individualização, ou seja, quando queremos que um &lt;div&gt; tenha características únicas, utilizamos o atributo <strong>id</strong>. Já quado queremos repetir a aparência em diversas divs, utilizamos o atributo <strong>class</strong>. <u><a href="exemplo-html/exdiv1.html" target="_blank">Veja um exemplo</a></u>:</p>
+            
+            <p>Perceba que as divs "cabeçalho" e "rodape" contém características diferentes, portanto, utilizamos o atributo <strong>id</strong> para realizar as atribuições apropriada. Já as divs com identificações "primeiroConteudo" e "segundoConteudo" foram estilizadas por meio da classe ".centralizado", pois as características são as mesmas para os dois elementos.</p>
+        </div>
+
+        <div class="centralizado">
+            <h3>Diferença entre &lt;div&gt; e &lt;span&gt;</h3>
+            <p>É comun duvidas em relação a utilização das tags &lt;div&gt; e &lt;apan&gt;. Isso porque <strong>as duas servem para delimitar um determinado conteúdo</strong> e aplicar o estilo CSS atribuidos a elas. A principal diferença entre elas é o atributo display, que por padrão é definido como "block" na tag &lt;div&gt; e "inline" na tag &lt;span&gt;.</p>
+            <p>O display block significa que existe uma quebra de linha no início e no encerramento da tag. Veja o <u>algorítimo</u> abaixo:</p>
+
+            <pre class="exemplos">
+                <code>
+                    &lt;DOCTYPE html&gt;
+                    &lt;html lang="en"&gt;
+                    &lt;head&gt;
+                    &lt;meta charset="UTF-8"&gt;
+                    &lt;meta name="viewport" content="width=device-width,
+                        initial-scale=1.0"&gt;
+                    &lt;title&gt;Tags div e span&lt;/title&gt;
+                    &lt;style type="text/css"&gt;
+                        .divs{
+                            background-color: darkcyan;
+                            border: 1px solid #000;
+                        }
+                        .span1 {
+                            background-color: burlywood;
+                            border: 2px solid red;
+                        }
+                        .span2 {
+                            background-color:chocolate;
+                            border: 2px solid red;
+                        }
+                    &lt;/style&gt;
+                    &lt;/head&gt;
+                    &lt;body&gt;
+                    &lt;h1&gt;Diferença entre as tags div e span&lt;/h1&gt;
+                    &lt;div class="divs"&gt;Primeira div&lt;/div&gt;
+                    &lt;div class="divs"&gt;Segunda div&lt;/div&gt;
+                    &lt;span class="span1"&gt;Primeira span&lt;/span&gt;
+                    &lt;span class="span2"&gt;Segunda span&lt;/span&gt;
+                    &lt;div class="divs"&gt;Outra div&lt;/div&gt;
+                    &lt;/body&gt;
+                    &lt;/html&gt;
+                </code>
+            </pre>
+            <p>Ao depurar esse código em um navegador, perceba que a primeira &lt;div&gt; será iniciada em uma nova linha, após o encerramento da tag &lt;h2&gt;, assim como a segunda &lt;div&gt;. Já o conteúdo das duas spans ocupa a mensma linha, enquanto a próxima &lt;div&gt; será iniciada na linha sequinte.</p>
+            <p>Além disso, o elemento &lt;div&gt; ocupa toda a linha caso o seu tamanho não seja especificado, mesmo que seu conteúdo termine antes. Já a tag &lt;apan&gt; ocupa somente o espaço necessátio para a exibição dos elementos dentro dela.</p>
+        </div>
+        <div class="centralizado">
+            <h3>Como fazer o posicionamento do elemento &lt;div&gt;: CSS position</h3>
+            <p>Por padrão, o elemento &lt;div&gt; tem a largura da página, Entretanto, podemos aplicar qualquer tamanho a ele e, dessa forma, podicioná-lo de diferentes maneiras na página, como fixá-lo no topo, posicionar as divs uma ao lado da outra e muito mais. Isso é feito por meio da propriedade position, que determina como em elemento será posicionado na página e aceita os seguintes atributos:</p>
+            <ul>
+                <li><strong>ralative:</strong> em que o posicionamento é baseado nas definições das propriedades <em>top</em> e <em>bottom</em> para o deslocamento horizontal e <em>left</em> e <em>right</em> em relação horizontal. O deslocamento do elemento é feito em relação ao posicionamento em que ocupa na página;</li>
+                <li><strong>absolute</strong>: em que o posicionamento é definido pelas peopriedades <em>top, bottom,left</em> e <em>right</em> e em relação ao topo da página;</li>
+                <li><strong>fixed:</strong> em que o elemento dica na mesma posição, mesmo com a rolagem da página;</li>
+                <li><strong>sticky:</strong> funciona como um adesivo, ou seja, em um primeiro monento o posicionamento é relativo. entretanto, ao rolar a página, esse atributo faz com que a &lt;div&gt; permaneça no posicionamento indicado pelas outras popriedades auxiliares.</li>
+            </ul>
+            <p>confira o código abaixo em um navegador e perceba como as divs se comportam na página e ao faxer a rolagem. <a href="exemplo-html/exdiv2.html" rel="_blank">Veja o exemplo:</a></p>
+            <p>Também podemos posicionar a &lt;div&gt; no centro da página de forma automática. Perceba que, no código acima, criamos um elemento que utiliza o estilo ".divAlignCenter", que sefine a propriedade margin como "0 auto". Isso faz com que a HTML center &lt;div&gt; seja posicionada ao centro sem a necessidade de cálculos adicionais. </p>
+            <p>Outra necessidade comum ao atilizar o elemento &lt;div&gt; é realizar o posicionamento de uma &lt;div&gt; ao lado da outra de forma automática, ou seja, sem a utilização das propriedades <em>top, bottom, seft e right</em> para auxiliar nessa tarefa. Isso é feito por meio da propriedade CSS float, que significa flutuar.</p>
+        </div>
+    </article>
+
+    
+
+</body>
+</html>
